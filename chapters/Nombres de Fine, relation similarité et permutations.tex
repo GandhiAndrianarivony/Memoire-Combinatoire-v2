@@ -1,0 +1,1330 @@
+\chapter{Nombres de Fine, relations de similarité et permutations}
+Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x =
+	x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $. La
+permutation $st(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ est obtenu à partir de x en remplaçant
+la plus petite lettre de x par 1, la $2\textsuperscript{e}$ plus petite lettre de x par 2 et ainsi
+de suite. Donc la plus grande lettre de x par m. Soit $\pi \in S_{n}$. On dit que $\pi $ contient le
+motif $\alpha \in S_{m}$, s'il existe $i_{1},i_{2}, \cdots, i_{m}$ tel que $i_{1}<i_{2}< \cdots
+	<i_{m}$ et $st(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. \\
+Soit $i\in [n]$. $i$ est
+un point fixe de $\pi$ si $\pi_{i}=i$.\\Dans toute la suite, on note par  $S_{n}(\alpha)$ l'ensemble
+de toutes les permutations $\pi \in S_{n}$ qui ne contiennent pas le motif $\alpha$ et $|S_{n}(\alpha)|:= s_{n}(\alpha)$. $S_{n}^k(\alpha)$ est l'ensemble des permutations $\pi \in
+	S_{n}(\alpha)$ qui ont exactement k points fixes et $| S_{n}^{k}(\alpha) |:=s_{n}^{k}(\alpha)$.
+\vspace{5pt}
+
+L'objet de ce chapitre est d'étudier et de trouver la relation entre les permutations de $[n]$ sans
+le motif $\alpha \in \{132, 321\}$ et le nombre $F_{n}$. L'introduction de la notion des relations
+de similarité nous permet de trouver l'expression $s_{n}^{0}(321) = F_{n}$.
+
+\section{Relations de similarité $\mathcal{R}$}
+%Dans toute la suite la relation $\mathcal{R}$ est définie sur l'ensemble $[n]$
+\begin{definition}
+	\begin{rm}
+		Une relation de similarité sur [n] est une relation binaire, réflexive et symétrique
+		vérifiant la propriété suivante:\\
+		$\forall x, y, z \in [n], \left((x<y\leq z \text{ et } x\mathcal{R}z) \implies
+			(x\mathcal{R}y \text{ et } y\mathcal{R}z)\right) $
+	\end{rm}
+\end{definition}
+
+% Dans toute la suite, pour tout $i\in [n]$, on pose $CLS(i)_{\mathcal{R}} = \{j; j\mathcal{R}i \}$
+
+\subsection{Points isolés}
+\begin{definition}
+	\begin{rm}
+		Soit $i \in [n]$. On dit que i est un point isolé de $\mathcal{R}$, si $\forall j \in [n], (i\mathcal{R}
+			j\implies i=j) $
+	\end{rm}
+\end{definition}
+\begin{definition}
+	\begin{rm}
+		Une relation de similarité $\mathcal{R}$ est non-singulière si elle n'a aucun point
+		isolé.
+	\end{rm}
+\end{definition}
+Dans toute la suite, on note par $ \mathcal{SR}_{n} $ l'ensemble des relations de similarité sur
+$ [n] $ et par $\mathcal{SR}_{n}(k)$ l'ensemble des relations de similarité ayant exactement $k$ points isolés.
+On pose par $Sim_{n}$ l'ensemble des n-uples $(r_{1},\cdots, r_{n})$ d'entiers tel que $\forall i\leq n,
+	0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1 \text{ si } i<n $
+\newpage
+
+\begin{proposition} \label{Phi_bijection} \text{ }\\
+	La transformation $\Phi: SR_{n} \rightarrow Sim_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ où, pour $1\leq i \leq n$ , $r_{i}$ est égal au nombre d'entiers $j$ tels que $j<i$ et $j\mathcal{R}i$, est une application bijective.\\ De plus, le nombre de points isolés de $\mathcal{R}$ est égal au nombre d'entier $i$ tels que $r_{i}=r_{i+1}=0$ où l'on convient $r_{n+1}=0$.
+\end{proposition}
+\textit{Preuve}:\\
+Soit $\mathcal{R} \in SR_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
+Si $r_{i+1}>0$, alors $i\mathcal{R}(i+1)$ d'après la définition d'une relation de similarité. De plus, si $k\in E_{i+1}(\mathcal{R})$ et $k<i$, alors $k\mathcal{R}i$, i.e $k\in E_{i}(\mathcal{R})$. Par conséquent, $r_{i+1}-1 \leq r_{i}$. Ce qui prouve que $\Phi$ est bien définie.\vspace{5pt}\\
+D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in Sim_{n}$ et $p_{k}=k-r_{k}$ pour tout $k$. On a $p_{k}\leq p_{k+1}$ si $k<n$.\\
+Soit $\mathcal{R}$ un antécédent de $r$ par $\Phi$. D'après la définition de $\mathcal{R}$, $p_{k}$ est la plus petite lettre $\leq k$ telle que $p_{k}\mathcal{R}k$. Ainsi, pour tout couple $(i, j)$ tel que $i\leq j$, on a l'équivalence $(i\mathcal{R}j \iff i \geq p_{j})$. Ce qui prouve que $\Phi$ est bijective.\vspace{10pt}\\
+Enfin, soit $1\leq i \leq n$. Si $i=n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$.\\
+Si $i<n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$ et $i$ n'est pas en relation avec $i+1$ ou encore $r_{i}=r_{i+1}=0$. $\blacksquare$
+% Dans toute la suite on pose $\overline{Sim_{n}} = \{ r\in Sim_{n}; \forall i\leq n-1,(r_{i}=0  \implies r_{i+1}\neq 0) \} $
+
+\begin{corollaire} \label{sr_eq_sim} \text{ }\\
+	On a $\# SR_{n}(k) = \#\text{Sim}_{n}(k)$ où $\text{Sim}_{n}(k)=\{r\in Sim_{n}; |\{i; r_{i}=r_{i+1}=0|=k\} \}$
+\end{corollaire}
+
+\begin{proposition} \label{phi_tsfm} \text{ }\\
+	Soit la transformation $\varphi$ : $\text{Dyck}(n) \longrightarrow \text{Sim}_n$, $p=p_{1}p_{2}\cdots p_{2n} \longrightarrow r=r_{1}r_{2}\cdots r_{n}$ définie comme suit:\\
+	Soit $\text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Alors pour tout $1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ où $\gamma_{i-1}$ est le niveau du $i$-ième pas de p.\\
+	Alors $\varphi$ est une application bijective.\\
+	De plus, $|\text{Sim}_{n}(k)| = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
+
+\end{proposition}
+\textit{Preuve}:\\
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in \text{ Dyck(n)}$ et $\varphi(p):=r$. On note
+$\text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
+% et on en déduit que $\gamma_{i_{j}-1}=r_{j}\leq j-1$.\\ 
+De plus, $| p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}= (j-1)-[(i_{j}-1)-(j-1)]=2(j-1)-i_{j}+1= r_{j}$.\\
+Ainsi, $r_{j+1}=2j - i_{j+1}+1< 2j -i_{j}+1$ ou encore $r_{j+1}\leq 2j-i_{j}=r_{j}+1$.\\ D'où $r\in Sim_{n}$. Ce qui prouve $\varphi$ est bien définie.\vspace{10pt}\\
+D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in Sim_{n}$. On pose $p=p_{1}p_{2}\cdots p_{2n}$ un antécédent de $r$ par $\varphi$ et $E=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des $i$ tels que $p_{i}=m$ et $\gamma_{i_{j}-1}=2j-i_{j}-1=r_{j}$. Soit $j \in [n]$ tel que le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$. \\
+On en déduit alors $p_{1}=m$ et $\gamma_{0}=0$.\\
+Montrons que $p \in \text{Dyck}(n)$.  Il suffit de montrer que, pour tout $1\leq k\leq 2n$, $| p_{1}\cdots p_{k} |_{m}\geq | p_{1}\cdots p_{k} |_{d}$\\
+% Montrons que $|p|_{d} = |p|_{d}$.\\
+% De plus, le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$.\\ 
+Si $k=2n$, on a $|p|_{d}=\underset{j=1}{\overset{n}{\sum}}(r_{j}-r_{j+1}+1)=r_{1}-r_{n+1}+n=n$. Par conséquent, $|p|_{m}=|p|_{d}$.\\
+% Si $1<k\leq 2n$,
+Supposons que $k\neq 2n$
+\begin{itemize}
+	\item [-] Si $p_{k}=m$, alors il existe $i_{j}\in E$ tel que $k=i_{j}$. On a $| p_{1}p_{2}\cdots p_{k} |_{m}=j$ et  \\ $| p_{1}p_{2}\cdots p_{k} |_{d}= \underset{p=1}{\overset{j-1}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j}+ (j-1)=(j-1)-r_{j}<j$.
+	\item [-] Si $p_{k}=d$. Soit $i_{j}$ le plus grand entier élément de $E$ tel que $i_{j}<k$. \\
+	      On a $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{m}=j$ et\\
+	      $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{d}\leq | p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} \cdots p_{i_{j+1}}|_{d}= \underset{p=1}{\overset{j}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j+1}+j=j-r_{j+1}\leq j$
+\end{itemize}
+On en déduit que, pour tout $k \leq 2n$, $| p_{1}p_{2}\cdots p_{k} |_{d} \leq | p_{1}p_{2}\cdots p_{k} |_{m}$.\\ Ainsi, $p\in \text{Dyck}(n)$.
+Ce qui prouve que $\varphi$ est bijective.\vspace{10pt}\\
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in $ Dyck($n$) et $\varphi(p)=r$.
+Soit $k\in [2n-1]$ tel que $\gamma_{k-1}=0$ et $p_{k+1}=d$.\\ Il existe $i_{j}\in \text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ tel que $k=i_{j}$. Donc, $\gamma_{k-1}=\gamma_{i_{j}-1}=0=r_{j}$. De plus $k$ ne peut pas être pair.
+\begin{itemize}
+	\item [-] Si $k=2n-1$, alors on a $k=i_{n}$. Donc $\gamma_{i_{n}-1}=0=r_{n}$ et avec la convention $r_{n+1}=0$
+	\item [-] Si $k\neq 2n-1$, on a $p_{k+2}=m$ avec $\gamma_{(k+2)-1}=0$. Cela implique que $i_{j+1} = k+2$ et on en déduit que $\gamma_{(k+2)-1}=\gamma_{i_{j+1}-1}=0=r_{j+1}$.
+\end{itemize}
+D'où, $|\text{Sim}_{n}(k)| = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$. \hspace{10pt}$\blacksquare$
+
+\begin{corollaire}\label{SimNOfK} \text{ }\\
+	On a $\#\mathcal{SR}_{n}(k) = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
+\end{corollaire}
+\textit{Preuve}: En utilisant le \Cref{sr_eq_sim} et la \Cref{phi_tsfm}, on a le résultat.
+
+\begin{corollaire}
+	On a:  $|\mathcal{SR}_{n}|=C_{n}$.
+\end{corollaire}
+Notons que $\overline{\text{Dyck}}(n) = \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
+
+\begin{corollaire} \label{fnToSRn0}
+	\begin{rm}
+		On a, $F_{n}=|\mathcal{SR}_{n}(0)|$
+	\end{rm}
+\end{corollaire}
+\textit{Preuve}: En utilisant la \Cref{bij-DyckBar} et le \Cref{SimNOfK} , on obtient le résultat.
+
+
+\subsection{Relation entre $S_{n}^{k}(321)$ et $\mathcal{SR}_{n}(k)$}
+\begin{definition}
+	\begin{rm}
+		Soit $\pi$ une permutation de $[n]$. On note $D(\pi)$ l'ensemble des $i$ tels que $\pi_{n-i+1}=i$. Pour toute permutation $\sigma=x_{1}x_{2}\cdots x_{n}$, on note $r(\sigma)$ sa permutation miroir: $r(\sigma)=x_{n}\cdots x_{2}x_{1}$.\vspace{10pt}
+	\end{rm}
+\end{definition}
+
+\begin{proposition} \label{SKNBij}
+	Soit $\Sigma$ la transformation $S_{n}(321)\longrightarrow S_{n}(123)$, $\sigma \longrightarrow \pi$ définie par  $\Sigma(\sigma):= r(\sigma)$. Alors $\varphi$ est une application bijective.\\
+	De plus, $fix(\sigma)=|D(r(\sigma))|$
+\end{proposition}
+
+\underline{\textit{Preuve}}:
+Soit $\sigma \in S_{n}(321)$ et $\Sigma(\sigma):=\pi$. Supposons qu'il existe $i<j<k$ tels que $st(\pi_{i}\pi_{j}\pi_{k})=123$. Alors $st(\sigma_{n-k+1}\sigma_{n-j+1}\sigma_{n-i+1})=321$, qui est en contradiction avec $\sigma \in S_{n}(321)$. \\Ce qui prouve que $\Sigma$ est bien définie.\\
+Soit $\pi \in S_{n}(123)$. On pose $\sigma$ l'antécédent de $\pi$ par $\Sigma$ tel que $\sigma=r(\pi)\in S_{n}(321)$. \\
+Ainsi $\Sigma$ est bijective.\\
+De plus, soit $i\in Fix(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi $fix(\sigma)=|D(r(\sigma))|$. $\blacksquare$
+
+\begin{definition}
+	\begin{rm}
+		Soit $\sigma\in S_{n}$ et  $i\in [n]$.\\
+		On dit que $\sigma_{i}$ est un saillant supérieur gauche $(ssg)$ (resp saillant
+		supérieur droite (ssd) )  de $\sigma$ si $\forall j<i\text{, }\sigma_{j}<\sigma_{i}$
+		(resp $\forall j>i$, $\sigma_{j}<\sigma_{i}$)
+	\end{rm}
+\end{definition}
+
+\begin{definition}
+	\begin{rm}
+		Soit $\pi$ une permutation de $[n]$. On appelle ssd-décomposition de $\pi$ l'expréssion $\pi = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ où les $u_{i}$ sont les ssd de $\pi$ et les $w_{i}$ sont des sous-mots(éventuellement vide)  de $\pi$.
+	\end{rm}
+\end{definition}
+\begin{lemme}
+	Soit $\sigma \in S_{n}$ et $\sigma = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ sa ssd-décomposition. Alors $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant.
+\end{lemme}
+\textit{Preuve}:\\
+On a $w_{1}w_{2}\cdots w_{s}$  n'est pas décroissant\\
+ssi il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1}$ n'est pas décroissant\\
+ssi il existe $k \in [s - 1]$ tel que $w_{k} u_{k} w_{k+1} u_{k+1}$ contient le motif 123\\
+ssi $\sigma$ contient le motif 123.
+\begin{lemme} \label{jPtFix}
+	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si et seulement si, dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$.
+\end{lemme}
+\textit{Preuve}:
+Soit $\sigma = \sigma(1)\sigma(2)\cdots \sigma(n) \in S_{n}(321)$ et $1\leq j \leq n$ tel que $\sigma(j)=j$.\\
+Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de $[j-1]$, alors il existe $i<j$ et $k>j$ tel que $\sigma(i)\sigma(j)\sigma(k)$ est un motif $321$.
+
+
+\begin{proposition} \label{dyck_to_avoiding_321_tfsm}
+	Soit $\Theta$ la transformation $S_{n}(321)\longrightarrow \text{Dyck}(n)$, $\sigma \longrightarrow p$ définie par:\\
+	Si $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ est la ssd-décomposition de $\pi=r(\sigma)$, alors $p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$) tel que $|m_{i}| = |w_{i}|+1$ (resp. $|d_{i}| = u_{i}-u_{i+1}$) avec la convention $u_{s+1}=0$. Alors $\Theta$ est une application bijective.\\
+	De plus, $fix(\sigma)= \#\{i \in Mont\text{ p }; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}$
+\end{proposition}
+
+\underline{\textit{Démonstration}}:
+Soit $\sigma\in S_{n}(321)$ tel que $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ est la ssd-décomposition \\ de $r(\sigma)=\pi \in S_{n}(123)$  et $\Theta(\sigma):=p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où  $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$) tel que $|m_{i}| = |w_{i}|+1$ (resp. $|d_{i}| = u_{i}-u_{i+1}$) avec la convention $u_{s+1}=0$.\vspace{10pt}\\
+Premièrement, nous allons voir que $|p|_{m} = |p|_{d}$. On a:
+$$
+	|p|_{m} = \underset{k=1}{\overset{s}{\sum}}|m_{k}| = \underset{k=1}{\overset{s}{\sum}}(|w_{k}|+1)=s+\underset{k=1}{\overset{s}{\sum}}|w_{k}| = s+(n-s)=n
+$$
+et
+$$
+	|p|_{d} = \underset{k=1}{\overset{s}{\sum}}|d_{k}| = \underset{k=1}{\overset{s}{\sum}}(u_{k}-u_{k+1}) = u_{1} - u_{s+1}=u_{1}=n
+$$
+On peut alors écrire $p$ sous la forme $p=p_{1}p_{2}\cdots p_{2n}$ avec $p_{1}=m$ et  $\gamma_{0}=0$.\vspace{10pt}\\
+Deuxièment, nous allons voir que pour tout $k\leq 2n$, $|p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cdots p_{k}|_{d}$.\\
+On commence par prouvé que, pour tout $h\leq s$, $n-u_{h}\leq |m_{1}d_{1}\cdots m_{h-1}d_{h-1} |_{m}$.\\
+Supposons que $| w_{h}u_{h}\cdots w_{s}u_{s} |=q$. Alors, la plus grande lettre de $st(w_{h}u_{h}\cdots w_{s}u_{s})$  est égale à $q$.\\ Nécéssairement $u_{h}\geq q$ car $u_{h}$ ssd de $\pi$. D'où
+\[\begin{array}{l l l}
+		u_{h}\geq | w_{h}u_{h}\cdots w_{s}u_{s} | & = & n-| w_{1}u_{1}\cdots w_{h-1}u_{h-1} |                                 \\
+		                                          & = & n-\left[ (h-1)+ \underset{i=1}{\overset{h-1}{\sum}}|w_{i}|\right]     \\
+		                                          & = & n-\left[ (h-1)+ \underset{i=1}{\overset{h-1}{\sum}}(|m_{i}|-1)\right] \\
+		                                          & = & n- \underset{i=1}{\overset{h-1}{\sum}}|m_{i}|                         \\
+		                                          & = & n - | m_{1}d_{1}\cdots m_{h-1}d_{h-1} |_{m}
+	\end{array}
+\]
+ou encore $| m_{1}d_{1}\cdots m_{h-1}d_{h-1} |_{m}\geq n-u_{h}$.\\
+Passons ensuite à la preuve de $|p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cdots p_{k}|_{d}$, $\forall k\leq 2n$.
+\begin{itemize}
+	\item [-] Si $p_{k}=m$, alors il existe $l\in [s]$ tel que $p_{k}$ est une lettre de $m_{l}$.\\ On a $|m_{1}d_{1}\cdots m_{l-1}d_{l-1}|_{m}<|p_{1}p_{2}\cdots p_{k}|_{m}$ et $|p_{1}p_{2}\cdots p_{k}|_{d}=|m_{1}d_{1}\cdots m_{l-1}d_{l-1}|_{d}=\underset{i=1}{\overset{l-1}{\sum}}|d_{i}|=n-u_{l}$.\\
+	      On en déduit que $|p_{1}p_{2}\cdots p_{k}|_{d}=n-u_{l}\leq | m_{1}d_{1}\cdots m_{l-1}d_{l-1} |_{m} <|p_{1}p_{2}\cdots p_{k}|_{m}$ \\ ou encore $|p_{1}p_{2}\cdots p_{k}|_{d}<|p_{1}p_{2}\cdots p_{k}|_{m}$.
+
+	\item [-] Si $p_{k}=d$, alors il existe $l\in[s]$ tel que $p_{k}$ est une lettre de $d_{l}$.\\ On a $|p_{1}p_{2}\cdots p_{k}|_{d}\leq |m_{1}d_{1}\cdots m_{l}d_{l}|_{d}=\underset{i=1}{\overset{l}{\sum}}|d_{i}|= \underset{i=1}{\overset{l}{\sum}}(u_{i}-u_{i+1})=n-u_{l+1}$ et $|p_{1}p_{2}\cdots p_{k}|_{m}=|m_{1}d_{1}\cdots m_{l}d_{l}|_{m}$.\\
+	      On en déduit que $|p_{1}p_{2}\cdots p_{k}|_{d}\leq n-u_{l+1} \leq |m_{1}d_{1}\cdots m_{l}d_{l}|_{m} =|p_{1}p_{2}\cdots p_{k}|_{m}$ \\ou encore $|p_{1}p_{2}\cdots p_{k}|_{d} \leq|p_{1}p_{2}\cdots p_{k}|_{m}$\vspace{7pt}
+\end{itemize}
+Par conséquent, $p\in \text{ Dyck }(n)$. Ce qui prouve que $\Theta$ est bien définie.\vspace{10pt}\\
+Montrons qu'elle est bijective. Soit $p\in \text{Dyck}(n)$. On peut écrire $p$ sous la forme $p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$).\\
+Posons $u_{i}=\underset{k=i}{\overset{s}{\sum}}|d_{k}|$ et $1\leq i \leq s$ et soit $w_{1}, w_{2}, \cdots, w_{s}$ $s$ mots tels que $|w_{i}| = |m_{i}| - 1$ $(1\leq i \leq s)$ et $w_{1}w_{2}\cdots w_{s}$ le mot décroissant formé par les lettres de $[n]\setminus \{u_1, u_{2}, \cdots, u_{s}\}$ avec $w_i = e$ si $w_i$ est vide.\\
+Il est évident que $u_s < u_{s-1}< \cdots < u_1$.\\
+D'autre part, comme $|w_{1}w_{2}\cdots w_{s}| = n-s$ alors $|w_i w_{i+1} \cdots w_{s} | = n-s - |w_{1}w_{2}\cdots w_{i-1}| = n-s - (\underset{k=1}{\overset{i-1}{\sum}} |m_{k}| - (i-1)) \leq n-s - (\underset{k=1}{\overset{i-1}{\sum}} |d_{k}| - (i-1)) =  \underset{k=i}{\overset{s}{\sum}} |d_{k}| - (s-i +1)= u_{i} - (s-i+1)$.\\
+Par conséquent, $| w_{i}w_{i+1}u_{i+1}\cdots w_{s}u_{s} |\leq u_{i}-1< u_i$.\\
+Dès lors, toutes les lettres du mot $w_{i} w_{i+1} u_{i+1} \cdots w_s u_s$ sont plus petites que $u_i$. Il s'ensuit que l'antécédent de $p$ est $\sigma$ dont la ssd-décomposition du miroir est $w_1 u_1 w_2 u_2 \cdots w_s u_s$.\vspace{10pt}\\
+Enfin, soit $1 \leq j \leq n$. D'après le \Cref{jPtFix} et par passage au miroir,\\
+$\sigma(j) = j$,\\
+$\iff \exists i, u_i = j, |w_i | = 0, |w_1 u_1 w_2 u_2 \cdots w_{i-1} u_{i-1} | = n - j, |w_{i+1} u_{i+1} \cdots w_s u_s | = j - 1$\\
+$\iff \exists i, u_i = j, |w_i | = 0, |w_1  w_2  \cdots w_{i-1} | + i-1 = n - j, |w_{i+1} \cdots w_s | + s-j = j - 1$\\
+$\iff \exists i, \underset{k=1}{\overset{i-1}{\sum}}|d_{k}| = n-j , |m_{i}| = 1, \underset{k=1}{\overset{i-1}{\sum}}|m_{k}| = n-j, \underset{k=i+1}{\overset{s}{\sum}}|m_{k}| = j-1 $\\
+Or, comme $j - 1$ se trouve à droite de $j$ dans $r(\sigma)$, alors $u_{i+1} = j - 1$.
+\text{}\\
+Par conséquent,\\ $\sigma(j)=j$, \\
+$\iff \exists i, \underset{k=1}{\overset{i-1}{\sum}}|m_{k}| =\underset{k=1}{\overset{i-1}{\sum}}|d_{k}| =n-j, |m_{i}| = |d_{i}| = 1,  \underset{k=i+1}{\overset{s}{\sum}}|m_{k}| =  \underset{k=i+1}{\overset{s}{\sum}}|d_{k}|=j-1 $\\
+$\iff \gamma_{2(n-j)}=0$ et $p_{2(n-j+1)}=d$
+
+
+\begin{corollaire} \label{dn321ToFn}
+	On a $s_{n}^{k}(321) =  \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\} $
+\end{corollaire}
+\textit{Preuve}:
+En utilisant la \Cref{dyck_to_avoiding_321_tfsm}, on a le résultat.
+
+\begin{corollaire} \label{avoiding_321_and_SR_n}
+	$\forall n\geq 0$, $s_{n}^{k}(321)=\#\mathcal{SR}_{n}(k)$
+\end{corollaire}
+\textit{Preuve}:
+En utilisant le \Cref{dn321ToFn} et le \Cref{SimNOfK}, on le résultat.
+
+\begin{corollaire} \label{fn_and_avoiding_321_without_fix}
+	On a $F_{n} = s_{n}^{0}(321)$.
+\end{corollaire}
+\textit{Preuve}:
+En utilisant le \Cref{avoiding_321_and_SR_n} et \Cref{fnToSRn0}, on a le résultat.
+
+\section{Interprétations des $F_{n}$}
+\subsection{Mots de Catalan}
+Dans un chemin de Dyck, si on remplace chaque montée (resp. chaque descente) par un pas horizontal (resp. vertical), on obtient une autre définition d’un chemin de Dyck. Un chemin de Dyck de longueur 2n est un chemin dans $\mathbb{N}\times \mathbb{N}$ de (0, 0) vers (n, n) formé par les pas horizontaux $(1, 0)$ et verticaux $(0, 1)$ et qui se trouvent au-dessous de la droite $y = x$ (Voir figure ci-dessous).\\Un chemin de Dyck de longueur 2n peut être représenté par le mot $c_{0}c_{1} \cdots c_{n-1}$ où $c_{i-1}$ est le niveau du i-ème pas horizontal: $0 \leq c_{0} \leq c_{1} \leq \cdots \leq c_{n-1}$ avec $c_{i} \leq i$. Notons que $c_{i-1}$ est égal au nombre de pas verticaux qui se trouvent avant le i-ème pas horizontal.\vspace{15pt}
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.38\textwidth}
+		\centering
+		\includegraphics[width=1.1\textwidth]{./Images/DyckPath.jpg}
+		\caption{Chemin de Dyck}
+	\end{subfigure}
+	\hspace{2cm}
+	\begin{subfigure}[b]{0.38\textwidth}
+		\centering
+		\includegraphics[width=1.1\textwidth]{./Images/DyckTransform.jpg}
+		\caption{Transformé du chemin de Dyck}
+	\end{subfigure}
+	%\caption{Nouveau chemin de Dyck}
+	\label{fig:DyckPath}
+\end{figure}
+
+%\includegraphics[width=0.45\textwidth]{DyckPath.png}\hspace{10pt}
+%\includegraphics[width=0.45\textwidth]{DyckPath.png}
+
+\begin{definition}
+	\begin{rm}
+		A un décalage d'indice, un chemin de Dyck de longueur 2n est représenté par un mot $c_{1}c_{2}
+			\cdots c_{n}$ tel que $1 \leq c_{1} \leq c_{2} \leq \cdots \leq c_{n}$ où $c_{i} \leq i$ pour
+		tout i. Un tel mot est appelé mot de Catalan de longueur n.
+	\end{rm}
+\end{definition}
+\newpage
+\text{}\\
+Dans toute la suite, on note par $\textit{Cat(n)}$ l'ensemble des mots de Catalan  de longueur n.
+\begin{lemme}
+	La transformation d'un chemin de \text{Dyck} en un mot de \text{Catalan} précédente est un application bijective
+	% Il existe une bijection $\chi$ de $\textit{Cat(n)}$ sur $\text{Dyck}(n)$.
+\end{lemme}
+
+% \begin{proposition}
+% 	Le nombre de Fine $F_{n}$ est égal au nombre de mots de Catalan $c_{1}c_{2} \cdots c_{n}c_{n+1}$ ne 
+% 	contenant pas deux points fixes successifs et $c_{n+1} = n + 1.$
+% \end{proposition}
+% 	\underline{\textit{Démonstration}}: On en déduit de la \Cref{bij-DyckBar} (par la transformation de $\overline{\text{Dyck}}(n)$).
+
+\begin{definition} \label{psiDef_}
+	\begin{rm}
+		Soit $\psi: S_{m}(321)\longrightarrow S_{m-1}(321), \pi \longrightarrow \psi(\pi)$ définie par:
+		\begin{itemize}
+			\item [-] Si $\pi(m)=m-1$, alors $\psi(\pi)=st(\pi(1)\pi(2)\cdots \pi(m-1))$
+			\item [-] Si $\pi(m)\neq m-1$, alors $\psi(\pi)$ se déduit de $\pi$ en supprimant $m$
+		\end{itemize}
+		On pose $ps(\pi)$ la position de $m$, i.e $ps(\pi)=\pi^{-1}(m)$.
+	\end{rm}
+\end{definition}
+
+\begin{proposition} \label{bijCatN} \text{ }\\
+	La transformation $\alpha: S_{n}(321)\longrightarrow Cat(n), \pi \longrightarrow c=ps(\pi^{(n-1)})ps(\pi^{(n-2)})\cdots ps(\pi^{(0)}) $\\ où $\pi^{(0)}=\pi, \pi^{(1)}=\psi(\pi^{(0)}), \cdots, \pi^{(i)}=\psi(\pi^{(i-1)})$ est une application bijective.\\
+	De plus, $fix(\pi)=\# \{i; c_{i}=i \text{ et }c_{i+1}=i+1\}$ où l'on convient que $c_{n+1}=n+1$.
+\end{proposition}
+\underline{\textit{Preuve}}:
+Soit $\pi\in S_{n}(321)$ et $\alpha(\pi):=c=c_{1}c_{2}\cdots c_{n}$ où $c_{i}=ps(\pi^{(n-i)})$.
+\\Pour tout $0\leq i \leq n-1$, on a $\pi^{(i)}\in S_{n-i}(321)$.
+% et $ps(\pi^{(i)})\leq n-i$. 
+On en déduit que $ps(\pi^{(i)})\leq n-i$ ou encore $c_{n-i}\leq n-i$.\\
+En utilisant la définition de $\psi$ précédente, on a:
+\begin{itemize}
+	\item [-] si $\pi^{(i)}(n-i)=n-i-1$, alors $ps(\pi^{(i)})=ps(\pi^{(i+1)})$
+	\item [-] si $\pi^{(i)}(n-i)\neq n-i-1$ alors dans la décomposition linéaire de $\pi^{(i)}$, $n-i-1$ se trouve à gauche de $n-i$ car $\pi^{(i)}\in S_{n-i}(321)$. Cela implique que $ps(\pi^{(i)})>(\pi^{(i)})^{-1}(n-i-1) = ps(\psi(\pi^{(i)})) = ps(\pi^{(i+1)})$. D'où $ps(\pi^{(i)}) > ps(\pi^{(i+1)})$
+\end{itemize}
+Cela implique que $1\leq ps(\pi^{(n-1)}) \leq ps(\pi^{(n-2)}) \leq \cdots \leq ps(\pi^{(0)})\leq n$ ou encore $1\leq c_{1}\leq c_{2}\leq \cdots \leq c_{n}\leq n$.\\
+Il s'ensuit que  $c\in Cat(n)$. Ce qui prouve que $\alpha$ est bien définie.\vspace{10pt}\\
+Montrons qu'elle est bijective. Soit $c\in Cat(n)$ et $\pi^{(0)}, \pi^{(1)}, \cdots, \pi^{(n-1)}$ sont des mots tels que $\pi^{(n-1)}=1$ et pour tout $2 \leq j \leq n$, $\pi^{(n-j)}$ est un mot obtenue à partir de $\pi^{(n-j+1)}$ comme suit:
+\begin{itemize}
+	\item [-] si $c_{j}=c_{j-1}$, alors on remplace $j-1$ par $j$ et on ajoute $j-1$ après la dernière lettre.
+	\item [-] si $c_{j}>c_{j-1}$, alors on insère $j$ après la $(c_{j}-1)$-ème lettre.
+\end{itemize}
+On en déduit que pour tout $1\leq j \leq n$, $\pi^{(n-j)}\in S_{j}$.\vspace{7pt}\\
+Vérifions que pour tout $1 \leq j \leq n$, $c_{j} = ps(\pi^{(n-j)})$. D'après la construction de $\pi^{(n-j)}$ précèdente, cette dernière est  évidente dans le cas où $c_{j}> c_{j-1} (j\geq 2)$.
+Supposons alors que $c_{j}=c_{j-1}$.
+Soit $k<j-1$ l'entier qui vérifie (s'il existe) $c_{k+1}>c_{k}$ et $c_{k+1}=c_{k+2}=\cdots =c_{j-1}=c_{j}$. \\
+On a $ps(\pi^{(n-(k+1))}) = ps(\pi^{(n-(k+2))}) = \cdots  = ps(\pi^{(n-j+1)})= ps(\pi^{(n-j)})$ avec $ps(\pi^{(n-(k+1))})=c_{k+1}$\\
+On en déduit que $c_{j} = ps(\pi^{(n-j)})$\vspace{7pt}\\
+Il nous reste à montrer que pour tout $1 \leq j \leq n$,  $\pi^{(n-j)}\in S_{j}(321)$\\
+Supposons qu'il existe $j\leq n$ tel que $\pi^{(n-j)} \notin S_{j}(321)$ et pour tout $p<j$, $\pi^{(n-p)}\in S_{p}(321)$.\\
+Soit alors $i<k<l$ tel que $st(\pi^{(n-j)}(i)\pi^{(n-j)}(k)\pi^{(n-j)}(l))=321$.
+On en déduit que $\pi^{(n-j)}(i)=j$.\\
+On a $\pi^{(n-j)}(j)\neq j-1$ et  $j-1$ se trouve à droite de $j$  dans la décomposition linéaire de $\pi^{(n-j)}$ car sinon on aura $\pi^{(n-j+1)}\notin S_{j-1}(321)$.\\
+Cela implique que $ps(\pi^{(n-j)})< ps(\pi^{(n-j+1)})$ ou encore $c_{j}<c_{j-1}$ qui est en contradiction avec $c\in Cat(n)$.\\
+Ainsi, pour tout $1 \leq j \leq n$,   $\pi^{(n-j)}\in S_{j}(321)$.\\
+$\pi^{(0)}$ est l'antécédent de $c$ par $\alpha$. Ce qui prouve que $\alpha$ est une application bijective.\vspace{10pt}\\
+Enfin, soit $\pi\in S_{n}(321)$ et $\alpha(\pi)=c$. Soit $i\in Fix(\pi)$.
+D'après le \Cref{jPtFix}, toute lettre à gauche de $i$ est plus petite que $i$ et toute lettre à droite de $i$ est plus grande que $i$. D'après la \Cref{psiDef_}, on a $\pi^{(n-i)}(i)=i$ et $\pi^{(n-i-1)}(i+1)=i+1$ ou encore $c_{i}=i$ et $c_{i+1}=i+1$\\
+Ainsi $fix(\pi)=\#\{i; c_{i}=i \text{ et }c_{i+1}=i+1\}$. $\blacksquare$.
+
+\begin{corollaire}
+	On a $F_{n}= \#\{ c\in Cat(n); | \{i; c_{i}=i \text{ et } c_{i+1}=i+1\} |=0 \}$
+\end{corollaire}
+\textit{Preuve}: \\ En utilisant la \Cref{bijCatN}, on a $s_{n}^{k}(321) = \#\{ c\in Cat(n); | \{i; c_{i}=i \text{ et } c_{i+1}=i+1\} |=k \}$ et en utilisant le \Cref{fn_and_avoiding_321_without_fix}, on a le résultat. $\blacksquare$\vspace{10pt}\\
+Dans toute la suite, on pose $A_{n}(x)= \underset{\pi \in S_{n}(321)}{\sum}x^{fix(\pi)}$.
+
+\begin{proposition}
+	On a $A_{n}(x)=\sum\limits_{c\in Cat(n)}x^{\#D(c)}$ où $D(c) = \{i; c_{i}=i \text{ et } c_{i+1}=i+1\}$.\vspace{5pt}\\
+	De plus, $x^{\# D(c)} = \sum\limits_{S\subset D(c)}(x-1)^{\#S}$
+\end{proposition}
+Preuve: Soit $c\in Cat(n)$ et $\alpha(c):=\pi \in S_{n}(321)$ où $\alpha$ est la bijection définit dans la \Cref{bijCatN}. On a $fix(\pi) = \# \{i; c_{i}=i \text{ et } c_{i+1}=i+1\}=\#D(c)$. D'où le résultat.\vspace{5pt}\\
+D'autre part,\\ $x^{\#D(c)}= ((x-1)+1)^{\#D(c)}= \sum\limits_{k=0}^{\#D(c)} 1^{\#D(c)-k}(x-1)^{k}\binom{ \#D(c)}{ k}= \sum\limits_{k=0}^{\#D(c)}\sum\limits_{\underset{|S|=k}{S\subset D(c)}}(x-1)^{k} = \sum\limits_{S\subset D(c)}(x-1)^{\#S}$\text{ }$\blacksquare$\vspace{10pt}\\
+Posons $E:=\{c \in Cat(n); c_{2}=2\}$.
+\begin{proposition}
+	Soit $\eta$ la transformation de $E \longrightarrow Cat(n-1)$, $c\longrightarrow c^{(1)}$ définie comme suit, pour toute $i\leq n-1$, $c_{i}^{(1)}=c_{i+1}-1$. $\eta$ est bijective.\vspace{5pt}\\
+	De plus, $\#D(c) = \#D(c^{(1)}) +1$
+\end{proposition}
+Preuve: Il est évident que $\eta$ est bijective.\\
+Soit $c\in E$ et $i\in D(c)$ tel que $i\neq 1$. On a $c^{(1)}_{i-1}=c_{i}-1=i-1$ et $c^{(1)}_{i}=c_{i+1}-1=i+1-1=i$. D'où $i-1\in D(c^{(1)})$. Par définition même de la bijection et le fait qu'on a décalé les indice, on a $\#D(c) = \#D(c^{(1)}) +1$\hspace{5pt}$\blacksquare$
+\begin{proposition} \label{prop225}
+	On a $A_{n}(x)=(x-1)A_{n-1}(x)+ \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$ où l'on convient que $A_{0}(x)=1$.
+\end{proposition}
+Preuve: On a $A_{n}(x)= \sum\limits_{c\in Cat(n)}\sum\limits_{S\subset D(c)}(x-1)^{\# S}=\sum\limits_{c\in Cat(n)}\left( \sum\limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{\#S} + \sum \limits_{\underset{1\notin S}{S\subset D(c)}} (x-1)^{\#S} \right)$\vspace{5pt}\\
+On pose $A_{n}^{(1)}(x)=\sum\limits_{c\in Cat(n)}\sum\limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{{\#S}}$ et $A_{n}^{(2)}(x)=\sum\limits_{c\in Cat(n)}\sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{{\#S}}$. \\
+Donc $A_{n}(x) = A_{n}^{(1)}(x) + A_{n}^{(2)}(x)$.\vspace{15pt}\\
+Trouvons d'abord l'expression $A_{n}^{(1)}(x)$.\\
+On a $A_{n}^{(1)}(x) = \sum\limits_{c \in E}\sum\limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{{\#S}}$ car si $c_{2}\neq 2$, alors il n'existe aucun $S\subset D(c)$ tel que $1\in S$. \\
+Soit $c\in E$ et $c^{(1)}=\eta(c)$. Soit $S\subset D(c)$ tel que $1\in S$ et on pose $S'$ l'ensemble obtenu à partir de $S$ en supprimant l'élément $1$ et on diminuant de $1$ les éléments restants (s'il y en a). Cela implique que $S'\subset D(c^{(1)})$.
+Il est clair que pour tout $i \in S$, $i \neq 1$, on a $i-1 \in  D(c^{(1)})$ et $\#S = \#S' + 1$.\\
+De plus, $$\sum \limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{\#S} = \sum \limits_{S'\subset D(c^{(1)})}(x-1)^{\#S' + 1}$$\\
+Par conséquent, $$A_{n}^{(1)}(x)=\sum\limits_{c^{(1)}\in Cat(n-1)}\sum \limits_{S'\subset D(c^{(1)})}(x-1)^{\#S' + 1}=(x-1)A_{n-1}(x)$$\vspace{15pt}\\
+Trouvons ensuite l'expression de $A_{n}^{(2)}(x)$.\\
+On a $A_{n}^{(2)}(x) = \sum\limits_{\underset{c_{2}=2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S} + \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$.\\
+On pose $a_{n}(x)=\sum\limits_{\underset{c_{2}=2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$ et $b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$.\\
+Donc $A_{n}^{(2)}(x)=a_{n}(x)+b_{n}(x)$.\\
+Premièrement, trouvons l'expréssion de $a_{n}(x)$. Soit $c \in E$ et $c^{(1)} = \eta(c)$. Soit $S\subset D(c)$ tel que $1\notin S$. Posons $S'$ l'ensemble obtenu à partir de $S$ en diminuant de $1$ ses éléments. Il est clair que $S'\subset D(c^{(1)})$ et pour tout $i\in S$, on a $i-1\in S'$. D'où $\#S' = \#S$ et par conséquent $$a_{n}(x) = \sum\limits_{c^{(1)}\in Cat(n-1)} \sum\limits_{S'\subset D(c^{(1)})}(x-1)^{\#S'}=A_{n-1}(x)$$
+Deuxièmement, on va trouver l'expréssion de $b_{n}(x)$. Soit $c\in Cat(n)$ tel que $c_{2}\neq 2$. Cela implique que $1\notin D(c)$ ou encore pour tout $S\subset D(c)$, on a $1\notin S$. Alors on a $$b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$\\
+Posons $\overline{E}:=\{c\in Cat(n); c_{2}\neq 2\}$ et soit $i>1$. On note par $Cat_{i}(n)$ l'ensemble des $c\in \overline{E}$ tel que $i$ est le plus petit entier
+qui vérifie $c_{i}=i$.\\
+Il est clair que $Cat_{2}(n)=\emptyset$ et pour tout $i \neq j$, on a $Cat_{i}(n)\bigcap Cat_{j}(n)=\emptyset$\\
+Ensuite, on note par $F$ l'ensemble des $c\in \overline{E}$ tel que pour tout $k>1$,
+$c_{k}<k$.\\
+On en déduit que \[
+	\left(\bigsqcup\limits_{i=3}^{n}Cat_{i}(n)\right)\bigcap F=\emptyset \text{ et } \overline{E}=\left(\bigsqcup\limits_{i=3}^{n}Cat_{i}(n)\right)\bigsqcup F
+\]
+% On note que si $i=1 \text{ ou } i=2$ alors $Cat_{i}(n)=\emptyset$. \vspace{5pt}\\
+Par conséquent $$b_{n}(x)=  \sum\limits_{c\in \left(\bigsqcup\limits_{i=3}^{n}Cat_{i}(n)\right)\bigsqcup F} \sum\limits_{S\subset D(c)}(x-1)^{\#S}=\sum\limits_{i=3}^{n}\sum\limits_{c\in Cat_{i}(n)} \sum\limits_{S\subset D(c)}(x-1)^{\#S} + \sum\limits_{c\in F} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$. \\
+La transformation $\beta: Cat_{i}(n) \longrightarrow Cat(i-2)\times Cat(n-i+1)$; $c \longmapsto (c', c'')$ définie comme suit $c'_{j}=c_{j+1}$ et $c''_{j}=c_{i+j-1}-(i-1)$, est bijective.\\
+De plus, $\#D(c) = \#D(c'')$. \vspace{5pt}\\
+La transformation $\mu: F \longrightarrow Cat(n-1)$; $c \longmapsto c^{(1)}$ définie comme suit $c^{(1)}_{j}=c_{j+1}$ est bijective. De plus, pour tout $c \in F$, on a $D(c)=\emptyset$. D'où $\sum\limits_{S\subset D(c)}(x-1)^{\#S}=1$.\vspace{10pt}\\
+Ainsi,
+$$
+	\begin{array}{l l l}
+		b_{n}(x) & = & \sum\limits_{i=3}^{n} \sum\limits_{(c', c'')\in Cat(i-2)\times Cat(n-i+1)} \sum\limits_{S\subset D(c'')}(x-1)^{\#S} + \sum\limits_{c^{(1)}\in Cat(n-1)}1 \\
+		         & = & \sum\limits_{i=3}^{n} C_{i-2}\sum\limits_{c'' \in Cat(n-i+1)}\sum\limits_{S\subset D(c'')}(x-1)^{\#S} + C_{n-1}                                          \\
+		         & = & C_{n-1} + \sum\limits_{i=3}^{n} C_{i-2}A_{n-i+1}(x)
+	\end{array}
+$$
+Il s'ensuit que $A_{n}^{(2)}=a_{n}+b_{n}= A_{n-1}(x) + C_{n-1} + \sum\limits_{i=3}^{n} C_{i-2}A_{n-i+1}(x) = \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$.\\
+Dès lors, on a $A_{n}(x)= A_{n}^{(1)} + A_{n}^{(2)} = (x-1)A_{n-1}(x) + \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$ \hspace{5pt}$\blacksquare$
+% ==================================================================================================================================================================
+
+\subsection{Expression explicite des coefficients $A_{n}(x)$}
+Soit $\sigma \in S_{n}$ et $1 \leq i \leq n$\\
+\begin{definition}
+	\begin{rm}
+		On dit que $\sigma(i)$ est:
+		\begin{description}
+			\item[-] un creux de $\sigma$ si $\sigma (i-1)> \sigma (i)<\sigma (i+1)$
+			\item[-] un pic de $\sigma$ si  $\sigma (i-1)<\sigma (i)>\sigma(i+1)$
+			\item[-] une double montée de $\sigma$ si $\sigma (i-1)<\sigma (i)<\sigma(i+1)$
+			\item[-] une double descente de $\sigma$ si  $\sigma (i-1)>\sigma (i)>\sigma(i+1)$
+		\end{description}
+	\end{rm}
+\end{definition}
+On convient que $\sigma (0) = n+1$ et $\sigma (n+1) = 0 $.
+D'après \cite{FranconViennot}, on a la bijection de J. Françon et G. Viennot ci-dessous.. La démonstration
+de cette proposition nous sera utile dans toute la suite.
+
+\begin{proposition} \label{khiFV}
+	Il existe une bijection $\psi_{FV}$ de $S_{n}$ sur $HL(n)$ vérifiant:
+	\begin{itemize}
+		\item[(i)] i creux de $\sigma$ ssi $c_{i}=m$
+		\item[(ii)] i pic de $\sigma$ ssi $c_{i}=d$
+		\item[(iii)] i double descente de $\sigma$ ssi $c_{i}=b$
+		\item[(iv)] i double montée de $\sigma$ ssi $c_{i}=r$
+	\end{itemize}
+\end{proposition}
+\underline{\textit{Démonstration}}:
+Soit $\sigma \in S_{n}$ et $ M_{1} \cdots M_{u} $ sa décomposition en mots
+croissants maximaux, i.e pour tout $ j<u$, la dernière lettre de $M_{j}$ est supérieur à la première lettre
+de $M_{j+1}$. Dans toute la suite, on note par $D(M_{k})$ et  $P(M_{k})$ la dernière lettre et la première
+lettres de tout mots $M_{k}$. Soit $j \leq u$ et i une lettre de $M_{j}$. On a:\\
+$$
+	\begin{cases}
+		\text{ i est un creux de }\sigma            & ssi \text{ }|M_{j}| > 1 \text{ et } i = P(M_{j})        \\
+		\text{ i est un pic de }\sigma              & ssi \text{ }|M_{j}| > 1 \text{ et } i = D(M_{j})        \\
+		\text{ i est une double descente de }\sigma & ssi \text{ }|M_{j}| = 1                                 \\
+		\text{ i est une double montée de }\sigma   & ssi \text{ }|M_{j}| > 1 \text{ et } P(M_{j})<i<D(M_{j})
+	\end{cases}
+$$
+On obtient alors,\\
+$
+	\begin{array}{c c l}
+		|c_{1}\cdots c_{i}|_{m}-|c_{1}\cdots c_{i}|_{d} & = & | \{ l\leq i;l \text{ est un creux de }\sigma \} |-|\{ l\leq i;l
+		\text{ est un pic de }\sigma \}|                                                                                                                 \\
+		                                                & = & | \{ M_{r};|M_{r}|>1, P(M_{r})\leq P(M_{j})=i\} |-| \{ M_{r};|M_{r}|>1, D(M_{r})\leq i\} | \\
+		                                                & = & | \{ M_{r};|M_{r}|>1, P(M_{r})\leq i<D(M_{r})\} |                                          \\& &+| \{ M_{r};|M_{r}|>1, P(M_{r})<D(M_{r})\leq i\} |\\& &-| \{
+		M_{r};|M_{r}|>1, D(M_{r})\leq i\} |                                                                                                              \\
+		                                                & = & | \{ M_{r};|M_{r}|>1, P(M_{r})\leq i<D(M_{r})\}|\geq0
+	\end{array}
+$\vspace{10pt}\\
+D'après la \Cref{levelOfPath}, on a $\gamma_{i-1}=|\{ M_{r};|M_{r}|>1,P(M_{r})<i\leq D(M_{r}) \}|$.\\
+On pose $p_{i}=|\{ M_{r};r<j \text{ et }P(M_{r})<i<D(M_{r}) \}|$. Si $i$ est un creux ou une double descente de $
+	\sigma$, alors $0\leq p_{i}\leq\gamma_{i-1}$. Et si $i$ est un pic ou une double montée de $\sigma$, alors $0\leq p_{i}
+	\leq \gamma_{i-1}-1$.\\
+On a $(c,p)\in HL(n)$.\vspace{10pt}\\
+Pour montrer que $\psi_{F.V}$ est bijective, on va construire sa réciproque. Soit $(c, p) \in HL(n)
+$ et $\sigma$ un antécédent de (c, p) (s'il existe). $M_{1}\cdots M_{u} $ est la décomposition en mots croissants
+maximaux de $\sigma$. On a $|\{M_{r};|M_{r}| \geq 2 \}| = |c|_{m}$ et $|\{M_{r};|M_{r}| = 1 \}| = |c|_{b}$. D'où, $u = |
+	c|_{m}+|c|_{b}$.\\
+Pour construire $\sigma$, on procède comme suit.\\ Soit
+$ Q = \{ i_{1}, \cdots, i_{p} \} \text{ } (\text{resp } P = \{ j_{1}, \cdots, j_{p} \},
+	Dd = \{ s_{1}, \cdots, s_{u-p} \}, Dm = \{ t_{1}, \cdots, t_{n-p-u} \})$ l'ensemble des creux (resp
+des pics, des doubles descentes, des doubles montées) de $\sigma$.\\
+On pose $QP = Q \bigcup P  = \{ k_{1}, \cdots, k_{2p} \} $ avec $\forall i < 2p, k_{i}<k_{i+1}$. Il est évident que
+$k_{1}$ est un creux de $\sigma$. Nous allons placer tous les éléments de QP\vspace{10pt}\\
+On pose $\sigma^{0} = \star $.
+\begin{itemize}
+	\item[.] Si $c_{k_{1}}=m \text{ et } p_{k{1}}=0$, alors on place $k_{1}\star$ après la $(p_{k_{1}}+1)$-ième $\star$ et
+		on pose $\sigma^{1} = \star k_{1} \star $
+		%Ensuite, on place $k_{2}$ selon la condition $c_{k_{2}}=m$ ou $c_{k_{2}}=d$
+	\item[.] Si $c_{k_{2}}=m$ et $ p_{k_{2}}=0$ (resp $p_{k_{2}}=1$), alors on place $k_{2}\star$ après le $(p_{k_{2}}+1)$-
+		ième $\star$ et on pose $\sigma^{2} = \star k_{2} \star k_{1} \star $ (resp $\sigma^{2} = \star k_{1} \star k_{2} \star
+		$ )
+	\item[.] Si $c_{k_{2}}=d$ et $ p_{k_{2}}=0$, alors on remplace par $k_{2}$ le $(p_{k_{2}}+2)$-ième $\star$ et on pose
+		$\sigma^{2} = \star k_{1} k_{2} $
+\end{itemize}\vspace{5pt}
+Supposons que les lettres $k_{1},\cdots, k_{l-1} $ sont toutes placées. On va trouver la place de $k_{l}$.
+Si $c_{k_{l}} = m$, alors on place $k_{l}\star$ après le $(p_{k_{l}}+1)$-ième $\star$. Et si $c_{k_{l}}=d$, alors on
+remplace par $k_{l}$ le $(p_{k_{l}}+2)$-ième $\star$.\\
+On obtient ainsi l'expréssion $\sigma^{2p} = \star M_{1}\cdots M_{p} $ car $|Q| = |P|$. La présence d'une seule $\star$
+est dû au fait que $\sigma^0 = \star$ et $|Q| = |P|$. Supposons que les éléments de P et Q sont tous placés.\\ Soit i
+tel que $c_{i}=r \text{ ou } c_{i}=b$. Si $c_{i}=r$, alors on place i dans $M_{j}$ où $M_{j}$ est le $(p_{i}+1)$-ième
+mot qui vérifie $P(M_{j}) < i < D(M_{j})$.
+Si $c_{i}=b$, alors on place i entre $M_{q}$ et $M_{q+1}$ tel que $D(M_{q})>i>P(M_{q+1}) $ et $|\{j\leq q;
+	D(M_{j})>i>P(M_{j})\}| = p_{i} $. $\text{ } \blacksquare$\\
+\begin{lemme}\label{noRedPath123}
+	Soit $\sigma \in S_{n}$ et $(c, p) = \psi_{FV}(\sigma)$. Alors $$ \sigma \in S_{n}(123) \iff \forall i \in [n], c_{i}\neq r$$
+	De plus, $\#S_{n}(123)(c) = \prod\limits_{c_{i}=m}m_{\gamma_{i-1}} \prod\limits_{c_{i}=d}d_{\gamma_{i-1}} \prod\limits_{c_{i}=r}r_{\gamma_{i-1}} \prod\limits_{c_{i}=b}b_{\gamma_{i-1}}$\\
+	où $m_{q}=d_{q+1}=1$ et $r_{q+1}=0$ pour tout $q\geq 0$, $b_{0}=1$ et $b_{q}=2$ pour tout $q\geq 1$.
+\end{lemme}
+Preuve: Soit $\sigma \in S_{n}$ et $(c,p) = \psi_{FV}(\sigma)$. Soit $i$ une lettre de $\sigma$. D'après la construction de $\psi_{FV}$, $i$ est une double montée de $\sigma$ ssi $c_{i}=r$. On en déduit que $$\sigma \in S_{n}(123) \iff \forall i \in [n], c_{i}\neq r$$ car $\sigma$ ne contient pas une double montée.\vspace{10pt}\\
+D'autre part, on a $$\#S_{n}(123)(c) = \#\{\sigma \in S_{n}(123); (c, p)=\psi_{FV}(\sigma)\}= \prod\limits_{c_{i}=m}m_{\gamma_{i-1}} \prod\limits_{c_{i}=d}d_{\gamma_{i-1}} \prod\limits_{c_{i}=r}r_{\gamma_{i-1}} \prod\limits_{c_{i}=b}b_{\gamma_{i-1}}$$\\
+où $m_{\gamma_{i-1}}$ (resp $d_{\gamma_{i-1}}, r_{\gamma_{i-1}}, b_{\gamma_{i-1}}$) est le poids affecté au $i^{e}-pas $ de $c$.\vspace{5pt}\\
+Nous allons trouver ces poids.\\
+Soit $\sigma \in S_{n}(123)(c)$ et $(c, p)=\psi_{F.V}(\sigma)$. On pose $M_{1}M_{1} \cdots M_{l}$ la décomposition en mots croissants maximaux de $\sigma$.\vspace{5pt}\\
+D'abord, pour tout $i\leq l, |M_{i}|\leq 2 $ et si $|M_{i}|=|M_{j}|=2$, $i<j \leq l$, alors $D(M_{i})>D(M_{j})$ et
+$P(M_{i})>P(M_{j})$.\vspace{5pt}\\
+Ensuite, soit $j\leq l$ et $i$ une lettre de $M_{j}$. Notons que
+$$p_{i}=| \{M_{r}; r<j \text{ et } P(M_{r})<i<D(M_{r})\} | \text{ et }\gamma_{i-1}=| \{M_{r};|M_{r}|=2 \text{ et } P(M_{r})<i \leq D(M_{r})\} |$$
+On a:
+\begin{itemize}
+	\item [(i)] Si $i$ est un ceux de $\sigma$, alors pour tout $r<j$, $i=P(M_{j})<P(M_{r})$. Cela implique que $p_{i}=0$.\\
+	      D'où, $m_{q}=1$ pour tout $q\geq 0$.
+	\item [(ii)] Si $i$ est un pic de $\sigma$ i.e $i=D(M_{j})$, alors toutes lettres à droite de $i$ sont inférieurs à $i$. \\
+	      Cela implique que $$p_{i} = | \{M_{r}; r \neq j \text{ et } P(M_{r})<i<D(M_{r})\} | = | \{M_{r}; |M_{r}|=2 \text{ et } P(M_{r})<i \leq D(M_{r})\} |-1$$ car $P(M_{j})< i=D(M_{j})$. Ou encore $p_{i}=\gamma_{i-1}-1$. D'où $d_{q+1}=1$ pour tout $q\geq 0$
+	\item [(iii)] Si $i$ est une double descente de $\sigma$ et s'il existe $M_{u}$, $u<j$, tel que $P(M_{u})<i$, alors toutes lettres à droite de $i$ sont inférieur à $i$. Cela implique que $p_{i}=\gamma_{i-1}$. Il est évident que $p_{i}=0$ si $P(M_{u})>i$, pour tout $u<j$. D'où  $b_{0}=1$ et $b_{q}=2$ pour tout $q\geq 1$.
+	\item[(iv)] On en déduit de l'équivalence précédente que $r_{j+1}=0$ pour tout $j \geq 0$
+\end{itemize}
+\begin{proposition}
+	On a $1+\sum\limits_{n\geq 1}| S_{n}(123) |t^{n}=C(t)$
+\end{proposition}
+Preuve: En utilisant le \Cref{noRedPath123}, on a
+\[
+	\begin{array}{l l l}
+		1+\sum\limits_{n\geq 1}| S_{n}(123) |t^{n} & = & 1+\sum\limits_{n\geq 1}t^{n}\sum\limits_{c\in \Gamma_{n}}|S_{n}(123)(c)|     \\
+		                                           & = & 1+\sum\limits_{n\geq 1}t^{n}\sum\limits_{c\in \Gamma_{n}}w(c)                \\
+		                                           & = & \cfrac{1}{1-t-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{\ddots}}}} \\
+		                                           & = & C(t)
+	\end{array}
+\]
+$\blacksquare$\vspace{5pt}\\
+Dans toute la suite on pose $\phi(x, t)= 1 + \sum\limits_{n\geq 1}A_{n}(x)t^{n}$ avec $A_{n}(x)=\sum\limits_{\pi \in S_{n}(321)}x^{fix(\pi)}$\\
+\begin{proposition}
+	On a $\phi(x,t)=\cfrac{1}{1-xt-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{\ddots}}}}$
+\end{proposition}
+Preuve: Notons que l'application $\varphi$ de $S_{n}(321)$ vers $S_{n}(123)$, $\sigma \longrightarrow \pi$ définie par $\varphi(\sigma)=r(\sigma)$ où $r(\sigma)$ est la permutation miroir de $\sigma$, est bijective. De plus $fix(\sigma)=\#\{i; \pi_{n-i+1}=i\}$. \vspace{5pt}\\
+On en déduit $$A_{n}(x)=\sum\limits_{\pi \in S_{n}(123)}x^{\#\{i; \pi_{n-i+1}=i\}}$$\\
+D'abord, soit $c\in \Gamma_{n}$ et $\sigma \in S_{n}(123)(c)$ et soit $i$ tel que $\sigma_{n-i+1}=i$. Dans la décomposition linéaire de $\sigma $, toute lettre à gauche de $i$ est plus grande que $i$ et toute lettre à droite de $i$ est plus petite que $i$. Donc, $i$ est une double descente de $\sigma $ ou encore $c_{i}=b$.
+Posons $M_{1}M_{1} \cdots M_{l}$ la décomposition en mots croissants maximaux de $\sigma$.
+On a $\gamma_{i-1}=\#\{M_{r}; | M_{r} |>1 \text{ et }P(M_{r})<i\leq D(M_{r})\}=0$.\vspace{5pt}\\
+D'où la relation $$\sigma(n-i+1)=i \iff c_{i}=b \text{ et }\gamma_{i-1}=0$$\\
+Par conséquent, \text{ }$\#\{j; \sigma_{n-j+1}=j\}=\#\{j; c_{j}=b \text{ et }\gamma_{j-1}=0\}$.\vspace{10pt}\\
+Ainsi, on a
+$$A_{n}(x)=\sum\limits_{\sigma \in S_{n}(123)}x^{\#\{i; \sigma_{n-i+1}=i\}}=\sum\limits_{c\in \Gamma_{n}} \sum\limits_{\sigma \in S_{n}(123)(c)}x^{\#\{i; \sigma_{n-i+1}=i\}} $$ où $ \sum\limits_{\sigma \in S_{n}(123)(c)}x^{\#\{i; \sigma_{n-i+1}=i\}} = \sum\limits_{\sigma \in S_{n}(123)(c)}x^{\#\{i; c_{i}=b \text{ et }\gamma_{i-1}=0\}} = \prod\limits_{\underset{\gamma_{i-1}=0}{c_{i}=b}}x \text{ . }\#S_{n}(123)(c)=w(c)$.\\
+En utilisant le \Cref{noRedPath123}, on obtient  $m_{q}=d_{q+1}=1$ et $r_{q+1}=0$ pour tout $q\geq 0$, $b_{0}=x$ et $b_{q}=2$ pour tout $q\geq 1$.
+Dès lors, on a $$\phi(x, t) = 1 + \sum\limits_{n\geq 1}t^{n} \sum\limits_{c\in \Gamma_{n}}w(c) = \cfrac{1}{1-xt-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{1-2t-\cfrac{t^{2}}{\ddots}}}}$$\\
+% ==================================================================================================================================================================
+
+\begin{corollaire} \label{phiEqCOfT}
+	On a $\phi(x,t)=\cfrac{1-x+C(t)}{2-x+t(x-1)^{2}}$
+\end{corollaire}
+Preuve:\\
+Posons $\kappa(t)=\cfrac{1}{1-2t-\cfrac{t^2}{1-2t-\cfrac{t^2}{\ddots}}}$\hspace{5pt}
+ou encore $\kappa(t)=\cfrac{1}{1-2t-t^2\kappa(t)}$\vspace{10pt}\\
+Cela implique que $\kappa(t)$ est solution de l'équation $t^2x^2-(1-2t)x+1=0$.\vspace{10pt}\\Donc \[
+	\kappa(t)=\cfrac{(1-2t)-\sqrt{1-4t}}{2t^2} \text{ \hspace{5pt} ou  \hspace{5pt}} \kappa(t)=\cfrac{(1-2t)+\sqrt{1-4t}}{2t^2}
+\]
+Comme $\kappa(0)=1$, et au voisinage de 0,  $\kappa(t)=\cfrac{(1-2t)+\sqrt{1-4t}}{2t^2}$ tend vers $+\infty$,\vspace{10pt}\\alors $\kappa(t)=\cfrac{(1-2t)-\sqrt{1-4t}}{2t^2}$\vspace{10pt}\\
+Par conséquent,
+\[
+	\begin{array}{r c l}
+		\phi(x,t) & = & \cfrac{1}{1-xt-t^2\cfrac{1-2t-\sqrt{1-4t}}{2t^2}}                                \\
+		          & = & \cfrac{1}{1-xt-\cfrac{1}{2}(1-2t-\sqrt{1-4t})}                                   \\
+		          & = & \cfrac{2}{1-2t(x-1)+\sqrt{1-4t}}                                                 \\
+		          & = & \cfrac{2(1-2t(x-1)-\sqrt{1-4t})}{(1-2t(x-1)+\sqrt{1-4t})(1-2t(x-1)-\sqrt{1-4t})} \\
+		          & = & \cfrac{-2(x-1)t+1-\sqrt{1-4t}}{-2xt+4t+2t^2(x-1)^2}                              \\
+		          & = & \cfrac{-(x-1)+\cfrac{1-\sqrt{1-4t}}{2t}}{-x+2+t(x-1)^2}                          \\
+		          & = & \cfrac{1-x+C(t)}{2-x+t(x-1)^{2}}
+	\end{array}
+\]
+$\blacksquare$
+\text{ }
+\begin{proposition}
+	On a
+	$
+		A_{n}(x)=\underset{p=0}{\overset{n}{\sum}}C_{n-p}(-1)^p\cfrac{(x-1)^{2p}}{(2-x)^{p+1}}-(-1)^n\cfrac{(x-1)^{2n+1}}{(2-x)^{n+1}}
+	$
+\end{proposition}
+\text{ }\vspace{5pt}\\
+Preuve:
+En utilisant la \Cref{phiEqCOfT}, on a:\\
+\[
+	\begin{array}{r c l}
+		\phi(x,t) & = & \cfrac{1-x+C(t)}{2-x+t(x-1)^{2}}                                                                                                                                    \\
+		          & = & (C(t)-(x-1))\left[\cfrac{1}{(2-x)\left[1+\cfrac{(x-1)^2}{2-x}t\right]}\right]                                                                                       \\
+		          & = & [C(t)-(x-1)]\cfrac{1}{2-x}\underset{p\geq0}{\sum}(-1)^p\cfrac{(x-1)^{2p}}{(2-x)^p}t^p                                                                               \\
+		          & = & \underset{m,p}{\sum}C_{m}(-1)^p\cfrac{(x-1)^{2p}}{(2-x)^{p+1}}t^{m+p}-\underset{p\geq0}{\sum}(-1)^p\cfrac{(x-1)^{2p+1}}{(2-x)^{p+1}}t^p                             \\
+		          & = & \sum\limits_{n\geq 0}t^{n} \sum\limits_{p=0}^{n} C_{n-p}(-1)^{p}\cfrac{(x-1)^{2p}}{(2-x)^{p+1}} - \underset{p\geq0}{\sum}(-1)^p\cfrac{(x-1)^{2p+1}}{(2-x)^{p+1}}t^p \\
+	\end{array}
+\]
+D'où le résultat. \vspace{10pt}$\blacksquare$
+\begin{proposition}\label{p1}
+	On a
+	$A_{n}(x)=(x-1)^{n}+\underset{i=0}{\overset{n-1}{\sum}}\underset{j=1}{\overset{n-i}{\sum}}C_{j-1}A_{n-i-j}(x)(x-1)^{i}$
+\end{proposition}
+Preuve: D'après la \Cref{prop225}, $A_{n}(x)=(x-1)A_{n-1}(x)+ \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$\\ et posons $f(n) = \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$. \\
+On a:
+\[
+	\begin{array}{l l l}
+		A_{n}(x) & =      & (x-1)A_{n-1}(x) + f(n)                                                                  \\
+		         & =      & (x-1)^{2}A_{n-2}(x) + (x-1)f(n-1) + f(n)                                                \\
+		         & \vdots &                                                                                         \\
+		         & =      & (x-1)^{n}A_{0}(x) + (x-1)^{n-1}f(1) + \cdots + (x-1)^{2}f(n-2) + (x-1)f(n-1) + f(n)     \\
+		         & =      & (x-1)^{n} + \sum\limits_{i=0}^{n-1}(x-1)^{i}f(n-i)                                      \\
+		         & =      & (x-1)^{n} + \sum\limits_{i=0}^{n-1}(x-1)^{i} \sum\limits_{j=1}^{n-i}C_{j-1}A_{n-i-j}(x)
+	\end{array}
+\]
+$\blacksquare$\vspace{10pt}\\
+On peut alors écrire $A_{n}(x)$ sous la forme $A_{n}(x)= \underset{k=0}{\overset{n}{\sum}}b(n,k)(x-1)^{k}$
+\begin{proposition}\label{p2}
+	On a $(x-1)^{k}[A_{n}(x)] := b(n; k) = \sum\limits_{i=0}^{n-1} \sum\limits_{j=1}^{n-i}C_{j-1}b(n-i-j; k-i)$
+\end{proposition}
+Preuve: Cette relation est obtenue en utilisant la \Cref{p1}.
+\begin{corollaire} \label{c4}
+	On a
+	$b(n;k) = \sum\limits_{p=1}^{n}C_{p-1} \sum\limits_{i=1}^{n-p+1}b(n-p-i+1; k-i+1)$
+\end{corollaire}
+Preuve: En utilisant la \cref{p2}, on a $b(n; k)= \sum\limits_{p=0}^{n-1}C_{p} \sum\limits_{i=1}^{n-p}b(n-p-i; k-i+1)$. \\
+D'où le résultat. $\blacksquare$\vspace{5pt}
+% ==================================================================================================================================================================
+\begin{proposition} \label{formExplicitOfbnk}
+	On a:
+	\[
+		b(n,k)= \underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}+(-1)^n\binom{k-n-1}{n-1}
+	\]
+\end{proposition}
+Preuve:
+Le résultat suivant est obtenu dans la semestre S8 du parcours combinatoire:
+\[
+	\begin{array}{r c l}
+		\cfrac{1}{(1-z)^k} & = & \underset{n_{1},\cdots,c_{k}}{\sum}z^{n_{1}+\cdots+n_{k}}        \\
+		                   & = & \underset{n\geq0}{\sum}z^n\underset{n_{1}+\cdots+n_{k}=n}{\sum}1 \\
+		                   & = & \underset{n\geq 0}{\sum}z^n\binom{n+k-1}{k-1}
+	\end{array}
+\]
+Posons $z=x-1$ ou encore $2-x=1-z$. On a:
+\[
+	\begin{array}{r c l}
+		A_{n}(x) & = & \underset{p=0}{\overset{n}{\sum}}C_{n-p}(-1)^p(x-1)^{2p}\underset{q\geq 0}{\sum}\binom{q+p}{q}(x-1)^q-(-1)^n(x-1)^{2n+1}\underset{q\geq0}{\sum}\binom{q+n}{n}(x-1)^q       \\
+		         & = & \underset{p=0}{\overset{n}{\sum}}\left(\underset{q\geq0}{\sum}C_{n-p}(-1)^p\binom{q+p}{q}(x-1)^{2p+q}\right)+(-1)^{n+1}\underset{q\geq0}{\sum}\binom{q+n}{n}(x-1)^{2n+q+1} \\
+	\end{array}
+\]
+Par conséquent,
+\[
+	\begin{array} {r c l}
+		b(n,k) & = & \underset{p=0}{\overset{n}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}+(-1)^{n+1}\binom{k-n-1}{n}                             \\
+		       & = & \underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}+(-1)^n\left[ \binom{k-n}{n}-\binom{k-n-1}{n} \right] \\
+		       & = & \underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}+(-1)^n\binom{k-n-1}{n-1}
+	\end{array}
+\]
+$\blacksquare$\vspace{5pt}
+\begin{proposition} \label{bnkRec}
+	Soit $ n\geq 1$ et $k\leq n$. On a
+	\begin{equation} \label{eq:bnkRec}
+		b(n,k)=b(n,k+1)+b(n-1,k-1) \text{ où } b(0,0)=1 %\label{eq:b(n,k)}
+	\end{equation}
+\end{proposition}
+Preuve:
+En utilisant la \Cref{formExplicitOfbnk}, on en déduit la relation suivante:\\
+\[
+	\begin{array}{r c l}
+		b(n,k+1)+ b(n-1,k-1) & = & C_{n}+\underset{p=1}{\overset{n-1}{\sum}}(-1)^pC_{n-p}\left[ \binom{k-p+1}{p}-\binom{k-p}{p-1} \right]+(-1)^n\left[ \binom{k-n}{n-1}-\binom{k-n-1}{n-2} \right] \\
+		                     & = & C_{n}+\underset{p=1}{\overset{n-1}{\sum}}(-1)^pC_{n-p}\binom{k-p}{p}+(-1)^n\binom{k-n-1}{n-1}                                                                   \\
+		                     & = & \underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}+(-1)^n\binom{k-n-1}{n-1}                                                                         \\
+		                     & = & b(n,k)
+	\end{array}
+\]
+$\blacksquare$\vspace{10pt}\\
+En utilisant la forme explicite de $b(n,k)$, cette relation n'est pas vérifiée pour $n<k$.
+Par convention, si $n<k$, alors on pose $b(n,k)=0$.
+De plus, si $k<0$ ou $n<0$ on a $b(n,k)=0$.
+\begin{corollaire}
+	Pour tout $k \leq n$, on a:
+	$$ b(n,k)=\underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p} $$
+\end{corollaire}
+
+\begin{corollaire} \label{cor3.8}
+	Pour tout $n \in \mathbb{N}$, on a: $$b(n,0)=C_{n} \text{ et } b(0,0)=1$$
+\end{corollaire}
+Preuve: On a:
+\[\begin{array}{r c  l}b(n,k) & = & \underset{p=0}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}       \\
+                            & = & C_{n}+\underset{p=1}{\overset{n-1}{\sum}}C_{n-p}(-1)^p\binom{k-p}{p}
+	\end{array}\]
+Si $k=0$, alors on a le résultat. \vspace{10pt}$\blacksquare$
+\begin{proposition}\label{p3}
+	On a $b(n; k) = \sum\limits_{i=0}^{n}b(n-i; k-i+1)$
+\end{proposition}
+Preuve: On en déduit de la relation $b(n; k) = b(n; k+1) + b(n-1; k-1)$
+\begin{corollaire}
+	On a $b(n; k) = \sum\limits_{p=1}^{n}C_{p-1}b(n-p; k-1)$
+\end{corollaire}
+Preuve: D'après le \Cref{c4}, $$b(n,k) = \sum\limits_{p=1}^{n}C_{p-1}\sum\limits_{i=1}^{n-p+1}b(n-p-i+1; k-i+1)$$\\
+En utilisant la \Cref{p3}, on a
+$$\sum\limits_{i=1}^{n-p+1}b(n-p-i+1; k-i+1) = \sum\limits_{i=0}^{n-p}b(n-p-i; k-i) =  b(n-p; k-1)$$
+D'où le résultat. $\blacksquare$
+% ==================================================================================================================================================================
+
+\begin{proposition} \label{genbnk}
+	Soit $n\geq 1$. On a:
+	\begin{equation} \label{eq:genbnk}
+		b(n,k)=\frac{k+1}{n+1}
+		\begin{pmatrix}
+			2n-k \\n
+		\end{pmatrix}
+	\end{equation}
+\end{proposition}
+
+Preuve:
+On va montrer par récurrence sur k. Pour $k=0$, le résultat est obtenu en utilisant le \Cref{cor3.8}.
+Supposons que c'est vrai pour $k$ et montrons que c'est aussi vrai pour k+1. En utilisant la relation \eqref{eq:bnkRec}, on a
+\[
+	\begin{array} {l l l}
+		b(n,k+1) & = & b(n,k)-b(n-1,k-1)                                                                                           \\
+		         & = & \begin{pmatrix} 2n-k\\n\end{pmatrix}\cfrac{k+1}{n+1}-\cfrac{k}{n}\begin{pmatrix} 2n-2-k+1\\n-1\end{pmatrix} \\
+		         & = & \begin{pmatrix} 2n-k\\n\end{pmatrix}\cfrac{k+1}{n+1}-\cfrac{k}{n}\begin{pmatrix} 2n-k-1\\n-1\end{pmatrix}   \\
+	\end{array}
+\]
+D'après la formule de Pascal :\[\begin{pmatrix} 2n-k\\n\end{pmatrix}=\begin{pmatrix} 2n-k-1\\n-1\end{pmatrix}+\begin{pmatrix} 2n-k-1\\n\end{pmatrix}\\\]
+Ainsi, on en déduit que:
+\[
+	\begin{array}{l l l}
+		b(n,k+1) & = & \begin{pmatrix} 2n-k-1\\n-1\end{pmatrix}\cfrac{k+1}{n+1}+\begin{pmatrix} 2n-k-1\\n\end{pmatrix}\cfrac{k+1}{n+1}-\cfrac{k}{n}\begin{pmatrix} 2n-k-1\\n-1\end{pmatrix} \\
+		         & = & \cfrac{n-k}{(n+1)n}\begin{pmatrix} 2n-k-1\\n-1\end{pmatrix}+\cfrac{k+1}{n+1}\begin{pmatrix} 2n-k-1\\n\end{pmatrix}                                                   \\
+		         & = & \cfrac{k+2}{n+1}\begin{pmatrix} 2n-k-1\\n\end{pmatrix} \hspace{10pt} \blacksquare                                                                                    \\
+	\end{array}\vspace{10pt}
+\]
+
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+D'après \cite{Desantis}, les indices $n$ et $k$ de $c_{n, k}$ commencent chacun par $1$. Mais nous allons les redéfinir dans ce memoire.\\
+\begin{rm}
+	\begin{definition}\label{firstDefLab}
+		Soit $c_{n, k}$ le triangle de Catalan défini comme suit:
+		$$
+			\begin{cases}
+				c_{n, 0} & = 1, \forall n\geq 0                                 \\
+				c_{n, k} & = 0, \text{ si } n<k \text{ ou } n<0 \text{ ou } k<0 \\
+				c_{n, k} & = c_{n-1, k} + c_{n, k-1}, \forall k, n \geq 1
+			\end{cases}
+		$$
+	\end{definition}
+\end{rm}
+\text{}\vspace{10pt}\\
+En utilisant la \Cref{firstDefLab} et d'après le Théorème 2.2 de \cite{Desantis}, on le lemme suivant.
+\begin{lemme}
+	Soit $s_{n, k} (p)$ le nombre des permutations $\sigma$ dans $S_{n}(p)$ et $\sigma(1)=k$.\\ On a pour tout $n, k \geq 1$, $s_{n,k}(123) = s_{n,k}(132) = s_{n, n-k+1}(321) = c_{n-1, k-1}$
+\end{lemme}
+\text{ }\\
+A partir des deux tableaux suivants, on déduit la proposition ci-dessous.\vspace{5pt}\\
+Le tableau de $b(n, k)$ est
+$$
+	\begin{matrix}
+		1  &                  \\
+		1  & 1  &             \\
+		2  & 2  & 1 &         \\
+		5  & 5  & 3 & 1 &     \\
+		14 & 14 & 9 & 4 & 1 & \\
+	\end{matrix}
+$$
+et le tableau de $c_{n, k}$ est
+$$
+	\begin{matrix}
+		1 &                   \\
+		1 & 1 &               \\
+		1 & 2 & 2 &           \\
+		1 & 3 & 5 & 5  &      \\
+		1 & 4 & 9 & 14 & 14 & \\
+	\end{matrix}
+$$
+\begin{proposition}\label{p5}
+	Pour tout $n\geq k$, on a $c_{n, k} = b(n, n-k)$
+\end{proposition}
+Preuve: Nous allons montre par récurrence sur $n$ et $k$.
+D'abord, fixons $n$.\\
+Si $k=0$, on a $c_{n, 0}=1=b(n,n)$.\\
+Si $k=1$ on a $c_{n,1}=c_{n-1, 1} + c_{n,0}=c_{n-1,1}+1 = \cdots = c_{1,1}+n-1=n$\\
+et $b(n, n-1)=b(n,n)+ b(n-1,n-2)=1+b(n-1,n-2)=\cdots=n-1 + b(1,0)=n$. \vspace{5pt}\\
+D'où $c_{n,1}=b(n, n-1)$.\vspace{10pt}\\
+Supposons que $c_{n, k-1} = b(n, n-k+1)$\\
+Ensuite, fixons $k$ et faire varié $n$.\\
+On a $c_{0,k} = \begin{cases}
+		1 & \text{ si } k=0 \\
+		0 & \text{ sinon }
+	\end{cases}$ et
+$b(0, -k)=\begin{cases}
+		1 & \text{ si } k=0 \\
+		0 & \text{ sinon }
+	\end{cases}$.\vspace{5pt}\\
+D'où $c_{0, k} = b(0, -k)$.\vspace{10pt}\\
+Supposons que $c_{n-1, k} = b(n-1, n-k-1)$\vspace{5pt}\\
+Par conséquent,
+\[
+	c_{n, k} = c_{n-1, k}+ c_{n,k-1} = b(n-1; n-k-1) + b(n, n-k+1) = b(n, n-k) \text{ \hspace{5pt} }\blacksquare\]\vspace{10pt}\\
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+Dans la suite, nous allons voir que $A_{n}(x) = \underset{\pi \in S_{n}(132)}{\sum} x^{fix(\pi)}$
+\subsection{Permutations sans le motif 132}
+Posons $\mathcal{E}_{n,r} = \{ \pi:[n] \longrightarrow \{r+1, r+2, \cdots, n+r\}; \pi \text{ bijective et ne contient pas le motif 132 } \}$ et  $E_{n,r}(x) = \underset{\pi \in \mathcal{E}_{n,r}}{\sum}x^{fix(\pi)}$\\
+
+
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+% \begin{proposition}
+% 	Il existe une bijection $\Phi$ de $\mathcal{E}_{n, r}$ vers $\mathcal{E}_{n, -r}$.\\
+% \end{proposition}
+% \underline{\textit{Démonstration}}:
+% Soient $\pi \in \mathcal{E}_{n, r}$ et $\sigma \in  S_{n}(132)$ définie par $\sigma(i) = \pi(i) - r$ pour tout $1\leq i \leq n$. Soit $\pi'$ la permutation obtenue par la transformation $\pi'(i) = \sigma^{-1}(i) - r$ pour tout  $1\leq i \leq n$.\\
+% %De plus on a $fix(\pi) = fix(\pi')$
+
+% Premièrement, montrons que si $\sigma \in S_{n}(132)$ alors $\sigma^{-1} \in S_{n}(132)$. Supposons le contraire i.e $\exists i<j<k$ tel que
+% $ \sigma^{-1}(i)<\sigma^{-1}(k)< \sigma^{-1}(j)$. Alors $\sigma$ contient le motif 132 qui est $ikj$ i.e
+% $\sigma = \sigma(1) \cdots \sigma(\sigma^{-1}(i)) \cdots \sigma(\sigma^{-1}(k)) \cdots \sigma(\sigma^{-1}(j)) \cdots \sigma(n)$. On a une contradiction. D'où $\sigma^{-1} \in S_{n}(132)$. Ainsi $\pi' \in \mathcal{E}_{n, -r}$.\\
+% Deuxièmement, montrons que si $k$ est un point fixe de $\pi$ alors $k-r$ est un point fixe de $\pi'$.
+% \[
+% 	\begin{array}{l l l}
+% 		\pi(k) = \sigma(k) = k-r & \iff & k = \sigma^{-1}(k-r)                      \\
+% 		                         & \iff & k = \pi'(k-r) + r                         \\
+% 		                         & \iff & \pi'(k-r) = k-r \hspace{10pt}\blacksquare
+% 	\end{array}
+% \]
+\begin{lemme} \label{l100}
+	Soit $\sigma \in S_{n}(132)$. On a $\sigma^{-1}\in S_{n}(132)$
+\end{lemme}
+Preuve: Supposons le contraire i.e il existe $i<j<k$ tel que $st(\sigma^{-1}(i)\sigma^{-1}(j)\sigma^{-1}(k))=132$. Comme $\sigma^{-1}(p)$ est la position de $p$ dans $\sigma$, alors $ikj$ sera un motif $132$ de $\sigma$.$\blacksquare$\vspace{5pt}\\
+On pose $\mathcal{E}_{n,r} = \{\pi: [n] \longrightarrow \{ r+1, r+2, \cdots, r+n ; \pi \text{ bijective et ne contient pas le motif }132\}\} $ \\ et $E_{n, r}(x) = \sum\limits_{\sigma\in \mathcal{E}_{n, r}}x^{fix(\sigma)}$\vspace{10pt}. On convient que $E_{0, r}(x)=1$\\
+\begin{proposition}\label{p6}
+	La transformation $\rho: \mathcal{E}_{n,r} \longrightarrow \mathcal{E}_{n, -r}$, $\pi \longrightarrow \pi'$ définie par:\\
+	Soit $\pi \in \mathcal{E}_{n,r} $ et $\sigma \in S_{n}(132)$ définie par $\sigma(i) = \pi(i) - r$ et $\rho(\pi):=\pi'$ la permutation obtenue par $\pi'(i) = \sigma^{-1}-r$. Alors $\rho$ est bijective.\\
+	De plus, $fix(\pi)=fix(\pi')$.
+\end{proposition}
+Preuve: En utilisant le \Cref{l100}, on a $\sigma^{-1}\in S_{n}(132)$. On en déduit que $\pi'\in \mathcal{E}_{n,-r}$. \\Ainsi $\rho$ est bien définie.\vspace{5pt}\\
+Montrons qu'elle est bijective. Soit $\pi' \in \mathcal{E}_{n, -r}$ et $\tau\in S_{n}(132)$ définie par $\tau(i) = \tau'(i)+r$. $\pi$ est obtenue par $\pi(i)=\tau^{-1}(i) + r$. Comme $\tau\in S_{n}(132)$, donc d'après le \Cref{l100} on a $\tau^{-1}\in S_{n}(132)$; on en déduit que $\pi \in \mathcal{E}_{n, r}$. Ce qui prouve que $\rho$ est bijective.\vspace{10pt}\\
+D'autre part, soit $\pi \in \mathcal{E}_{n,r}$, $\rho(\pi)=\pi' \in \mathcal{E}_{n, -r}$ et $\sigma \in S_{n}(132)$ tel que $\sigma(i)=\pi(i)-r$. Soit $k\in Fix(\pi)$. On a:
+\[
+	\begin{array}{l l l}
+		\pi(k) = k = \sigma(k)+r & \iff & \sigma(k) = k-r            \\
+		                         & \iff & k-r = \sigma^{-1}(k-r) - r \\
+		                         & \iff & k-r = \pi'(k-r)
+	\end{array}
+\]
+
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+
+\begin{corollaire}
+	On a $E_{n,r}(x) = E_{n,-r}(x)$
+\end{corollaire}
+Dans toute la suite on pose $r \geq 0$ et on pose $\mathcal{E}_{n, r}^{i} = \{\pi \in \mathcal{E}_{n, r}; \pi(i)=n+r\}$.\\
+
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+% 	\begin{proposition}
+% 		On a
+% 		$E_{n, r}(x) = \underset{i=1}{\overset{n}{\sum}}E_{i-1, n-i+r}(x)E_{n-i, r-i}(x) + (x-1)E_{n-1,0}(x)\mathbbm{1}_{\{r=0\}}$
+% 	\end{proposition}
+
+% 	\underline{\textit{Démonstration}}:
+% 	Posons $\mathcal{E}_{n, r}^{i} = \{ \pi \in  \mathcal{E}_{n, r}; \pi_{i} = n+r\}$. Soit $\pi \in \mathcal{E}_{n, r}^{i}$. On peut écrire $\pi$ sous la forme \\$\pi = \pi_{1} \pi_{2} \cdots \pi_{i-1}(n+r)\pi_{i+1} \cdots \pi_{n}$.
+% 		Soient $\pi' = \pi'_{1} \pi'_{2} \cdots \pi'_{i-1}$ et $\pi'' =\pi''_{1} \cdots\pi''_{n-i}$ obtenu à partir de $\pi_{1} \pi_{2} \cdots \pi_{i-1}$ et $\pi_{i+1} \cdots \pi_{n}$ respectivement tel que $\forall l \in [i-1] \text{, } \pi'_{l} = \pi_{l}$ et $\forall k \in [n-i]\text{, } \pi''_{k} = \pi_{i+k}-i$. On en déduit que les éléments de $\pi'$ sont dans l'ensemble $\{n+r-i+1, n+r-i+2, \cdots, n+r-1\}$ et les éléments de $\pi''$ sont dans l'ensemble $\{r-i+1, r-i+2, \cdots, r + n-2i\}$.
+% 		On a alors $(\pi', \pi'') \in  \mathcal{E}_{i-1, n-i+r}\text{ x } \mathcal{E}_{n-i, r-i}$. On convient que $\mathcal{E}_{0,r} = \{ \pi:\{0\} \rightarrow \{r\} \}$.
+% 		Donc il existe une bijection de $\mathcal{E}_{n, r}^{i}$ vers $ \mathcal{E}_{i-1, n-i+r}\text{ x } \mathcal{E}_{n-i, r-i}$.\\
+% 		De plus, soit $q\geq i+1$ tel que $\pi_{q} = q$ s'il existe. Alors, il existe p tel que i+p = q. D'où $\pi''_{p} = \pi_{i+p}-i = i+p-i=p$. Cela implique que $fix(\pi'') = fix(\pi_{i+1}\cdots \pi_{n})$.\\
+% 		D'abord, nous allons considerer le cas où $r=0$. On a:
+% \[
+% 	E_{n,0}(x) =\underset{i=1}{\overset{n}{\sum}}\text{ }\underset{\underset{\pi_{i}=n}{\pi \in \mathcal{E}_{n,0}}}{\sum}x^{fix(\pi)} = \underset{i=1}{\overset{n-1}{\sum}}\text{ }\underset{\underset{\pi_{i}=n}{\pi \in \mathcal{E}_{n,0}}}{\sum}x^{fix(\pi)} + \underset{\underset{\pi_{n}=n}{\pi \in \mathcal{E}_{n,0}}}{\sum}x^{fix(\pi)}
+% \]
+% On en déduit que, $\forall i \in [n-1], fix(\pi) = fix(\pi') + fix(\pi'')$\\
+% D'où
+% \[
+% 	\begin{array} {l l l}
+% 		E_{n,0}(x) & = & \underset{i=1}{\overset{n-1}{\sum}} \text{ } \underset{(\pi', \pi'') \in \mathcal{E}_{i-1,n-i}\times \mathcal{E}_{n-i,-i}}{\sum}x^{fix(\pi') + fix(\pi'')} + \underset{\pi \in \mathcal{E}_{n-1,0}}{\sum}x^{fix(\pi)+1} \\
+% 		           & = & \underset{i=1}{\overset{n-1}{\sum}}\left[ \underset{\pi' \in \mathcal{E}_{i-1,n-i}}{\sum}x^{fix(\pi')}\text{ }\underset{\pi'' \in \mathcal{E}_{n-i,-i}}{\sum}x^{fix(\pi'')} \right] + xE_{n-1,0}(x)                     \\
+% 		           & = & \underset{i=1}{\overset{n-1}{\sum}}E_{i-1,n-i}(x)E_{n-i,-i}(x) +  xE_{n-1,0}(x)
+% 	\end{array}
+% \]
+% Enfin, si $r\neq 0$, on a: \[E_{n,r} =\underset{i=1}{\overset{n}{\sum}}\text{ }\underset{\underset{\pi_{i}=n+r}{\pi \in \mathcal{E}_{n,r}}}{\sum}x^{fix(\pi)} \]
+% Or $\forall r>0, fix(\pi) = fix(\pi') + fix(\pi'')$\\
+% D'où,  $$E_{n,r} = \underset{i=1}{\overset{n}{\sum}}E_{i-1,n-i+r}(x)E_{n-i,r-i}(x)$$
+% $\blacksquare$
+\begin{proposition}\label{p7}
+	La transformation $\mu: \mathcal{E}_{n, r}^{i} \longrightarrow \mathcal{E}_{i-1, n-i+r}\times \mathcal{E}_{n-i, r-i}$, $\pi \longrightarrow (\pi', \pi'')$ définie par:
+	\begin{itemize}
+		\item[-] Pour tout $1 \leq l \leq i-1 $, $\pi'(l) = \pi(l)$
+		\item[-] Pour tout $1 \leq l \leq n-i$, $\pi''(k) = \pi(i+k)-i$
+	\end{itemize}
+	est bijective.\vspace{5pt}\\
+	De plus, \\
+	- Si $r>0$, alors $fix(\pi) = fix(\pi') + fix(\pi'')$.\\
+	- Si $r=0$ et $i<n$ (resp $i=n$) alors $fix(\pi) = fix(\pi') + \fix(\pi'')$ (resp, $fix(\pi) = fix(\pi') + 1$)
+\end{proposition}
+Preuve: Il est évident que $\mu$ est bijective.\\
+D'autre part, soit $\pi \in \mathcal{E}_{n, r}^{i}$ et $\mu(\pi)=(\pi', \pi'')$. On a toujours $fix(\pi') = fix(\pi(1)\cdots \pi(i-1))$ et\\
+- Si $r>0$, alors $i \notin Fix(\pi)$. Soit $q\geq i+1$, $q\in Fix(\pi)$. Il existe $1 \leq p \leq n-i$ tel que $q=i+p$. On a $\pi''(p) = \pi(i+p) - i = i+p - i = p$. Donc $p \in Fix(\pi'')$. D'où $fix(\pi) =  fix(\pi') + fix(\pi'')$\\
+- Si $r=0$, alors $\mathcal{E}_{n, 0} = S_{n}(132)$. De plus, si $i<n$ (resp $i=n$) alors $i\notin Fix(\pi)$ (resp $i \in Fix(\pi)$) et on a $fix(\pi) = fix(\pi') + fix(\pi'')$ (resp  $fix(\pi) = fix(\pi') + 1$)
+\begin{proposition}\label{p8}
+	On a $E_{n, 0} = \sum\limits_{i=1}^{n-1}E_{i-1, n-i}(x)E_{n-i, -i}(x) + xE_{n-1, 0}(x)$
+\end{proposition}
+Preuve: On a
+\[
+	\begin{array}{l l l}
+		E_{n, 0}(x) = \sum\limits_{\pi \in \mathcal{E}_{n, 0}}x^{fix(\pi)} & = & \sum\limits_{i=1}^{n} \sum\limits_{\underset{\pi(i)=n }{\pi \in \mathcal{E}_{n,0} }} x^{fix(\pi)}                                                                                                   \\
+		                                                                   & = & \sum\limits_{i=1}^{n-1} \sum\limits_{\underset{\pi(i)=n }{\pi \in \mathcal{E}_{n,0} }} x^{fix(\pi)} + \sum\limits_{\underset{\pi(n)=n }{\pi \in \mathcal{E}_{n,0} }}x^{fix(\pi)}                    \\
+		                                                                   & = & \sum\limits_{i=1}^{n-1} \sum\limits_{\pi \in \mathcal{E}_{n,0}^{i} } x^{fix(\pi)} + \sum\limits_{\pi \in \mathcal{E}_{n-1,0} }x^{fix(\pi)+1}                                                        \\
+		                                                                   & = & \underset{i=1}{\overset{n-1}{\sum}} \text{ } \underset{(\pi', \pi'') \in \mathcal{E}_{i-1,n-i}\times \mathcal{E}_{n-i,-i}}{\sum}x^{fix(\pi') + fix(\pi'')} + xE_{n-1,0}(x)                          \\
+		                                                                   & = & \underset{i=1}{\overset{n-1}{\sum}}\left[ \underset{\pi' \in \mathcal{E}_{i-1,n-i}}{\sum}x^{fix(\pi')}\text{ }\underset{\pi'' \in \mathcal{E}_{n-i,-i}}{\sum}x^{fix(\pi'')} \right] + xE_{n-1,0}(x) \\
+		                                                                   & = & \underset{i=1}{\overset{n-1}{\sum}}E_{i-1,n-i}(x)E_{n-i,-i}(x) +  xE_{n-1,0}(x)
+	\end{array}
+\]
+\begin{proposition}\label{p9}
+	Pour tout $r>0$, on a $E_{n,r}(x) = \underset{i=1}{\overset{n}{\sum}}E_{i-1,n-i+r}(x)E_{n-i,r-i}(x)$
+\end{proposition}
+Preuve: On a $E_{n,r}(x) =\underset{i=1}{\overset{n}{\sum}}\text{ }\underset{\underset{\pi_{i}=n+r}{\pi \in \mathcal{E}_{n,r}}}{\sum}x^{fix(\pi)}$.
+En utilisant la \Cref{p7}, on a $$\begin{array}{l l l}
+		E_{n,r}(x) = \underset{i=1}{\overset{n}{\sum}} \text{ } \underset{(\pi', \pi'') \in \mathcal{E}_{i-1,n-i+r}\times \mathcal{E}_{n-i,r-i}}{\sum}x^{fix(\pi') + fix(\pi'')} & = & \underset{i=1}{\overset{n}{\sum}}\left[ \underset{\pi' \in \mathcal{E}_{i-1,n-i+r}}{\sum}x^{fix(\pi')}\text{ }\underset{\pi'' \in \mathcal{E}_{n-i,r-i}}{\sum}x^{fix(\pi'')} \right] \\
+		                                                                                                                                                                         & = & \underset{i=1}{\overset{n}{\sum}}E_{i-1,n-i+r}(x)E_{n-i,r-i}(x)
+	\end{array}$$
+\begin{corollaire}\label{c5}
+	On a $E_{n, r}(x) = \underset{i=1}{\overset{n}{\sum}}E_{i-1, n-i+r}(x)E_{n-i, r-i}(x) + (x-1)E_{n-1,0}(x)\mathbbm{1}_{\{r=0\}}$
+\end{corollaire}
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+
+\begin{proposition}
+	On a $\forall r\geq n\text{, }E_{n,r}(x) = C_{n}$
+\end{proposition}
+$\underline{\textit{Démontration}}:$\\
+D'abord, pour tout $ \pi \in \mathcal{E}_{n, r}, fix(\pi)=0$. Alors, on a
+$E_{n,r}(x)= \sum_{i=1}^{n}| \mathcal{E}_{i-1, n-i+r}||\mathcal{E}_{n-i, r-i}|$\\
+Le nombre $|\mathcal{E}_{n, r}|$ dépend seulement de n. On convient $|\mathcal{E}_{0, r}|=1$. On a  $|\mathcal{E}_{1, r}|=1$ et  $|\mathcal{E}_{2, r}|=2$. Comme $E_{n,r}(x)$ et $C_{n}$ ont même relation de récurrence, alors $E_{n,r}(x) = C_{n}\text{, }\forall r\geq n \hspace{10pt}\blacksquare$ \vspace{15pt}
+
+Il est important de faire quelques modifications sur les indices pour prouver la proposition ci-dessous.
+On change $E_{n-i,r-i}(x)$ par $E_{n-i,i-r}(x)$ si $i>r$ et on utilise le fait que\\ $E_{i-1,n-i+r}(x)=C_{i-1}$ si $n-i+r\geq i-1$ ou encore $n+r+1\geq 2i$
+ou encore $i\leq \lfloor \frac{n+r+1}{2}\rfloor$ (avec $\lfloor x \rfloor$ est le plus grand entier inférieur ou égal a $x$). Et $E_{n-i,i-r}(x)=C_{n-i}$ si $i-r\geq n-i$ ie $i\geq \lfloor \frac{n+r}{2}\rfloor$. On obtient ainsi la récurrence suivante :
+
+
+\begin{equation} \label{eq:Enr}
+	\begin{array}{l l l}
+		E_{n,r}(x) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}E_{n-i,r-i}(x)                                    \\
+		           & \text{} & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor}{\sum}}C_{i-1}E_{n-i,i-r}(x)    \\
+		           & \text{} & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor +1}{\overset{n}{\sum}}C_{n-i}E_{i-1,n-i+r}(x) \\
+		           & \text{} & +(x-1)E_{n-1,0}(x)\mathbbm{1}_{\{r=0\}}
+	\end{array}
+\end{equation}
+On pose $F_{n, r}(x)=A_{n}(x) + (1-x)\sum\limits_{i=1}^{r}C_{i-1}A_{n-i}$. Alors on peut écrire $F_{n, r}(x)=\sum\limits_{k=0}^{n}f(n, k)(x-1)^{k}$\\
+\begin{lemme}\label{l101}
+	$[(x-1)^{k}]F_{n, r}(x)=f(n, k) = b(n, k) - \sum\limits_{i=1}^{r}C_{i-1}b(n-i, k-1)$
+\end{lemme}
+\begin{proposition}\label{p9}
+	Pour tout $r\geq n$, on a $F_{n, r}(x)=C_{n}$
+\end{proposition}
+Preuve: On a $F_{n, r}(x) = f(n, 0) + \sum\limits_{k=1}^{n}f(n, k)(x-1)^{k} = f(n, 0) =b(n, 0)=C_{n}$ \\car $b(n, k) = \sum\limits_{i=1}^{n}C_{i-1}b(n-i, k-1)$ et\\
+pour tout $r\geq n \text{ et } k\neq 0, f(n, k) = b(n, k) - \sum\limits_{i=1}^{n}C_{i-1}b(n-i, k-1)=0$
+\begin{corollaire} \label{c100}
+	Pour tout $r\geq n$, on $F_{n, r}(x) = E_{n, r}(x)$
+\end{corollaire}
+Dans toute la suite on pose $r<n$.
+\begin{proposition}\label{p10}
+	On a $\begin{cases}
+			f(n, 0) & = C_{n}, \forall n \geq 0                  \\
+			f(n, k) & = 0 \text{ si }k, n <0 \text{ ou }k>n      \\
+			f(n, k) & = f(n, k+1) + f(n-1, k-1), \forall k\leq n
+		\end{cases}$
+\end{proposition}
+Preuve: En utilisant le \Cref{l101}, on a $f(n, 0)=C_{n}$ et $f(n, k) = 0$ si $n, k <0$ et aussi $f(n, k)=0$ si $k>n$ car pour tout $1\leq i\leq r$, on a $n-i<k-1$ et donc $b(n-i, k-1)=0$.\\
+De plus,
+$$
+	\begin{array}{l l l}
+		f(n, k+1)+ f(n-1, k-1) & =       & b(n, k+1) -  \sum\limits_{i=1}^{r}C_{i-1}b(n-i, k) + b(n-1, k-1)              \\
+		                       & \text{} & -  \sum\limits_{i=1}^{r}C_{i-1}b(n-i-1, k-2)                                  \\
+		                       & =       & b(n, k) - \sum\limits_{i=1}^{r}C_{i-1}\left[ b(n-i, k) + b(n-i-1, k-2)\right] \\                               \\
+		                       & =       & b(n, k) - \sum\limits_{i=1}^{r}C_{i-1}b(n-i, k-1)                             \\
+	\end{array}
+$$
+$\blacksquare$
+\text{} \vspace{5pt}\\
+On pose $$
+	\begin{array}{l l l}
+		F^{(1)}_{n,r}(x) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}F_{n-i,r-i}(x)                                   \\ &\text{ }&\\
+		                 & \text{} & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor}{\sum}}C_{i-1}F_{n-i,i-r}(x)   \\ &\text{ }&\\
+		                 & \text{} & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor+1}{\overset{n}{\sum}}C_{n-i}F_{i-1,n-i+r}(x) \\ &\text{ }&\\
+		                 & \text{} & +(x-1)F_{n-1,0}(x)\mathbbm{1}_{\{r=0\}}
+	\end{array}
+$$
+Alors on peut écrire $F^{(1)}_{n,r}(x) = \sum\limits_{k=0}^{n}f^{(1)}(n,k)(x-1)^{k}$
+\begin{lemme} \label{l102}
+	On a
+	$$
+		\begin{array}{l l l}
+			f^{(1)}(n, k) & =        & \sum\limits_{i=1}^{r}C_{i-1}\left[ b(n-i, k) - \sum\limits_{p=1}^{r-i}C_{p-1}b(n-i-p, k-1) \right]                                      \\ &\text{ }&\\
+			              & \text{ } & + \sum\limits_{i=r+1}^{\lfloor \frac{n+r+1}{2} \rfloor}C_{i-1}\left[ b(n-i, k) - \sum\limits_{p=1}^{i-r}C_{p-1}b(n-i-p, k-1) \right]    \\ &\text{ }&\\
+			              & \text{ } & + \sum\limits_{i=\lfloor \frac{n+r+1}{2} \rfloor +1}^{n}C_{n-i}\left[ b(i-1, k) - \sum\limits_{p=1}^{n+r-i}C_{p-1}b(i-p-1, k-1) \right] \\ &\text{ }&\\
+			              & \text{ } & +  b(n-1, k-1)\mathbbm{1}_{\{r=0\}}                                                                                                     \\
+		\end{array}
+	$$
+\end{lemme}
+\begin{proposition}\label{p11}
+	On a $f^{(1)}(n, k) = f^{(1)}(n, k+1) + f^{(1)}(n-1, k-1)$
+\end{proposition}
+Preuve: En utilisant le \Cref{l102}, on a
+$$
+	\begin{array}{l l l}
+		f^{(1)}(n, k+1) & =        & \sum\limits_{i=1}^{r}C_{i-1}\left[ b(n-i, k+1) - \sum\limits_{p=1}^{r-i}C_{p-1}b(n-i-p, k) \right]                                      \\ &\text{ }&\\
+		                & \text{ } & + \sum\limits_{i=r+1}^{\lfloor \frac{n+r+1}{2} \rfloor}C_{i-1}\left[ b(n-i, k+1) - \sum\limits_{p=1}^{i-r}C_{p-1}b(n-i-p, k) \right]    \\ &\text{ }&\\
+		                & \text{ } & + \sum\limits_{i=\lfloor \frac{n+r+1}{2} \rfloor +1}^{n}C_{n-i}\left[ b(i-1, k+1) - \sum\limits_{p=1}^{n+r-i}C_{p-1}b(i-p-1, k) \right] \\ &\text{ }&\\
+		                & \text{ } & +  b(n-1, k)\mathbbm{1}_{\{r=0\}}                                                                                                       \\
+	\end{array}
+$$
+\vspace{5pt}\\
+et
+\vspace{5pt}\\
+$$
+	\begin{array} {l l l}
+		f^{(1)}(n-1,k-1) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                                   \\ &\text{ }&\\ &\text{}&+\underset{i=r+1}{\overset{\lfloor \frac{n+r}{2}\rfloor}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]\\ &\text{ }&\\
+		                 & \text{} & +\underset{i=\lfloor \frac{n+r}{2}\rfloor+1}{\overset{n-1}{\sum}}C_{n-i-1}\left[b(i-1,k-1)-\underset{j=1}{\overset{n+r-i-1}{\sum}}C_{j-1}b(i-j-1,k-2)\right] \\ &\text{ }&\\
+		                 & \text{} & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}
+	\end{array}
+$$
+\vspace{10pt}\\
+Si on arrive à montrer que
+$$
+	\begin{array} {l l l}
+		f^{(1)}(n-1,k-1) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                               \\ &\text{ }&\\ &\text{}&+\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]\\ &\text{ }&\\
+		                 & \text{} & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor+1}{\overset{n}{\sum}}C_{n-i}\left[b(i-2,k-1)-\underset{j=1}{\overset{n+r-i}{\sum}}C_{j-1}b(i-j-2,k-2)\right] \\ &\text{ }&\\
+		                 & \text{} & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}
+	\end{array} \hspace{15pt}(E)
+$$
+alors, le résultat se déduit en utilisant la relation $b(n, k) = b(n-1, k-1) + b(n, k+1) (\forall k\leq n)$.
+\vspace{10pt}\\
+Nous allons étudier séparement le cas où $n+r$ est impair et $n+r$ pair.\\
+D'abord, supposons que $n + r$ est impair. Alors, il existe $p$ tel que $n+r=2p+1$.\\
+Cela implique que $$\lfloor \cfrac{n+r+1}{2}\rfloor = \lfloor \cfrac{n+r}{2} \rfloor +1$$ et
+\[
+	\begin{array} {l l l}
+		f^{(1)}(n-1,k-1) & =        & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                                   \\ &\text{ }&\\ &\text{ }&+\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor -1}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]\\ &\text{ }&\\
+		                 & \text{ } & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor}{\overset{n-1}{\sum}}C_{n-i-1}\left[b(i-1,k-1)-\underset{j=1}{\overset{n+r-i-1}{\sum}}C_{j-1}b(i-j-1,k-2)\right] \\ &\text{ }&\\
+		                 & \text{ } & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}                                                                                                                           \\
+	\end{array}
+\]
+ou encore $$
+	\begin{array}{l l l}
+		f^{(1)}(n-1,k-1) & =        & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                               \\ &\text{ }&\\ &\text{}&+\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]\\ &\text{ }&\\
+		                 & \text{ } & -C_{\lfloor \frac{n+r+1}{2} \rfloor-1}\biggl[b(n-\lfloor \frac{n+r+1}{2} \rfloor-1, k-1)                                                                 \\ &\text{}& \hspace{70pt} - \underset{j=1}{\overset{ \lfloor \frac{n+r+1}{2} \rfloor-r }{\sum}}C_{j-1}  b(n-\lfloor \frac{n+r+1}{2} \rfloor-j-1, k-2)\biggr]
+		\\ &\text{ }&\\
+		                 & \text{}  & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor+1}{\overset{n}{\sum}}C_{n-i}\left[b(i-2,k-1)-\underset{j=1}{\overset{n+r-i}{\sum}}C_{j-1}b(i-j-2,k-2)\right] \\ &\text{ }&\\
+		                 & \text{}  & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}                                                                                                                       \\
+	\end{array}
+$$
+Il reste à montrer que $$C_{\lfloor \frac{n+r+1}{2} \rfloor-1}\left[ b(n-\lfloor \frac{n+r+1}{2} \rfloor-1, k-1) - \underset{j=1}{\overset{ \lfloor \frac{n+r+1}{2} \rfloor-r }{\sum}}C_{j-1}  b(n-\lfloor \frac{n+r+1}{2} \rfloor-j-1, k-2)\right] = 0$$\\
+\vspace{5pt}\\
+On a
+\[
+	\begin{array}{l l l}
+		n-\lfloor \frac{n+r+1}{2}\rfloor-1 & = & n-(p+1)-1 \\&=&2p+1-r-p-2\\&=&p-1-r\\&=& p+1-r-2\\&=&\lfloor \frac{n+r+1}{2}\rfloor -r-2
+	\end{array}
+\]
+ou encore  $\lfloor \frac{n+r+1}{2}\rfloor -r=n-\lfloor \frac{n+r+1}{2}\rfloor +1$.\\
+Cela implique que
+\[
+	\begin{array}{l l l}
+		\underset{j=1}{\overset{ \lfloor \frac{n+r+1}{2} \rfloor-r }{\sum}}C_{j-1}  b(n-\lfloor \frac{n+r+1}{2} \rfloor-j-1, k-2) & = & \underset{j=1}{\overset{n- \lfloor \frac{n+r+1}{2} \rfloor + 1 }{\sum}}C_{j-1}  b(n-\lfloor \frac{n+r+1}{2} \rfloor-j-1, k-2) \\ &\text{ }&\\
+		                                                                                                                          & = & \underset{j=1}{\overset{n- \lfloor \frac{n+r+1}{2} \rfloor - 1 }{\sum}}C_{j-1}  b(n-\lfloor \frac{n+r+1}{2} \rfloor-j-1, k-2) \\ &\text{ }&\\
+		                                                                                                                          & = & b(n-\lfloor \frac{n+r+1}{2} \rfloor-1, k-1)
+	\end{array}
+\]
+D'où, la relation $(E)$\vspace{10pt}\\
+Ensuite, supposons que $n+r$ est pair. Alors, il existe $p$ tel que $n+r=2p$.\\
+Cela implique que
+\[
+	\lfloor \cfrac{n+r+1}{2}\rfloor = \lfloor \cfrac{n+r}{2} \rfloor
+\]
+et
+\[
+	\begin{array} {l l l}
+		f^{(1)}(n-1,k-1) & =        & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                                     \\
+		                 & \text{ } &                                                                                                                                                                \\
+		                 & \text{ } & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor }{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]    \\
+		                 & \text{ } &                                                                                                                                                                \\
+		                 & \text{ } & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor+1}{\overset{n-1}{\sum}}C_{n-i-1}\left[b(i-1,k-1)-\underset{j=1}{\overset{n+r-i-1}{\sum}}C_{j-1}b(i-j-1,k-2)\right] \\
+		                 & \text{ } &                                                                                                                                                                \\
+		                 & \text{ } & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}                                                                                                                             %\hspace{1cm}(5.5)
+	\end{array}
+\]
+ou encore
+\[
+	\begin{array} {l l l}
+		f^{(1)}(n-1,k-1) & =        & \underset{i=1}{\overset{r}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{r-i}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right]                                 \\
+		                 & \text{ } &                                                                                                                                                            \\
+		                 & \text{}  & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+1}{2}\rfloor}{\sum}}C_{i-1}\left[b(n-i-1,k-1)-\underset{j=1}{\overset{i-r}{\sum}}C_{j-1}b(n-i-j-1,k-2)\right] \\
+		                 & \text{ } &                                                                                                                                                            \\
+		                 & \text{}  & +\underset{i=\lfloor \frac{n+r+1}{2}\rfloor+1}{\overset{n}{\sum}}C_{n-i}\left[b(i-2,k-1)-\underset{j=1}{\overset{n+r-i}{\sum}}C_{j-1}b(i-j-2,k-2)\right]   \\
+		                 & \text{ } &                                                                                                                                                            \\
+		                 & \text{}  & -C_{n-\lfloor \frac{n+r+1}{2} \rfloor-1}\biggl[ b( \lfloor \frac{n+r+1}{2} \rfloor -1 , k-1)                                                               \\
+		                 & \text{}  & \hspace{80pt} -\underset{j=1}{\overset{n+r-\lfloor \frac{n+r+1}{2} \rfloor-1}{\sum}}C_{j-1}b(\lfloor \frac{n+r+1}{2} \rfloor-j-1,k-2) \biggr]              \\
+		                 & \text{ } &                                                                                                                                                            \\
+		                 & \text{}  & +b(n-2,k-2)\mathbbm{1}_{\{r = 0\}}
+	\end{array}
+\]
+Il reste à montrer que \\
+$$C_{n-\lfloor \frac{n+r+1}{2} \rfloor-1}\left[ b( \lfloor \frac{n+r+1}{2} \rfloor -1 , k-1)  -\underset{j=1}{\overset{n+r-\lfloor \frac{n+r+1}{2} \rfloor-1}{\sum}}C_{j-1}b(\lfloor \frac{n+r+1}{2} \rfloor-j-1,k-2) \right] = 0$$
+\vspace{10pt}\\
+On a
+\[
+	\begin{array}{l l l}
+		n-\lfloor \frac{n+r+1}{2}\rfloor+r-1 & = & n+r-p-1 \\&=&2p-p-1\\&=&p-1\\&=&\lfloor \frac{n+r+1}{2}\rfloor-1
+	\end{array}
+\]
+Cela implique que
+\[
+	\begin{array}{l l l}
+		\underset{j=1}{\overset{n+r-\lfloor \frac{n+r+1}{2} \rfloor-1}{\sum}}C_{j-1}b(\lfloor \frac{n+r+1}{2} \rfloor-j-1,k-2) & =        & \underset{j=1}{\overset{\lfloor \frac{n+r+1}{2} \rfloor-1}{\sum}}C_{j-1}b(\lfloor \frac{n+r+1}{2} \rfloor-j-1,k-2) \\
+		                                                                                                                       & \text{ } &                                                                                                                    \\
+		                                                                                                                       & =        & b( \lfloor \frac{n+r+1}{2} \rfloor -1 , k-1)
+	\end{array}
+\]
+D’où, la relation $(E)$
+\begin{corollaire}
+	On a $F_{n, r}(x) =  F^{(1)}_{n,r}(x)$
+\end{corollaire}
+Preuve: On en déduit du \Cref{l102} que $f^{(1)}(n, 0) = \sum\limits_{i=1}^{n}C_{i-1}C_{n-i}= C_{n}$ et $f^{(1)}(n, k)=0$ si $n, k < 0$ ou $n<k$. En utilisant la \Cref{p10} et la \Cref{p11}, on a $f(n, k)=f^{(1)}(n, k)$
+\begin{corollaire}
+	On a $F_{n, r}(x) = E_{n, r}(x)$
+\end{corollaire}
+Preuve: Nous allons montrer par récurrence sur $n$. \\
+Si $n=0$, on a  $F_{0, r}(x)=1$ et $E_{0, r}(x)=1$\\
+Si $n=1$, on a $F_{1, r}(x)=\begin{cases}
+		x & \text{ si } r=0     \\
+		1 & \text{ si } r\neq 0
+	\end{cases}$ et $E_{1, r}(x)= \sum\limits_{\pi \mathcal{E}_{1,r}}x^{fix(\pi)} =\begin{cases}
+		x & \text{ si } r=0     \\
+		1 & \text{ si } r\neq 0
+	\end{cases}$\\
+Supposont que  $F_{k, r}(x)=E_{k, r}(x)$ pour tout $k\leq n$, et montrons que $F_{n+1, r}(x)=E_{n+1, r}(x)$. On a
+\[
+	\begin{array}{l l l}
+		E_{n+1,r}(x) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}E_{n+1-i,r-i}(x)                                        \\
+		             & \text{} & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+2}{2}\rfloor}{\sum}}C_{i-1}E_{n+1-i,i-r}(x)        \\
+		             & \text{} & +\underset{i=\lfloor \frac{n+r+2}{2}\rfloor +1}{\overset{n+1}{\sum}}C_{n+1-i}E_{i-1,n+1-i+r}(x) \\
+		             & \text{} & +(x-1)E_{n,0}(x)\mathbbm{1}_{\{r=0\}}
+	\end{array}
+\]
+\vspace{5pt}\\
+et
+\vspace{5pt}\\
+\[
+	\begin{array}{l l l}
+		F_{n+1,r}(x) & =       & \underset{i=1}{\overset{r}{\sum}}C_{i-1}F_{n+1-i,r-i}(x)                                       \\ &\text{ }&\\
+		             & \text{} & +\underset{i=r+1}{\overset{\lfloor \frac{n+r+2}{2}\rfloor}{\sum}}C_{i-1}F_{n+1-i,i-r}(x)       \\ &\text{ }&\\
+		             & \text{} & +\underset{i=\lfloor \frac{n+r+2}{2}\rfloor+1}{\overset{n+1}{\sum}}C_{n+1-i}F_{i-1,n+1-i+r}(x) \\ &\text{ }&\\
+		             & \text{} & +(x-1)F_{n,0}(x)\mathbbm{1}_{\{r=0\}}
+	\end{array}
+\]
+En utilisant l'hypothèse de récurrence, on le résultat. $\blacksquare$
+
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================
+
+\begin{corollaire}
+	On a $E_{n, 0}(x) = A_{n}(x) = \underset{\pi \in S_{n}(132)}{\sum} x^{fix(\pi)}$\\
+\end{corollaire}
+
+\begin{proposition} \label{newCnExp} On a
+	$
+		\begin{array}{l l l}
+			C_{n}%&=&A_{n}(x)+(1-x)[A_{n}(x)+(1-x)A_{n-1}(x)]\\
+			 & = & 2A_{n}(x)-xA_{n}(x)+(1-x)^{2}A_{n-1}(x)
+		\end{array}
+	$
+\end{proposition}
+
+Preuve:
+Prenons $r = n$. Par définition de $F_{n, r}(x)$ et en utilisant le \Cref{c100}, on a
+\[C_{n}=A_{n}(x)+(1-x)\underset{i=1}{\overset{n}{\sum}}C_{i-1}A_{n-i}(x) \]
+Et en utilisant la \Cref{prop225}. on a:
+\[\underset{i=1}{\overset{n}{\sum}}C_{i-1}A_{n-i}(x) =A_{n}(x)+(1-x)A_{n-1}(x)\]
+Par conséquent
+\[
+	\begin{array}{l l l}
+		C_{n} & =       & A_{n}(x)+(1-x)[A_{n}(x)+(1-x)A_{n-1}(x)]                                       \\
+		      & \text{} &                                                                                \\
+		      & =       & 2A_{n}(x)-xA_{n}(x)+(1-x)^{2}A_{n-1}(x)\hspace{10pt}\blacksquare\vspace{ 15pt}
+	\end{array}
+\]
+Dans toute la suite, pour tout $0\leq k\leq n$, on pose $F_{n}^{k}=s_{n}^{k}(\alpha)$, $\alpha\in\{132,321\}$ et convient que $F_{n}^{-1}=0$.
+\begin{proposition} \label{genFn} Pour tout $n\geq 2$, on a
+	\[
+		2F_{n}^{k}+F_{n-1}^{k}=F_{n}^{k-1}+2F_{n-1}^{k-1}-F_{n-1}^{k-2}
+	\]
+\end{proposition}
+Preuve:
+Comme
+\[
+	\begin{array}{l l  l}
+
+		A_{n}(x) & =       & \underset{\pi\in S_{n}(\alpha)}{\sum}x^{fix(\pi)}                                            \\
+		         & \text{} &                                                                                              \\
+		         & =       & \underset{k=0}{\overset{n}{\sum}}\left(\underset{\pi\in S_{n}^{k}(\alpha)}{\sum}x^{k}\right) \\
+		         & \text{} &                                                                                              \\
+		         & =       & \underset{k=0}{\overset{n}{\sum}}s_{n}^{k}(\alpha)x^{k}
+	\end{array}
+\]
+En extrayant le coefficient de $x^{k}$ dans la \Cref{newCnExp}. on a:
+\[ 0=2s_{n}^{k}(\alpha)-s_{n}^{k-1}(\alpha)+s_{n-1}^{k}(\alpha)-2s_{n-1}^{k-1}(\alpha)+s_{n-1}^{k-2}(\alpha)\hspace{10pt}\blacksquare \]
+
+\begin{proposition}
+	Soit $\alpha\in \{132,321\}$. Pour tout
+	$ n\geq 1$, \[s_{n}^{1}(\alpha)=\frac{1}{4}\underset{i=0}{\overset{n-1}{\sum}}(-\frac{1}{2})^{i}\left(C_{n-i}+3F_{n-i-1}\right) \]
+\end{proposition}
+
+Preuve:
+En utilisant la \Cref{genFn} et pour $k=1$, on a\[ 2F_{n}^{1}+F_{n-1}^{1}=F_{n}^{0}+2F_{n-1}^{0} \]
+On pose $s(t)=\underset{n\geq 0}{\sum}s_{n}^{1}(\alpha)t^{n}$. Comme $F_{n}^{0} = s_{n}^{0}(\alpha)=F_{n}$, alors
+%et $F_{n-1}^{0}=F_{n}$ alors
+%et $F_{n}^{1}=s_{n}^{1}$, alors
+\[
+	\underset{n\geq 1}{\sum}2F_{n}^{1}t^n + \underset{n\geq 1}{\sum}F_{n-1}^{1}t^n = \underset{n\geq 1}{\sum}F_{n}^{0}t^n + \underset{n\geq 1}{\sum}2F_{n-1}^{0}t^n
+\]
+D'où
+\[2[-s_{0}^{1}+s(t)]+ts(t)=-F_{0}+F(t)+2tF(t) \]ou encore
+\[
+	\begin{array}{l l l}
+		s(t) & =       & \cfrac{F(t)(1+2t)-1}{2+t}                                                                                                                                                                                                                                      \\
+		     & \text{} &                                                                                                                                                                                                                                                                \\
+		     & =       & \cfrac{F(t)}{2+t}(1+2t)-\cfrac{1}{2+t}                                                                                                                                                                                                                         \\
+		     & \text{} &                                                                                                                                                                                                                                                                \\
+		     & =       & \cfrac{1}{2}\underset{n\geq 0}{\sum}t^{n}\underset{i=0}{\overset{n}{\sum}}F_{n-i}(-\cfrac{1}{2})^{i}*(1+2t)-\cfrac{1}{2}\underset{n\geq 0}{\sum}(-\cfrac{1}{2})^{n}t^{n}                                                                                       \\
+		     & \text{} &                                                                                                                                                                                                                                                                \\
+		     & =       & \cfrac{1}{2}\left[\underset{n\geq 0}{\sum}t^{n}\underset{i=0}{\overset{n}{\sum}}F_{n-i}(-\cfrac{1}{2})^{i}-\underset{n\geq 0}{\sum}(-\cfrac{1}{2})^{n}t^{n}\right]+\underset{n\geq 1}{\sum}t^{n}\underset{i=0}{\overset{n-1}{\sum}}F_{n-i-1}(-\frac{1}{2})^{i}
+	\end{array}
+\]
+Cela implique que:
+\[
+	\begin{array}{l l l}
+		s_{n}^{1}(\alpha) & =       & \cfrac{1}{2}\left[\underset{i=0}{\overset{n}{\sum}}F_{n-i}(-\cfrac{1}{2})^{i}-(-\cfrac{1}{2})^{n}\right]+\underset{i=0}{\overset{n-1}{\sum}}F_{n-i-1}(-\cfrac{1}{2})^{i} \\
+		                  & \text{} &                                                                                                                                                                          \\
+		                  & =       & \underset{i=0}{\overset{n-1}{\sum}}\left[\cfrac{F_{n-i}}{2}+F_{n-i-1}\right](-\cfrac{1}{2})^{i}                                                                          \\
+		                  & \text{} &                                                                                                                                                                          \\
+		                  & =       & \cfrac{1}{4}\underset{i=0}{\overset{n-1}{\sum}}\left[2F_{n-i}+F_{n-i-1}+3F_{n-i-1}\right](-\cfrac{1}{2})^{i}                                                             \\
+		                  & \text{} &                                                                                                                                                                          \\
+		                  & =       & \cfrac{1}{4}\underset{i=0}{\overset{n-1}{\sum}}[C_{n-i}+3F_{n-i-1}](-\cfrac{1}{2})^{i}
+		\hspace{10pt}\blacksquare\end{array}
+\]
+
+\begin{proposition}
+	Soit $\alpha\in\{132,321\}$. Pour $n\geq1$, $0\leq k\leq n$, on a:\[
+		s_{n}^{k}(\alpha)=\underset{j=0}{\overset{n-k}{\sum}}(-1)^{j}\begin{pmatrix} j+k\\k\end{pmatrix}b(n, k+j)%C_{n}^{(k+j)}
+	\]
+\end{proposition}
+Preuve:
+On a:
+\[
+	\begin{array}{l l l}
+		A_{n}(x) & =       & \underset{k=0}{\overset{n}{\sum}}b(n,k)(x-1)^{k}                                                                                      \\
+		         & \text{} &                                                                                                                                       \\
+		         & =       & \underset{k=0}{\overset{n}{\sum}}\left(\underset{i=0}{\overset{k}{\sum}}\begin{pmatrix} k\\i\end{pmatrix}b(n,k)(-1)^{k-i}x^{i}\right) \\
+	\end{array}
+\]
+Ainsi le coefficient de $x^{k}$ est\[\underset{j=k}{\overset{n}{\sum}}\begin{pmatrix} j\\k\end{pmatrix}b(n,j)(-1)^{j-k}\]
+D'où, \[s_{n}^{k}(\alpha)=\underset{j=0}{\overset{n-k}{\sum}}\begin{pmatrix} j+k\\k\end{pmatrix}b(n,j+k)(-1)^{j}\]
+
+\begin{proposition}
+	Pour tout $ n\geq 0$, on a \[C_{n}=\underset{k=0}{\overset{n}{\sum}}\underset{j=0}{\overset{n-k}{\sum}}(-1)^{j}\begin{pmatrix} j+k\\k\end{pmatrix}b(n,j+k)\]
+\end{proposition}
+Preuve:
+Comme $S_{n}(\alpha)=\underset{k=0}{\overset{n}{\bigcup}}S_{n}^{k}(\alpha)$ avec $|S_{n}(\alpha)|=C_{n}$ alors, on a $C_{n}=\underset{k=0}{\overset{n}{\sum}}s_{n}^{k}(\alpha)$ $\blacksquare$
+
+\begin{proposition}
+	Pour tout $ n\geq 1$, $F_{n}=\underset{j=0}{\overset{n}{\sum}}(-1)^{j}b(n,j)$
+\end{proposition}
+Preuve: On a
+\[
+	\begin{array}{l l l}
+		F_{n} & = & s_{n}^{0}(\alpha) \\&=&\underset{j=0}{\overset{n}{\sum}}\begin{pmatrix} j\\0\end{pmatrix}b(n,j)(-1)^{j}\\&=&\underset{j=0}{\overset{n}{\sum}}b(n,j)(-1)^{j}\text{ }\blacksquare
+	\end{array}
+\]
+\begin{proposition}\label{p12}
+	On a $F_{n} = \sum\limits_{k=0}^{\lfloor \frac{n}{2} \rfloor}c_{n-1, n-2k}$
+\end{proposition}
+Preuve: Dans la Proposition 2.2.31, on a $F_{n} = \sum\limits_{j=0}^{n}(-1)^{j}b(n, j)$. Rappelons que, pour tout $n\geq k$,\\$c_{n, k} = b(n, k)$. Cela implique que $F_{n}=\sum\limits_{j=0}^{n}(-1)^{j}c_{n, n-j}$. Nous allons distinguer le cas où $n$ est pair et $n$ impair.\vspace{5pt}\\
+	Si $n$ est pair, alors il existe $n \in \mathbb{N}$, tel que $n=2p$. \\
+	On a
+	\[
+		F_{2p}=\sum\limits_{j=0}^{2p}(-1)^{j}c_{2p, 2p-j}=(c_{2p, 2p} - c_{2p, 2p-1}) + (c_{2p, 2p-2} - c_{2p, 2p-3})+ \cdots + (c_{2p, 2} - c_{2p, 1}) + c_{2p, 0}
+	\]
+	D'après la définition de $c_{n, k}$, on en déduit,
+	\[
+		\begin{array}{l l l}
+			F_{2p} & =        & c_{2p-1, 2p} + c_{2p-1, 2p-2} + \cdots + c_{2p-1, 2} + c_{2p, 0} \\
+			       & \text{ } &                                                                  \\
+			       & =        & \sum\limits_{i=0}^{p}c_{2p-1,2i}                                 \\
+			       & \text{ } &                                                                  \\
+			       & =        & \sum\limits_{i=0}^{p}c_{2p-1, 2p-2i}
+		\end{array}
+	\]
+	\text{ }\vspace{5pt}\\
+	Si $n$ est impair, alors il existe $p\in \mathbb{N}$ tel que $n=2p+1$.\\
+	On a \[
+		F_{2p+1}=\sum\limits_{j=0}^{2p+1}(-1)^{j}c_{2p+1, 2p+1-j}=(c_{2p+1, 2p+1} - c_{2p+1, 2p}) + (c_{2p+1, 2p-1} - c_{2p+1, 2p-2})+ \cdots + (c_{2p+1, 1} - c_{2p+1, 0})
+	\]
+	D'après la définition de $c_{n, k}$, on en déduit,
+	\[
+		\begin{array}{l l l}
+			F_{2p+1} & =        & c_{2p, 2p+1} + c_{2p, 2p-1} + \cdots + c_{2p, 1} \\
+			         & \text{ } &                                                  \\
+			         & =        & \sum\limits_{i=0}^{p}c_{2p,2i+1}                 \\
+			         & \text{ } &                                                  \\
+			         & =        & \sum\limits_{i=0}^{p}c_{2p, 2p+1-2i}
+		\end{array}
+	\]
+	D'où le résultat. \hspace{5pt} $\blacksquare$
+	\text{ }\vspace{5pt}\\
+	\begin{corollaire}
+		Pour tout $x \in \{123, 132\}$, on a $F_{2n}=\#\{ \sigma \in S_{2n}(x); \sigma(1) \text{ impair }\}$ et $F_{2n+1} = \#\{\sigma\in S_{2n+1}(x); \sigma(1) \text{ pair }\}$
+	\end{corollaire}
+	Preuve: Soit $x \in \{123, 132\}$.
+	Il est à noter que, pour tout $n, k\geq 1$, $s_{n, k}(x) = c_{n-1,k-1}$. \\ \text{}\vspace{5pt}\\
+	On a \\
+	\[
+		\begin{array}{l l l}
+			F_{2n} & = & \sum\limits_{k=0}^{n}c_{2n-1, 2n-2k} = \sum\limits_{k=0}^{n}s_{2n, 2(n-k)+1}(x) = \sum\limits_{k=0}^{n}s_{2n, 2k+1}(x) = \#\{\sigma\in S_{2n}(x); \sigma(1) \text{ impair }\}
+		\end{array}
+	\]
+	\text{}\\
+	et
+	\[
+		\begin{array}{l l l}
+			F_{2n+1} & = & \sum\limits_{k=0}^{n}c_{2n, 2n-2k+1} = \sum\limits_{k=0}^{n}s_{2n+1, 2(n-k)+2}(x) = \sum\limits_{k=0}^{n}s_{2n+1, 2(n-k+1)}(x) = \#\{\sigma\in S_{2n+1}(x); \sigma(1) \text{ pair }\}
+		\end{array}
+	\]
+$\blacksquare$\vspace{10pt}\\
+	Soit $x \in \{132, 321\}$. On pose $T_{n}(x)= \{\pi \in S_{n}(x); Fix(\sigma)\bigcap [n-1]\neq \emptyset\}$\vspace{5pt} \\
+	\begin{proposition}
+		Pour tout $n\geq 1$, on a $|T_{n}(x)| = F_{n}$.
+	\end{proposition}
+	Preuve:
+	Soit $n\geq 1$, on pose $U_{n}(x) = \{\pi \in S_{n}(x); \forall i<n, \pi(i)\neq i \text{ et } \pi(n)=n\}$. Les ensembles $S_{n}^{0}(x)$, $T_{n}(x)$ et $U_{n}(x)$ forment une partion de $S_{n}(x)$. De plus, l'ensemble $U_{n}(x)$ est en bijection avec l'ensemble $S_{n-1}^{0}(x)$, via la bijection $\pi \mapsto \pi'$ où $\pi'$ est obtenue en supprimant $n$ dans $\pi$. \\
+	On a $| S_{n}(x) | = C_{n} = |S_{n}^{0}(x)| + |T_{n}(x)| + |S_{n-1}^{0}(x)|$
+$\iff C_{n} = F_{n}+F_{n-1} + |T_{n}(x)|$.\\
+	Rappelons que $C_{n} = 2F_{n} +F_{n-1}$ (D'après la Proposition 1.4.4). Dès lors, $| T_{n}(x) | = F_{n}$
+% ==================================================================================================================================================================
+% ==================================================================================================================================================================

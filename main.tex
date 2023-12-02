@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{extreport}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm,right=2cm,left=3cm]{geometry}
+
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{import}
+\usepackage{bbm}
+\usepackage{comment}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+% Show Prop, Lemma and other label near them
+% \usepackage{showkeys}
+
+
+
+% \setcounter{chapter}{-1}
+
+\newtheorem{definition}{Définition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemme}{Lemme}[section]
+\newtheorem{corollaire}[proposition]{Corollaire}
+
+\begin{document}
+\tableofcontents
+\pagenumbering{arabic}
+
+\newpage
+\input{./chapters/introduction.tex}
+\input{./chapters/Nombres de Fine et Fraction continues.tex}
+\input{./chapters/Nombres de Fine, relation similarité et permutations.tex}
+
+\bibliographystyle{unsrt}
+\begin{thebibliography}{100} % 100 is a random guess of the total number of
+	%references
+	\bibitem{SansMotif} C. Krattenthaler, Advances in Applied Mathematics 27,\emph{Permutations with
+		Restricted Patterns and Dyck Paths}
+
+	\bibitem{RP} RODICA SIMION AND FRANK W. SCHMIDT, \emph{ Restricted Permutations}, Europ.l.
+	Combinatorics (1985) 6, 383-406
+
+	\bibitem{RRP}Aaron Robertson, Dan Saracino, Doron Zeilberger, \emph{REFINED RESTRICTED PERMUTATIONS}
+
+	\bibitem{FNR} Gi-Sang Cheon, Sang-Gu Lee, Louis W. Shapiro \emph{The Fine numbers refined}, European
+	Journal of Combinatorics 31 (2010) 120-128
+
+	\bibitem{NOTESR} Volker STREHL \emph{A NOTE ON SIMILARITY RELATIONS},
+	Discrete Mathematics 19 (W7) 99-101.
+
+	\bibitem{Desantis} DEREK DESANTIS, REBECCA FIELD, WESLEY HOUGH, BRANT JONES, REBECCA MEISSEN, AND JACOB ZIEFLE \emph{PERMUTATION PATTERN AVOIDANCE AND THE CATALAN TRIANGLE},
+	MISSOURI J. OF MATH. SCI., Vol. 25, 2010
+
+	\bibitem{Fine} Emeric Deutsch, Louis Shapiro \emph{A survey of the Fine numbers},
+	Discrete Mathematics, pp 241-265, 2001
+
+	\bibitem{FranconViennot} J. Françon, G. Viennot \emph{Permutations selon leurs pics, creux, doubles montées et double descentes, nombres d’Euler et nombres de Genocchi},
+	Discrete Mathematics, pp 21-35, 1979
+
+	\bibitem{ref30} SHISHUO FU, DAZHAO TANG, BIN HAN, AND JIANG ZENG \emph{(q, t)-CATALAN NUMBERS},
+	Discrete Mathematics, pp 9, 2018
+
+	\bibitem{ref31} SERGI ELZALDE \emph{Fixed Points and Excedances in Restricted Permutations},
+	Dartmouth College, pp 6, 2012
+
+	\bibitem{TFine} T. Fine. Extrapolation when very little is known about the source, Inform and Control 331 - 359
+
+
+\end{thebibliography}
+\end{document}
