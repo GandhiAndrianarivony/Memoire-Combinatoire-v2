@@ -5,66 +5,64 @@ Ce nombre est étroitement lié au nombre de Catalan qui fait l'objet d'étude d
 
 Étant donné que les permutations et les relations de similarité jouent un rôle crucial dans l'interprétation des nombres de Fine, il est donc primordial d'approfondir la recherche sur leurs implications. C'est précisément l'objectif de ce mémoire, qui marque cependant le commencement d'une exploration approfondie plutôt qu'une présentation exhaustive de ces nombres. \vspace{5pt}\\
 
-De ce fait, ce mémoire est organisé en deux chapitres fondamentaux. Le premier chapitre, les préliminaires, a pour objectif de fournir les connaissances et outils nécessaires à la compréhension de la suite du document. Il présente les définitions, théorèmes et propriétés essentiels abordés dans la semestre S10 du parcours combinatoire et qui seront utilisés ultérieurement. Ensuite, nous détaillons la définition des chemins de Fine et ses propriétés fondamentales, à savoir les fractions continues et les fonctions génératrices de ce nombre. \vspace*{5pt}\\
+De ce fait, ce mémoire est organisé en deux chapitres fondamentaux. Le premier chapitre, les préliminaires, a pour objectif de fournir les connaissances et outils nécessaires à la compréhension de la suite du document. Il présente les définitions, théorèmes et propriétés essentiels abordés dans la semestre S10 du parcours combinatoire et qui seront utilisés ultérieurement. Ensuite, nous détaillons la définition des chemins de Fine et ses propriétés fondamentales, à savoir les fractions continues et les fonctions génératrices du nombre de Fine. \vspace*{5pt}\\
 
-% Enfin, le second chapitre se focalisera sur les interprétations combinatoires du nombre de Fine, notamment les permutations évitant un motif. Dans un premier temps, on introduit les relations de similarité et ses relations avec les nombres de Fine. Ensuite, on va généraliser la relation entre les permutations évitant un motif et les relations de similarité. Pour finir, on va établir des résultats divers sur les permutations évitant un motif afin que l'on puisse avoir les interprétations combinatoires des nombres de Fine\\
 Finalement, le second chapitre se concentre sur les interprétations combinatoires du nombre de Fine, en mettant particulièrement l'accent sur les permutations évitant un motif. Dans un premier temps, nous introduisons les relations de similarité et explorons leurs liens avec les nombres de Fine. Ensuite, nous généralisons la relation entre les permutations évitant un motif et les relations de similarité. Enfin, nous établissons divers résultats concernant les permutations évitant un motif, afin de développer des interprétations combinatoires approfondies des nombres de Fine.\\
----------------------------------------------------------------------------------------------------------------------\\
 \newpage
 
-Les chemins sont des objets combinatoires fréquemment étudiés en théorie des graphes et en informatiques. Ce mémoire est
-inspiré de \cite{RRP} et nos études se focalisent sur les chemins de Fine et leurs interprétations combinatoires.
+% Enfin, le second chapitre se focalisera sur les interprétations combinatoires du nombre de Fine, notamment les permutations évitant un motif. Dans un premier temps, on introduit les relations de similarité et ses relations avec les nombres de Fine. Ensuite, on va généraliser la relation entre les permutations évitant un motif et les relations de similarité. Pour finir, on va établir des résultats divers sur les permutations évitant un motif afin que l'on puisse avoir les interprétations combinatoires des nombres de Fine\\
 
-Un chemin est une suite de points $(A_{i})_{0 \leq i \leq n}$ dans $\mathbb{N}\times \mathbb{N}$ tel que, pour tout $i$, $
-	(a_{i}, b_{i})$ sont les coordonnées de $A_{i}$ et pour tout $i<n$, $a_{i+1} - a_{i}=1$ et $|b_{i+1} - b_{i}| \leq 1$.
-On note par $\Gamma_{n,1}^{i}$ l'ensemble des chemins de $A_{0} = (0,0)$ vers $A_{n} = (n,i)$.
-Soit $c \in \Gamma_{n,1}^{i}$. Alors, on a $c = (A_{0},A_{1}, \cdots, A_{n})$ où $b_{0}=0, b_{n} = i$ et $A_{k} = (k, b_{k})
-$. Si $b_{k} - b_{k-1} = 0$ (resp. 1, -1), alors on dit que le $k^{e}$ pas de $c$ est un palier (resp. une
-montée, une 	descente) de niveau $b_{k-1}$. On en déduit que $c$ est entièrement détérminé par $b_{0}, b_{1}, \cdots, b_{n}$.
-On peut alors écrire $c = c_{1}c_{2} \cdots c_{n} \in \{m, p, d\}^{*}$. Soit $i \in [n]$ avec $c$ vérifie les conditions
-suivantes:
-\begin{itemize}
-	\item[1.] $c_{i} = m$ (resp. d, p) si le $i^{e}$ pas est une montée (resp. une descente, un palier).
-	\item[2.] $|c_{1} \cdots c_{i}|_{m} \geq |c_{1} \cdots c_{i}|_{d}$ où $|x|_{u}$ désigne le nombre de
-		lettres dans le mot x égal à u.
-\end{itemize} \vspace{15pt}
+% Un chemin est une suite de points $(A_{i})_{0 \leq i \leq n}$ dans $\mathbb{N}\times \mathbb{N}$ tel que, pour tout $i$, $
+% 	(a_{i}, b_{i})$ sont les coordonnées de $A_{i}$ et pour tout $i<n$, $a_{i+1} - a_{i}=1$ et $|b_{i+1} - b_{i}| \leq 1$.
+% On note par $\Gamma_{n,1}^{i}$ l'ensemble des chemins de $A_{0} = (0,0)$ vers $A_{n} = (n,i)$.
+% Soit $c \in \Gamma_{n,1}^{i}$. Alors, on a $c = (A_{0},A_{1}, \cdots, A_{n})$ où $b_{0}=0, b_{n} = i$ et $A_{k} = (k, b_{k})
+% $.
+% Si $b_{k} - b_{k-1} = 0$ (resp. 1, -1), alors on dit que le $k^{e}$ pas de $c$ est un palier (resp. une
+% montée, une 	descente) de niveau $b_{k-1}$. On en déduit que $c$ est entièrement détérminé par $b_{0}, b_{1}, \cdots, b_{n}$.
+% On peut alors écrire $c = c_{1}c_{2} \cdots c_{n} \in \{m, p, d\}^{*}$. Soit $i \in [n]$ avec $c$ vérifie les conditions
+% suivantes:
+% \begin{itemize}
+% 	\item[1.] $c_{i} = m$ (resp. d, p) si le $i^{e}$ pas est une montée (resp. une descente, un palier).
+% 	\item[2.] $|c_{1} \cdots c_{i}|_{m} \geq |c_{1} \cdots c_{i}|_{d}$ où $|x|_{u}$ désigne le nombre de
+% 		lettres dans le mot x égal à u.
+% \end{itemize} \vspace{15pt}
 
-Un chemin de Motzkin de longueur n est un élément de $\Gamma_{n, 1}^{0}$. Il est à noter que, si $c \in \Gamma_{n, 1}^{0}$,
-alors $|c_{1} \cdots c_{n}|_{m} = |c_{1} \cdots c_{n}|_{d}$ et vice-versa. Soit $c \in \Gamma_{n, 1}^{0}$, et on note $
-	\gamma_{i-1}$ le niveau
-de son $i^e$ pas. On a $\gamma_{0}=0$ et $\gamma_{1} = 1$.
+% Un chemin de Motzkin de longueur n est un élément de $\Gamma_{n, 1}^{0}$. Il est à noter que, si $c \in \Gamma_{n, 1}^{0}$,
+% alors $|c_{1} \cdots c_{n}|_{m} = |c_{1} \cdots c_{n}|_{d}$ et vice-versa. Soit $c \in \Gamma_{n, 1}^{0}$, et on note $
+% 	\gamma_{i-1}$ le niveau
+% de son $i^e$ pas. On a $\gamma_{0}=0$ et $\gamma_{1} = 1$.
 
-\begin{proposition} \label{levelOfPath}
-	Pour tout $\forall i \geq 3, |c_{1} \cdots c_{i-1}|_{m} - |c_{1} \cdots c_{i-1}|_{d} = \gamma_{i-1}$
-\end{proposition}
-\underline{\textit{Démonstration}}: On a \\
-\vspace{5pt}
-$
-	\begin{array}{c c l}
-		\gamma_{i-1} & = & (\gamma_{i-1}-\gamma_{i-2})+(\gamma_{i-2}-\gamma_{i-3})+\cdots+(\gamma_{1}-\gamma_{0})                           \\
-		             & = & \underset{j=1}{\overset{i-1}{\sum}}(\gamma_{j}-\gamma_{j-1})                                                     \\
-		             & = & \underset{\underset{c_{j}=m}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=d}{j\leq i-1}}
-		{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=p}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})                             \\
-		             & = & |c_{1}\cdots c_{i-1}|_m-|c_{1}\cdots c_{i-1}|_d \hspace{10pt}\blacksquare
-	\end{array}
-$\vspace{15pt}
-Un 2-chemin de Motzkin de longueur n est un mot $c = c_{1}c_{2}\cdots c_{n} \in \{m,d,b,r\}^{*}$\\ où m (resp d, b, r) est
-une montée (resp une descente, un palier bleu, un palier rouge) qui vérifie les conditions suivantes:
-\begin{itemize}
-	\item[1.] Si $c_{i}=r$, alors le niveau du $i^e$ pas est différent de zéro.
-	\item[2.] $|c|_{m}=|c|_{d}$
-	\item[3.] $\forall i \leq n$, $|c_{1}\cdots c_{i}|_{m}\geq |c_{1}\cdots c_{i}|_{d}$
-\end{itemize} \newpage
-On note par $\Gamma_{n}$ l'ensemble de 2-chemins de Motzkin de longueur n et on note par $\Gamma_{n, 2}^{i}$ l'ensemble des
-2-chemins qui ne sont pas nécessairement de Motzkin allant de (0, 0) vers (n,i) et qui vérifient les conditions 1. et 3.
-précèdentes.
-Un chemin de Fine de longueur $n$ est un  2-chemin de Motzkin de longueur $n$ et sans palier bleu de niveau 0. Le nombre de
-Fine $F_{n}$ est le nombre de tous les chemins de Fine de longueur $n$. On note par $\mathcal{F}_{n}$ un tel ensemble de cardinal $F_{n}$
-\\
+% \begin{proposition} \label{levelOfPath}
+% 	Pour tout $\forall i \geq 3, |c_{1} \cdots c_{i-1}|_{m} - |c_{1} \cdots c_{i-1}|_{d} = \gamma_{i-1}$
+% \end{proposition}
+% \underline{\textit{Démonstration}}: On a \\
+% \vspace{5pt}
+% $
+% 	\begin{array}{c c l}
+% 		\gamma_{i-1} & = & (\gamma_{i-1}-\gamma_{i-2})+(\gamma_{i-2}-\gamma_{i-3})+\cdots+(\gamma_{1}-\gamma_{0})                           \\
+% 		             & = & \underset{j=1}{\overset{i-1}{\sum}}(\gamma_{j}-\gamma_{j-1})                                                     \\
+% 		             & = & \underset{\underset{c_{j}=m}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=d}{j\leq i-1}}
+% 		{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=p}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})                             \\
+% 		             & = & |c_{1}\cdots c_{i-1}|_m-|c_{1}\cdots c_{i-1}|_d \hspace{10pt}\blacksquare
+% 	\end{array}
+% $\vspace{15pt}
+% Un 2-chemin de Motzkin de longueur n est un mot $c = c_{1}c_{2}\cdots c_{n} \in \{m,d,b,r\}^{*}$\\ où m (resp d, b, r) est
+% une montée (resp une descente, un palier bleu, un palier rouge) qui vérifie les conditions suivantes:
+% \begin{itemize}
+% 	\item[1.] Si $c_{i}=r$, alors le niveau du $i^e$ pas est différent de zéro.
+% 	\item[2.] $|c|_{m}=|c|_{d}$
+% 	\item[3.] $\forall i \leq n$, $|c_{1}\cdots c_{i}|_{m}\geq |c_{1}\cdots c_{i}|_{d}$
+% \end{itemize}
+% On note par $\Gamma_{n}$ l'ensemble de 2-chemins de Motzkin de longueur n et on note par $\Gamma_{n, 2}^{i}$ l'ensemble des
+% 2-chemins qui ne sont pas nécessairement de Motzkin allant de (0, 0) vers (n,i) et qui vérifient les conditions 1. et 3.
+% précèdentes.
+% Un chemin de Fine de longueur $n$ est un  2-chemin de Motzkin de longueur $n$ et sans palier bleu de niveau 0. Le nombre de
+% Fine $F_{n}$ est le nombre de tous les chemins de Fine de longueur $n$. On note par $\mathcal{F}_{n}$ un tel ensemble de cardinal $F_{n}$
+% \\
 
-Ce mémoire est organisé comme suit: dans la première partie, nous allons faire des rappels sur les fractions continues et de
-trouver des relations de récurrences entre les nombres de Fine et les nombres de Catalan. Et dans la deuxième partie, nous
-allons trouver la relation entre les triangles de Catalan défini dans \cite{Desantis} et les nombres de Fine.
+% Ce mémoire est organisé comme suit: dans la première partie, nous allons faire des rappels sur les fractions continues et de
+% trouver des relations de récurrences entre les nombres de Fine et les nombres de Catalan. Et dans la deuxième partie, nous
+% allons trouver la relation entre les triangles de Catalan défini dans \cite{Desantis} et les nombres de Fine.
 
 
 
