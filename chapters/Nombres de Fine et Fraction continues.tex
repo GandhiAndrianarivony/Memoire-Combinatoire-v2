@@ -1,6 +1,74 @@
-\chapter{Nombres de Fine et Fractions continues}
-Dans ce chapitre, nous allons trouver des relations entre $C_{n}$ et $F_{n}$ en utilisant le
-concept des fractions continues.
+\chapter{Les chemins de Fine}
+% Dans ce chapitre, nous allons trouver des relations entre $C_{n}$ et $F_{n}$ en utilisant le
+% concept des fractions continues.
+\section{Chemins de Motzkin}
+
+\begin{definition}
+	\begin{rm}
+		Un chemin est une suite de points $(A_{i})_{0 \leq i \leq n}$ dans $\mathbb{N}\times \mathbb{N}$ tel que, pour tout $i$, si $
+			(a_{i}, b_{i})$ sont les coordonnées de $A_{i}$, alors pour tout $i<n$, $a_{i+1} - a_{i}=1$ et $|b_{i+1} - b_{i}| \leq 1$.
+	\end{rm}
+\end{definition}
+Dans la suite, on notera par $\Gamma_{n,1}^{i}$ l'ensemble des chemins de $A_{0} = (0,0)$ vers $A_{n} = (n,i)$ en $n$ pas.
+
+\begin{property}
+	Soit $c \in \Gamma_{n,1}^{i}$ avec $c=(A_{0},A_{1}, \cdots, A_{n})$ où $A_{i}=(a_{i}, b_{i})$.\\
+	On a $b_{0}=0$, $b_{n}=i$ et pour tout $k \in \{0, 1, \cdots, n\}$, $A_{k} = (k, b_{k})$.
+\end{property}
+
+\begin{definition} \label{path_char}
+	\begin{rm}
+		Soit $c \in \Gamma_{n,1}^{i}$. On dit que le $k$-ième pas de $c$ est:
+		\begin{itemize}
+			\item[$\bullet$] un palier, que l'on note par la lettre $p$, si $b_{k}- b_{k-1} = 0$.
+			\item[$\bullet$] une montée, que l'on note par la lettre $m$, si $b_{k}- b_{k-1} = 1$.
+			\item[$\bullet$] une descente, que l'on note par la lettre $d$, si $b_{k}- b_{k-1} = -1$.
+		\end{itemize}
+	\end{rm}
+\end{definition}
+Tout chemin $c \in \Gamma_{n,1}^{i}$ est entièrement détérminé par $b_{0}, b_{1}, \cdots, b_{n}$.
+En conséquence, nous adoptons la notation suivante pour un chemin donné:
+$c = c_{1}c_{2}\cdots c_{n}$, où $c_{k} \in \{p, m, d\}$ représente la $k$-ième pas de $c$ de niveau $b_{k-1}$. La longueur du chemin, notée $|c|$, correspond au nombre total de pas. On désigne par $|x|_{u}$ le nombre de lettre dans le mot $x$ égal à $u$. Nous notons également l'ensemble $\{1, 2, \ldots, n\}$ par $[n]$ tout au long du document.
+
+\begin{definition}
+	\begin{rm}
+		Les chemins de Motzkin sont les éléments de l'ensemble $\Gamma_{n,1}^{0}$ qui vérifient, pour tout $c \in \Gamma_{n,1}^{0}$:
+		\begin{itemize}
+			\item[$(i)$] $\forall i \in [n]$, $|c_{1}c_{2}\cdots c_{i}|_{m} \geq |c_{1}c_{2}\cdots c_{i}|_{d} $
+			\item[$(ii)$] $|c_{1}c_{2}\cdots c_{n}|_{m} = |c_{1}c_{2}\cdots c_{n}|_{d} $
+		\end{itemize}
+	\end{rm}
+\end{definition}
+On note par $\gamma_{k-1}$ le niveau du $k$-ième pas d'un chemin de Motzkin $c$. On a $\gamma_{0} = 0$.
+\newpage
+\begin{proposition} \label{levelOfPath}
+	Soit $c \in \Gamma_{n,1}^{0}$. Pour tout $i \geq 2$, on a $|c_{1} \cdots c_{i-1}|_{m} - |c_{1} \cdots c_{i-1}|_{d} = \gamma_{i-1}$
+\end{proposition}
+Preuve: On a \\
+$$
+	\begin{array}{c c l}
+		\gamma_{i-1} & = & (\gamma_{i-1}-\gamma_{i-2})+(\gamma_{i-2}-\gamma_{i-3})+\cdots+(\gamma_{1}-\gamma_{0})                           \\
+		             & = & \underset{j=1}{\overset{i-1}{\sum}}(\gamma_{j}-\gamma_{j-1})                                                     \\
+		             & = & \underset{\underset{c_{j}=m}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=d}{j\leq i-1}}
+		{\sum}(\gamma_{j}-\gamma_{j-1})+\underset{\underset{c_{j}=p}{j\leq i-1}}{\sum}(\gamma_{j}-\gamma_{j-1})                             \\
+		             & = & |c_{1}\cdots c_{i-1}|_m-|c_{1}\cdots c_{i-1}|_d \hspace{10pt}\blacksquare
+	\end{array}
+$$
+\vspace{5pt}
+\begin{definition}
+	\begin{rm}
+		Un 2-chemin de Motzkin est un chemin de Motzkin caractérisé par deux types de paliers : le palier rouge, noté $r$, et le palier bleu, noté $b$. De plus, un chemin $c = c_{1}c_{2}\cdots c_{n}$, avec $c_{k} \in \{m, d, r, b\}$, est considéré comme un 2-chemin de Motzkin s'il ne comporte aucun palier rouge de niveau zéro.
+	\end{rm}
+\end{definition}
+
+Dans la suite, l'ensemble des 2-chemin de Motzkin en $n$ pas sera noté par $\Gamma_{n}$.
+\vspace{5pt}
+\begin{definition}
+	\begin{rm}
+		Un chemin de Fine est un 2-chemin de Motzkin sans palier bleu de niveau zéro. On note par $\mathcal{F}_{n}$ l'ensemble des chemin de Fine en $n$ pas.
+	\end{rm}
+\end{definition}
+
 \section{Nombres de Catalan}
 \begin{definition}
 	\begin{rm}
