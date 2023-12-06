@@ -147,17 +147,25 @@ D'où le résultat sera obtenu en utilisant la \Cref{j-frac}. \hspace{10pt} $\bl
 		Un 2-chemin de Motzkin valué est un couple (c,p) où $c = c_{1}c_{2}\cdots c_{n}$\\ et $p = p_{1}p_{2}\cdots p_{n}$
 		vérifient les conditions suivantes:
 		\begin{itemize}
-			\item[1.] $c \in \Gamma_{n}$
-			\item[2.] p est le poids associé à c
-			\item[3.] $0\leq p_{i}\leq \gamma_{i-1}$, si $c_{i}=m\text{ ou }c_{i}=b$
-			\item[4.]  $0\leq p_{i}\leq \gamma_{i-1} - 1$, si  $c_{i}=d\text{ ou }c_{i}=r$
+			\item[$(i)$] $c \in \Gamma_{n}$
+			\item[$(ii)$.] p est le poids associé à c
+			\item[$(iii)$.] $0\leq p_{i}\leq \gamma_{i-1}$, si $c_{i}=m\text{ ou }c_{i}=b$
+			\item[$(iv)$.]  $0\leq p_{i}\leq \gamma_{i-1} - 1$, si  $c_{i}=d\text{ ou }c_{i}=r$
 		\end{itemize}
 	\end{rm}
 \end{definition}
-Dans la suite, nous adopterons la notation du cours de combinatoire en S10 pour désigner l'ensemble des 2-chemins de Motzkin valués en $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement.
-Soit $c \in \Gamma_{n, 2}^{i}$ et $j \in [n]$. Si $c_{j} = m$ (resp d, b, r), alors on affecte le poids $m_{\gamma_{j-1}}$ (resp
-$d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$, $r_{\gamma_{j-1}}$) au $j^e$-pas où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$,
-$b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
+Dans la suite, nous adopterons la notation du cours de combinatoire en S10 pour désigner l'ensemble des 2-chemins de Motzkin valués ayant $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement. Les chemins, allant de $A_{0}=(0, 0)$ vers $A_{n}=(n, i)$, qui ont deux types de palier (à savoir rouge et bleu) sera noté par $\Gamma_{n, 2}^{i}$. \\
+Soit $c \in \Gamma_{n, 2}^{i}$. Nous attribuons à chaque pas de $c$ un poids selon les conditions suivante:
+\begin{itemize}
+	\item [$(i)$] si le $j$-ième pas est une montée (i.e $c_{j}=m$), alors on affecte le poids $m_{\gamma_{j-1}}$
+	\item [($ii$)] si le $j$-ième pas est une descente (i.e $c_{j}=d$), alors on affecte le poids $d_{\gamma_{j-1}}$
+	\item [($iii$)]  si le $j$-ième pas est un palier bleu (i.e $c_{j}=b$), alors on affecte le poids $b_{\gamma_{j-1}}$
+	\item [($iv$)]  si le $j$-ième pas est un palier rouge (i.e $c_{j}=r$), alors on affecte le poids $r_{\gamma_{j-1}}$
+\end{itemize}
+où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
+% Si $c_{j} = m$ (resp d, b, r), alors on affecte le poids $m_{\gamma_{j-1}}$ (resp
+% $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$, $r_{\gamma_{j-1}}$) au $j^e$-pas où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$,
+% $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
 Dans toute la suite, on pose $H_{i,n} = \underset{c\in \Gamma_{n,2}^{i}}{\sum}w(c)$ où $w(c) = \underset{c_{j}=m}{\prod}
 	m_{\gamma_{j-1}}\text{ } \underset{c_{j}=d}{\prod}d_{\gamma_{j-1}}\text{ }\underset{c_{j}=b}{\prod}
 	b_{\gamma_{j-1}}\text{ }\underset{c_{j}=r}{\prod}r_{\gamma_{j-1}}$.\\
@@ -178,7 +186,7 @@ Preuve:
 Soit $c \in \Gamma_{n,2}^{i}$. Il est clair que si $i\geq 1$ et $n=0$ alors $w(c)=0$ ou encore $H_{i, 0}=0$. \\
 % Pour tout $i \geq 1$, l'ensemble $\Gamma_{0,2}^{i}=\emptyset$. On en déduit que $w(c)=0$. D'où $H_{i, 0} = 0$.
 De plus, comme $\Gamma_{n, 2}^{0}=\Gamma_{n}$ alors, on a $c_{n}\neq r$ et $c_{n}\neq m$.\vspace{5pt}\\
-D'où
+Et
 \[
 	\begin{array}{l l l}
 		H_{0, n} & =       & \underset{\underset{c_{n}=b}{c\in \Gamma_{n,2}^{0}}}{\sum}w(c)
@@ -193,8 +201,7 @@ D'où
 		         & \text{} &                                                                        \\
 		         & =       & b_{0}H_{0,n-1}+d_{1}H_{1,n-1}
 	\end{array}
-\]\\Ensuite, on en déduit de la
-définition de $\Gamma_{n,2}^{i}$ que si $i>n$ alors $\Gamma_{n,2}^{i}$ serait vide car on n'atteint jamais le coordonné $(n,i)$ en $n$ pas. Cela implique que pour tout $c \in \Gamma_{n,2}^{i}$, $H_{i,n}=0$ si $i>n$.\vspace{10pt}\\ Enfin, soit $c \in \Gamma_{n,2}^{i}$ tel que $1\leq i\leq n$.\\
+\]\\D'autre part, si $i>n$, alors $\Gamma_{n,2}^{i}$ est vide car on n'atteint jamais le niveau $i$ en $n$ pas pour tout les chemins de $\Gamma_{n,2}^{i}$. Cela implique que $\forall c \in \Gamma_{n,2}^{i}$, $H_{i,n}=0$ si $i>n$.\vspace{10pt}\\ Enfin, soit $i \in [n]$ et $c \in \Gamma_{n,2}^{i}$, \\
 On a:
 $$
 	\gamma_{n-1} = \begin{cases}
@@ -204,7 +211,8 @@ $$
 	\end{cases}
 $$\\
 On note $c^{(1)}$ le chemin obtenu à partir de $c$ en
-supprimant sa dernière lettre. \\On déduit alors la relation suivante:
+supprimant sa dernière lettre. \\
+On obtient alors la relation suivante:
 $$
 	w(c) = \begin{cases}
 		w(c^{(1)})m_{i-1} & \text{ si }c_{n}=m \\
@@ -224,64 +232,65 @@ Par conséquent,
 		\underset{\scriptstyle \underset{c_{n}=d}{c\in \Gamma_{n,2}^{i}}}{\sum}w(c)                                  \\
 		        & \text{} &                                                                                          \\
 		        & =       & m_{i-1}\underset{c^{(1)}\in \Gamma_{n-1,2}^{i-1}}{\sum}w(c^{(1)})+b_{i}\underset{c^{(1)}
-			\in \Gamma_{n-1,2}^{i}}{\sum}w(c^{(1)})+r_{i}\underset{c^{(1)}\in \Gamma_{n-1,2}^{i}}{\sum}
-		w(c^{(1)})+d_{i+1}\underset{c^{(1)} \in \Gamma_{n-1,2}^{i+1}}{\sum}w(c^{(1)})                                \\
-		        & \text{} &                                                                                          \\
+			\in \Gamma_{n-1,2}^{i}}{\sum}w(c^{(1)})                              \\
+				& \text{} & \\
+		        & \text{} & +r_{i}\underset{c^{(1)}\in \Gamma_{n-1,2}^{i}}{\sum}w(c^{(1)})+d_{i+1}\underset{c^{(1)} \in \Gamma_{n-1,2}^{i+1}}{\sum}w(c^{(1)})                                                                                            \\
+				& \text{} &\\
 		        & =       & m_{i-1}H_{i-1,n-1}+(b_{i}+r_{i})H_{i,n-1}+d_{i+1}H_{i+1,n-1}\hspace{5pt}
 	\end{array}
 \]D'où le résultat $\blacksquare$\vspace{15pt}\\
-Dans toute la suite, on pose $H_{i}(t) = \underset{n\geq 0}{\sum}H_{i, n}t^{n}$.
+Dans toute la suite, on pose $H_{i}(z) = \underset{n\geq 0}{\sum}H_{i, n}z^{n}$ ($i\geq 0$).
 \begin{proposition}\label{H-frac} On a:
 	\[
 		\begin{array}{r c l}
-			H_{0}(t)=\cfrac{1}{1-b_{0}t-\cfrac{m_{0}d_{1}t^2}{1-(b_{1}+r_{1})t-\cfrac{m_{1}d_{2}t^2}
-			{1-(b_{2}+r_{2})t-\cfrac{m_{2}d_{3}t^2}{\ddots}}}}
+			H_{0}(z)=\cfrac{1}{1-b_{0}z-\cfrac{m_{0}d_{1}z^2}{1-(b_{1}+r_{1})z-\cfrac{m_{1}d_{2}z^2}
+			{1-(b_{2}+r_{2})z-\cfrac{m_{2}d_{3}z^2}{\ddots}}}}
 		\end{array}
 	\]
 \end{proposition}
 Preuve:
-En utilisant la \Cref{weight-tab}, on a
+D'après la \Cref{weight-tab}, on a
 $$
 	\begin{array}{r c l}
-		H_{0}(t) & =       & 1+\underset{n\geq1}{\sum}H_{0,n}t^n                                                 \\
+		H_{0}(z) & =       & 1+\underset{n\geq1}{\sum}H_{0,n}z^n                                                 \\
 		         & \text{}                                                                                       \\
-		         & =       & 1+b_{0}\underset{n\geq1}{\sum}H_{0,n-1}t^n+d_{1}\underset{n\geq1}{\sum}H_{1,n-1}t^n \\
+		         & =       & 1+b_{0}\underset{n\geq1}{\sum}H_{0,n-1}z^n+d_{1}\underset{n\geq1}{\sum}H_{1,n-1}z^n \\
 		         & \text{}                                                                                       \\
-		         & =       & 1+b_{0}tH_{0}(t)+d_{1}tH_{1}(t)                                                     \\
+		         & =       & 1+b_{0}zH_{0}(z)+d_{1}zH_{1}(z)                                                     \\
 		         & \text{}                                                                                       \\
-		         & =       & \cfrac{1}{1-b_{0}t-d_{1}t\cfrac{H_{1}(t)}{H_{0}(t)}}
+		         & =       & \cfrac{1}{1-b_{0}z-d_{1}z\cfrac{H_{1}(z)}{H_{0}(z)}}
 	\end{array}
 $$
-De plus, pour tout $i\geq1$,
+D'autre part, pour tout $i\geq1$,
 \[
 	\begin{array}{r c l}
-		H_{i}(t) & =       & \underset{n\geq0}{\sum}H_{i,n}t^n                                                                     \\
+		H_{i}(z) & =       & \underset{n\geq0}{\sum}H_{i,n}z^n                                                                     \\
 		         & \text{} &                                                                                                       \\
-		         & =       & \underset{n\geq1}{\sum}H_{i,n}t^n                                                                     \\
+		         & =       & \underset{n\geq1}{\sum}H_{i,n}z^n                                                                     \\
 		         & \text{} &                                                                                                       \\
-		         & =       & \underset{n\geq1}{\sum}m_{i-1}H_{i-1,n-1}t^n+(b_{i}+r_{i})\underset{n\geq1}{\sum}H_{i,n-1}t^n+d_{i+1}
-		\underset{n\geq}{\sum}H_{i+1,n-1}t^n                                                                                       \\
+		         & =       & \underset{n\geq1}{\sum}m_{i-1}H_{i-1,n-1}z^n+(b_{i}+r_{i})\underset{n\geq1}{\sum}H_{i,n-1}z^n+d_{i+1}
+		\underset{n\geq}{\sum}H_{i+1,n-1}z^n                                                                                       \\
 		         & \text{} &                                                                                                       \\
-		         & =       & m_{i-1}tH_{i-1}(t)+(b_{i}+r_{i})tH_{i}(t)+d_{i+1}H_{i+1}(t)
+		         & =       & m_{i-1}zH_{i-1}(z)+(b_{i}+r_{i})zH_{i}(z)+d_{i+1}H_{i+1}(z)
 	\end{array}
 \]
 Cela implique que :\\
 \[
-	\cfrac{H_{i}(t)}{H_{i-1}(t)}=\cfrac{m_{i-1}t}{1-(b_{i}+r_{i})t-d_{i+1}t\cfrac{H_{i+1}(t)}{H_{i}(t)}}
+	\cfrac{H_{i}(z)}{H_{i-1}(z)}=\cfrac{m_{i-1}z}{1-(b_{i}+r_{i})z-d_{i+1}z\cfrac{H_{i+1}(z)}{H_{i}(z)}}
 \]
 Par conséquent:
 \[
 	\begin{array}{r c l}
-		H_{0}(t) & =       & \cfrac{1}{1-b_{0}t-d_{1}t\cfrac{m_{0}t}{1-(b_{1}+r_{1})t-d_{2}t\cfrac{H_{2}(t)}{H_{1}(t)}}}                   \\
+		H_{0}(z) & =       & \cfrac{1}{1-b_{0}z-d_{1}z\cfrac{m_{0}z}{1-(b_{1}+r_{1})z-d_{2}z\cfrac{H_{2}(z)}{H_{1}(z)}}}                   \\
 		         & \text{} &                                                                                                               \\
-		         & =       & \cfrac{1}{1-b_{0}t-\cfrac{m_{0}d_{1}t^2}{1-(b_{1}+r_{1})t-\cfrac{m_{1}d_{2}t^2}{1-(b_{2}+r_{2})t-\cfrac{m_{2}
-			d_{3}t^2}{\ddots}}}}
+		         & =       & \cfrac{1}{1-b_{0}z-\cfrac{m_{0}d_{1}z^2}{1-(b_{1}+r_{1})z-\cfrac{m_{1}d_{2}z^2}{1-(b_{2}+r_{2})z-\cfrac{m_{2}
+			d_{3}z^2}{\ddots}}}}
 	\end{array}
 \]
 D'où le résultat. \hspace{5pt}$\blacksquare$
 
 \begin{corollaire} \label{H0(t)}
-	On a $H_{0}(t) = 1 + \underset{n\geq 1}{\sum}t^{n}\text{ }\underset{c\in \Gamma_{n}}{\sum} w(c)$
+	On a $H_{0}(z) = 1 + \underset{n\geq 1}{\sum}z^{n}\text{ }\underset{c\in \Gamma_{n}}{\sum} w(c)$
 \end{corollaire}
 Preuve: Le résultat se déduit du fait que  $H_{0,n} = \underset{c\in \Gamma_{n,2}^{0}}{\sum}w(c) = \underset{c\in \Gamma_{n}}{\sum}w(c)$
 
@@ -293,9 +302,9 @@ Comme $|\Gamma_{n}| = \underset{c\in \Gamma_{n}}{\sum}1 $, alors on en déduit
 $m_{\gamma_{i-1}}=d_{\gamma_{i-1}}=r_{\gamma_{i-1}}=b_{\gamma_{i-1}}=1$. Ainsi, en
 utilisant la \Cref{H-frac} et le \Cref{H0(t)}, on obtient:\\
 $
-	1+\underset{n \geq 1}{\sum}|\Gamma_{n}|t^n = 1 + \underset{n \geq 1}{\sum}t^n \left(
-	\underset{c\in \Gamma_{n}}{\sum}1  \right) = \cfrac{1}{1-t-\cfrac{t^2}{1-2t-
-			\cfrac{t^2}{\ddots}}}
+	1+\underset{n \geq 1}{\sum}|\Gamma_{n}|z^n = 1 + \underset{n \geq 1}{\sum}z^n \left(
+	\underset{c\in \Gamma_{n}}{\sum}1  \right) = \cfrac{1}{1-z-\cfrac{z^2}{1-2z-
+			\cfrac{z^2}{\ddots}}}
 $
 
 \begin{corollaire}
