@@ -453,13 +453,12 @@ Si $c_{i}=d$ ou $c_{i}=b$, alors on a \text{}\vspace{5pt}\\
 		                             & \geq & | c_{1}\cdots c_{i} |_{d} =| p_{1}\cdots p_{2i-1}p_{2i} |_{d} > | p_{1}\cdots p_{2i-1} |_{d} \\
 	\end{array}
 \]
-Par conséquent, pour tout $j\leq 2n$, $|p_{1} \cdots p_{j}|_{m}\geq |p_{1} \cdots p_{j}|_{d}$. Ainsi, $p\in \text{Dyck}(n)$
-\vspace{20pt}\\
-D'autre part, soit $j$ tel que $p_{j}=m \text{ et } \gamma_{j-1}=0$. Nécéssairement, $j$ est impair i.e il existe $i\leq n$ tel que $j=2i-1$. Cela implique que $|p_{1} \cdots p_{2i-2}|_{m} = |p_{1} \cdots p_{2i-2}|_{d}$ ou encore $|
+Par conséquent, pour tout $j\leq 2n$, $|p_{1} \cdots p_{j}|_{m}\geq |p_{1} \cdots p_{j}|_{d}$. Ainsi, $p\in \text{Dyck}(n)$\\
+De plus, s'il existe $j$  tel que $p_{j}=m \text{ et } \gamma_{j-1}=0$, nécéssairement ce $j$ est impair i.e il existe $i\leq n$ tel que $j=2i-1$. Cela implique que $|p_{1} \cdots p_{2i-2}|_{m} = |p_{1} \cdots p_{2i-2}|_{d}$ ou encore $|
 	c_{1} \cdots c_{i-1}|_{m} = |c_{1} \cdots c_{i-1}|_{d}$. Comme $c$ est un élément $
 	\mathcal{F}_{n}$, alors $c_{i}$ ne peut pas être égal à $d$, $r$ ou $b$. D'où, $c_{i}=m$
 ou encore, $p_{2i}=p_{j+1}=m$. Ainsi $p\in \overline{\text{Dyck}}(n) $. Ce qui prouve que $\theta$ est bien définie.\vspace{15pt}\\
-Montrons qu'elle est bijective. Soit $p\in \overline{\text{Dyck}}(n) $ et c son antécédent par $\theta$	(s'il existe).\\ On note que $\#\{i; p_{2i-1}p_{2i}=mm\} = \#\{i; p_{2i-1}p_{2i}=dd\}$. Cela implique que $|c|_{m} = |c|_{d}$.\\
+Réciproquement; soit $p\in \overline{\text{Dyck}}(n) $ et c son antécédent par $\theta$	(s'il existe).\\ On note que $\#\{i; p_{2i-1}p_{2i}=mm\} = \#\{i; p_{2i-1}p_{2i}=dd\}$. Cela implique que $|c|_{m} = |c|_{d}$.\\
 Fixons $j\in [n]$ et montrons que $| c_{1}\cdots c_{j} |_{m}\geq | c_{1}\cdots c_{j} |_{d}$. On a \vspace{5pt}
 \[
 	| c_{1}\cdots c_{j} |_{m} = |  p_{1}\cdots p_{2j-1}p_{2j} |_{m} \geq | p_{1}\cdots p_{2j-1}p_{2j} |_{d} = | c_{1}\cdots c_{j} |_{d}
@@ -469,19 +468,43 @@ Fixons $j\in [n]$ et montrons que $| c_{1}\cdots c_{j} |_{m}\geq | c_{1}\cdots c
 % On en déduit  $\#\{i; i\leq j \text{ tel que  } p_{2i-1}p_{2i}=mm\} \geq \#\{i; i \leq j \text{ tel que } p_{2i-1}p_{2i}=dd\}$ ou encore $|c_{1}\cdots c_{j}|_{m} \geq |c_{1}\cdots c_{j}|_{d} $
 Enfin montrons que $c$ ne contient pas ni palier bleu ni palier rouge de niveau zéro. \\
 Soit $i\in [n]$. Si $c_{i}=b$ (resp $c_{i}=r$) alors on a $\gamma_{i-1}\neq 0$ parce que $p_{2i-1}p_{2i}=md$ (resp. $p_{2i-1}p_{2i}=dm$) avec le niveau du pas $p_{2i}$ différent de $1$ (resp. différent de 0).\\
-Dès lors, on a $c\in \mathcal{F}_{n}$. \hspace{10pt}$\blacksquare$
+Ainsi, $c\in \mathcal{F}_{n}$. Enfin l'application $\theta$ est bijective\hspace{10pt}$\blacksquare$
 \begin{proposition}
 	On a: $ F_{n} = \underset{i=2}{\overset{n}{\sum}}C_{i-1}F_{n-i} $
 \end{proposition}
 $\underline{\textit{Preuve}}$:\\
-Soit $i\in [n]$. On pose $\overline{\text{Dyck}}_{i}(n)$ l'ensemble des chemins $p$ élément de $\overline{\text{Dyck}}(n)$ qui vérifient les conditions suivantes:
-$|p_{1}p_{2}\cdots p_{2i}|_{m} = |p_{1}p_{2}\cdots p_{2i}|_{d} \text{ et } \forall j<2i,
-	|p_{1}p_{2}\cdots p_{j}|_{m}>|p_{1}p_{2}\cdots p_{j}|_{d}$. Nécéssairement $i\neq 1$. Soit $p \in \overline{\text{Dyck}}_{i}(n)$.
-On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$, $p_{2}\cdots p_{2i-1} \in \text{Dyck}(i-1) $ et \\ $p_{2i+1} \cdots p_{2n} \in \overline{\text{Dyck}}(n-i)$. Donc il existe une bijection de $\overline{\text{Dyck}}_{i}(n)$ sur $ \text{Dyck}(i-1) \times
-	\overline{\text{Dyck}}(n-i)$.\\
-De plus $\underset{i=2}{\overset{n}{\bigcup}}\overline{\text{Dyck}}_{i}(n) = \overline{\text{Dyck}}
-	(n)$. En
-utilisant la \Cref{bij-DyckBar}, on a le résultat. \hspace{10pt} $\blacksquare$.
+% =================================================================================================
+Soit $p \in  \overline{\text{Dyck}}(n)$ et $i \leq 2n$ le plus petit entier qui vérifie:
+$$|p_{1}p_{2}\cdots p_{2i}|_{m} = |p_{1}p_{2}\cdots p_{2i}|_{d} \text{ et } \forall j<2i, |p_{1}p_{2}\cdots p_{j}|_{m}>|p_{1}p_{2}\cdots p_{j}|_{d}$$
+Nécéssairement, $i > 1$. On note par $\overline{\text{Dyck}}_{i}(n)$ l'ensemble des éléments $\overline{\text{Dyck}}(n)$ qui vérifient les conditions précédentes. \\
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in \overline{\text{Dyck}}_{i}(n)$. On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$. Soit $p'=p'_{1}\cdots p'_{2(i-1)}$ et $p''=p''_{1} \cdots p''_{2(n-i)}$ obtenu à partir de $p$ tel que
+\begin{itemize}
+	\item $p'_{k}=p_{k+1}, (k\leq 2(i-1))$
+	\item $p''_{k}=p_{2i+k}, (k\leq 2(n-i))$
+\end{itemize}
+On a $p'\in \text{Dyck}(i-1) $ et  $p'' \in \overline{\text{Dyck}}(n-i)$. \\
+Considérons l'application $\alpha: \overline{\text{Dyck}}_{i}(n) \longrightarrow \text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i), p \mapsto (p', p'')$, défini par la transformation ci-dessus. On voit que $\alpha$ est une application bijective.\newpage
+Par conséquent,
+$$\#\underset{i=2}{\overset{n}{\bigcup}}\text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i)= \# \underset{i=2}{\overset{n}{\bigcup}}\overline{\text{Dyck}}_{i}(n) = \# \overline{\text{Dyck}}(n)$$
+D'après la \Cref{bij-DyckBar}, on a $F_{n} = \#\overline{\text{Dyck}}(n)$ et le fait que $C_{n}=\#\text{Dyck}(n)$, on obtient le résultat.
+Ci-dessous une illustration.
+\begin{figure}[h!]
+	% \centering
+	% \begin{subfigure}[b]{0.38\textwidth}
+	% 	\centering
+	% 	\includegraphics[width=1.1\textwidth]{./Images/DyckPath.jpg}
+	% 	\caption{Chemin de Dyck}
+	% \end{subfigure}
+	% \hspace{2cm}
+	\begin{subfigure}[b]{0.38\textwidth}
+		\centering
+		\includegraphics[width=2.4\textwidth]{./Images/fine-catalan.png}
+		% \caption{}
+	\end{subfigure}
+	%\caption{Nouveau chemin de Dyck}
+	% \label{fig:DyckPath}
+\end{figure}
+% =================================================================================================
 %\section{Chemins de Dyck}
 
 

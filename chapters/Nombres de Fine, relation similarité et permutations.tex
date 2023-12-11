@@ -1,29 +1,24 @@
 \chapter{Nombres de Fine, relations de similarité et permutations}
-Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x =
-	x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $. La
-permutation $st(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ est obtenu à partir de x en remplaçant
-la plus petite lettre de x par 1, la $2\textsuperscript{e}$ plus petite lettre de x par 2 et ainsi
-de suite. Donc la plus grande lettre de x par m. Soit $\pi \in S_{n}$. On dit que $\pi $ contient le
+Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x = x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $.\\ On pose $\text{st}(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ la permutation obtenue à partir de $x$ en remplaçant
+la plus petite lettre de $x$ par 1, la $2\textsuperscript{e}$ plus petite lettre de $x$ par 2 et ainsi
+de suite. Donc la plus grande lettre de $x$ par $m$. Soit $\pi \in S_{n}$. On dit que $\pi $ contient le
 motif $\alpha \in S_{m}$, s'il existe $i_{1},i_{2}, \cdots, i_{m}$ tel que $i_{1}<i_{2}< \cdots
-	<i_{m}$ et $st(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. \\
-Soit $i\in [n]$. $i$ est
-un point fixe de $\pi$ si $\pi_{i}=i$.\\Dans toute la suite, on note par  $S_{n}(\alpha)$ l'ensemble
-de toutes les permutations $\pi \in S_{n}$ qui ne contiennent pas le motif $\alpha$ et $|S_{n}(\alpha)|:= s_{n}(\alpha)$. $S_{n}^k(\alpha)$ est l'ensemble des permutations $\pi \in
-	S_{n}(\alpha)$ qui ont exactement k points fixes et $| S_{n}^{k}(\alpha) |:=s_{n}^{k}(\alpha)$.
+	<i_{m}$ et $\text{st}(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. Dans le cas contraire, on dit que $\pi$ évite le motif $\alpha$.
+Soit $i\in [n]$. On dit que, $i$ est un point fixe de $\pi$ si $\pi_{i}=i$.\\ On note par  $S_{n}(\alpha)$ l'ensemble
+de toutes les permutations $\pi \in S_{n}$ qui évitent le motif $\alpha$ et on désigne par $s_{n}(\alpha)$ son cardinal. Par suite, on note par $S_{n}^k(\alpha)$ l'ensemble des permutations $\pi \in S_{n}(\alpha)$ qui ont exactement k points fixes et son cardinal est désigné $s_{n}^{k}(\alpha)$.
 \vspace{5pt}
 
-L'objet de ce chapitre est d'étudier et de trouver la relation entre les permutations de $[n]$ sans
-le motif $\alpha \in \{132, 321\}$ et le nombre $F_{n}$. L'introduction de la notion des relations
-de similarité nous permet de trouver l'expression $s_{n}^{0}(321) = F_{n}$.
+% Ce chapitre se focalise sur la relation entre les permutations de $[n]$ évitant le motif $\alpha \in \{132, 321\}$ et le nombre $F_{n}$. L'introduction de la notion des relations
+% de similarité nous permet de trouver l'expression $s_{n}^{0}(321) = F_{n}$.
 
-\section{Relations de similarité $\mathcal{R}$}
+\section{Relations de similarité }
 %Dans toute la suite la relation $\mathcal{R}$ est définie sur l'ensemble $[n]$
 \begin{definition}
 	\begin{rm}
-		Une relation de similarité sur [n] est une relation binaire, réflexive et symétrique
-		vérifiant la propriété suivante:\\
-		$\forall x, y, z \in [n], \left((x<y\leq z \text{ et } x\mathcal{R}z) \implies
-			(x\mathcal{R}y \text{ et } y\mathcal{R}z)\right) $
+		Une relation de similarité $\mathcal{R}$ sur [n] est une relation binaire, réflexive et symétrique
+		vérifiant la propriété suivante:
+		$$\forall x, y, z \in [n], \left((x<y\leq z \text{ et } x\mathcal{R}z) \implies
+			(x\mathcal{R}y \text{ et } y\mathcal{R}z)\right) $$
 	\end{rm}
 \end{definition}
 
@@ -32,8 +27,8 @@ de similarité nous permet de trouver l'expression $s_{n}^{0}(321) = F_{n}$.
 \subsection{Points isolés}
 \begin{definition}
 	\begin{rm}
-		Soit $i \in [n]$. On dit que i est un point isolé de $\mathcal{R}$, si $\forall j \in [n], (i\mathcal{R}
-			j\implies i=j) $
+		Soit $i \in [n]$. On dit que $i$ est un point isolé de $\mathcal{R}$ si \\
+		$$\forall j \in [n], (i\mathcal{R} j\implies i=j) $$
 	\end{rm}
 \end{definition}
 \begin{definition}
@@ -42,10 +37,10 @@ de similarité nous permet de trouver l'expression $s_{n}^{0}(321) = F_{n}$.
 		isolé.
 	\end{rm}
 \end{definition}
-Dans toute la suite, on note par $ \mathcal{SR}_{n} $ l'ensemble des relations de similarité sur
-$ [n] $ et par $\mathcal{SR}_{n}(k)$ l'ensemble des relations de similarité ayant exactement $k$ points isolés.
-On pose par $Sim_{n}$ l'ensemble des n-uples $(r_{1},\cdots, r_{n})$ d'entiers tel que $\forall i\leq n,
-	0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1 \text{ si } i<n $
+% Dans toute la suite, on note par $ \text{RS}_{n} $ l'ensemble des relations de similarité sur $ [n] $ et 
+On note par $\text{RS}_{n}(k)$ l'ensemble des éléments de $\text{RS}_{n}$ ayant exactement $k$ points isolés.
+On note par $\text{Sim}_{n}$ l'ensemble des mots $r_{1} r_{2}\cdots, r_{n}$ avec les $r_{i}\in\mathbb{N}$ et tel que \\
+$\forall i\leq n, 0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1 \text{ si } i<n $
 \newpage
 
 \begin{proposition} \label{Phi_bijection} \text{ }\\
@@ -102,24 +97,24 @@ Soit $k\in [2n-1]$ tel que $\gamma_{k-1}=0$ et $p_{k+1}=d$.\\ Il existe $i_{j}\i
 D'où, $|\text{Sim}_{n}(k)| = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$. \hspace{10pt}$\blacksquare$
 
 \begin{corollaire}\label{SimNOfK} \text{ }\\
-	On a $\#\mathcal{SR}_{n}(k) = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
+	On a $\#\text{RS}_{n}(k) = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
 \end{corollaire}
 \textit{Preuve}: En utilisant le \Cref{sr_eq_sim} et la \Cref{phi_tsfm}, on a le résultat.
 
 \begin{corollaire}
-	On a:  $|\mathcal{SR}_{n}|=C_{n}$.
+	On a:  $|\text{RS}_{n}|=C_{n}$.
 \end{corollaire}
 Notons que $\overline{\text{Dyck}}(n) = \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
 
 \begin{corollaire} \label{fnToSRn0}
 	\begin{rm}
-		On a, $F_{n}=|\mathcal{SR}_{n}(0)|$
+		On a, $F_{n}=|\text{RS}_{n}(0)|$
 	\end{rm}
 \end{corollaire}
 \textit{Preuve}: En utilisant la \Cref{bij-DyckBar} et le \Cref{SimNOfK} , on obtient le résultat.
 
 
-\subsection{Relation entre $S_{n}^{k}(321)$ et $\mathcal{SR}_{n}(k)$}
+\subsection{Relation entre $S_{n}^{k}(321)$ et $\text{RS}_{n}(k)$}
 \begin{definition}
 	\begin{rm}
 		Soit $\pi$ une permutation de $[n]$. On note $D(\pi)$ l'ensemble des $i$ tels que $\pi_{n-i+1}=i$. Pour toute permutation $\sigma=x_{1}x_{2}\cdots x_{n}$, on note $r(\sigma)$ sa permutation miroir: $r(\sigma)=x_{n}\cdots x_{2}x_{1}$.\vspace{10pt}
@@ -230,7 +225,7 @@ $\iff \gamma_{2(n-j)}=0$ et $p_{2(n-j+1)}=d$
 En utilisant la \Cref{dyck_to_avoiding_321_tfsm}, on a le résultat.
 
 \begin{corollaire} \label{avoiding_321_and_SR_n}
-	$\forall n\geq 0$, $s_{n}^{k}(321)=\#\mathcal{SR}_{n}(k)$
+	$\forall n\geq 0$, $s_{n}^{k}(321)=\#\text{RS}_{n}(k)$
 \end{corollaire}
 \textit{Preuve}:
 En utilisant le \Cref{dn321ToFn} et le \Cref{SimNOfK}, on le résultat.
