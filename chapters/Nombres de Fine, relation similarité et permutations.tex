@@ -1,10 +1,10 @@
 \chapter{Nombres de Fine, relations de similarité et permutations}
-Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x = x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $.\\ On pose $\text{st}(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ la permutation obtenue à partir de $x$ en remplaçant
+Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x = x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $.\\ On pose st$(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ la permutation obtenue à partir de $x$ en remplaçant
 la plus petite lettre de $x$ par 1, la $2\textsuperscript{e}$ plus petite lettre de $x$ par 2 et ainsi
 de suite. Donc la plus grande lettre de $x$ par $m$. Soit $\pi \in S_{n}$. On dit que $\pi $ contient le
 motif $\alpha \in S_{m}$, s'il existe $i_{1},i_{2}, \cdots, i_{m}$ tel que $i_{1}<i_{2}< \cdots
-	<i_{m}$ et $\text{st}(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. Dans le cas contraire, on dit que $\pi$ évite le motif $\alpha$.
-Soit $i\in [n]$. On dit que, $i$ est un point fixe de $\pi$ si $\pi_{i}=i$.\\ On note par  $S_{n}(\alpha)$ l'ensemble
+	<i_{m}$ et st$(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. Dans le cas contraire, on dit que $\pi$ évite le motif $\alpha$.
+Soit $i\in [n]$. On dit que, $i$ est un point fixe de $\pi$ si $\pi_{i}=i$ et note fix$(\pi)$ le nombre des points fixes de $\pi$.\\ On note par  $S_{n}(\alpha)$ l'ensemble
 de toutes les permutations $\pi \in S_{n}$ qui évitent le motif $\alpha$ et on désigne par $s_{n}(\alpha)$ son cardinal. Par suite, on note par $S_{n}^k(\alpha)$ l'ensemble des permutations $\pi \in S_{n}(\alpha)$ qui ont exactement k points fixes et son cardinal est désigné $s_{n}^{k}(\alpha)$.
 \vspace{5pt}
 
@@ -38,43 +38,43 @@ de toutes les permutations $\pi \in S_{n}$ qui évitent le motif $\alpha$ et on 
 	\end{rm}
 \end{definition}
 % Dans toute la suite, on note par $ \text{RS}_{n} $ l'ensemble des relations de similarité sur $ [n] $ et 
-On note par $\text{RS}_{n}(k)$ l'ensemble des éléments de $\text{RS}_{n}$ ayant exactement $k$ points isolés.
-On note par $\text{Sim}_{n}$ l'ensemble des mots $r_{1} r_{2}\cdots, r_{n}$ avec les $r_{i}\in\mathbb{N}$ et tel que \\
-$\forall i\leq n, 0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1 \text{ si } i<n $
+On note par RS$_{n}(k)$ l'ensemble des éléments de RS$_{n}$ ayant exactement $k$ points isolés.
+On note par Sim$_{n}$ l'ensemble des mots $r=r_{1} r_{2}\cdots r_{n}$, avec les $r_{i}\in\mathbb{N}$, tel que \\
+$\forall i\leq n, 0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1$ avec la convention $r_{n+1}=0$
 \newpage
 
 \begin{proposition} \label{Phi_bijection} \text{ }\\
-	La transformation $\Phi: SR_{n} \rightarrow Sim_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ où, pour $1\leq i \leq n$ , $r_{i}$ est égal au nombre d'entiers $j$ tels que $j<i$ et $j\mathcal{R}i$, est une application bijective.\\ De plus, le nombre de points isolés de $\mathcal{R}$ est égal au nombre d'entier $i$ tels que $r_{i}=r_{i+1}=0$ où l'on convient $r_{n+1}=0$.
+	La transformation $\Phi: $RS$_{n} \rightarrow $Sim$_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ où, pour $1\leq i \leq n$ , $r_{i}$ est égal au nombre d'entiers $j$ tels que $j<i$ et $j\mathcal{R}i$, est une application bijective.\\ De plus, le nombre de points isolés de $\mathcal{R}$ est égal au nombre d'entiers $i$ \\tels que $r_{i}=r_{i+1}=0$ % où l'on convient $r_{n+1}=0$.
 \end{proposition}
-\textit{Preuve}:\\
-Soit $\mathcal{R} \in SR_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
-Si $r_{i+1}>0$, alors $i\mathcal{R}(i+1)$ d'après la définition d'une relation de similarité. De plus, si $k\in E_{i+1}(\mathcal{R})$ et $k<i$, alors $k\mathcal{R}i$, i.e $k\in E_{i}(\mathcal{R})$. Par conséquent, $r_{i+1}-1 \leq r_{i}$. Ce qui prouve que $\Phi$ est bien définie.\vspace{5pt}\\
-D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in Sim_{n}$ et $p_{k}=k-r_{k}$ pour tout $k$. On a $p_{k}\leq p_{k+1}$ si $k<n$.\\
+\textit{Preuve}:
+Soit $\mathcal{R} \in $RS$_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
+Si $r_{i+1}>0$, alors $i\mathcal{R}(i+1)$ d'après la définition d'une relation de similarité. De plus, si $k\in E_{i+1}(\mathcal{R})$ et $k<i$, alors $k\mathcal{R}i$, i.e $k\in E_{i}(\mathcal{R})$. Par conséquent, $r_{i+1}-1 \leq r_{i}$. \\Ce qui prouve que $\Phi$ est bien définie.\vspace{5pt}\\
+D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in $Sim$_{n}$ et $p_{k}=k-r_{k}$ pour tout $k$. On a $1\leq p_{k}\leq p_{k+1}$ si $k<n$.
 Soit $\mathcal{R}$ un antécédent de $r$ par $\Phi$. D'après la définition de $\mathcal{R}$, $p_{k}$ est la plus petite lettre $\leq k$ telle que $p_{k}\mathcal{R}k$. Ainsi, pour tout couple $(i, j)$ tel que $i\leq j$, on a l'équivalence $(i\mathcal{R}j \iff i \geq p_{j})$. Ce qui prouve que $\Phi$ est bijective.\vspace{10pt}\\
 Enfin, soit $1\leq i \leq n$. Si $i=n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$.\\
-Si $i<n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$ et $i$ n'est pas en relation avec $i+1$ ou encore $r_{i}=r_{i+1}=0$. $\blacksquare$
-% Dans toute la suite on pose $\overline{Sim_{n}} = \{ r\in Sim_{n}; \forall i\leq n-1,(r_{i}=0  \implies r_{i+1}\neq 0) \} $
-
+Si $i<n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$ et $i$ n'est pas en relation avec $i+1$ ou encore $r_{i}=r_{i+1}=0$. $\blacksquare$\\
+% Dans toute la suite on pose $\overline{\text{Sim}_{n}} = \{ r\in \text{Sim}_{n}; \forall i\leq n-1,(r_{i}=0  \implies r_{i+1}\neq 0) \} $
+Posons Sim$_{n}(k)=\{r \in $ Sim$_{n}; \#\{i; r_{i}=r_{i+1}=0\}=k\}$ 
 \begin{corollaire} \label{sr_eq_sim} \text{ }\\
-	On a $\# SR_{n}(k) = \#\text{Sim}_{n}(k)$ où $\text{Sim}_{n}(k)=\{r\in Sim_{n}; |\{i; r_{i}=r_{i+1}=0|=k\} \}$
+	On a $\#$\rm{RS}$_{n}(k) = \#$\rm{Sim}$_{n}(k)$
 \end{corollaire}
 
 \begin{proposition} \label{phi_tsfm} \text{ }\\
-	Soit la transformation $\varphi$ : $\text{Dyck}(n) \longrightarrow \text{Sim}_n$, $p=p_{1}p_{2}\cdots p_{2n} \longrightarrow r=r_{1}r_{2}\cdots r_{n}$ définie comme suit:\\
-	Soit $\text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Alors pour tout $1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ où $\gamma_{i-1}$ est le niveau du $i$-ième pas de p.\\
+	Soit la transformation $\varphi$ : $ $\rm{Dyck}$(n) \longrightarrow $\rm{Sim}$_n$, $p=p_{1}p_{2}\cdots p_{2n} \longrightarrow r=r_{1}r_{2}\cdots r_{n}$ définie comme suit:\\
+	Soit \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Alors pour tout $1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ où $\gamma_{i-1}$ est le niveau du $i$-ième pas de p.\\
 	Alors $\varphi$ est une application bijective.\\
-	De plus, $|\text{Sim}_{n}(k)| = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
+	De plus, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
 
 \end{proposition}
 \textit{Preuve}:\\
-Soit $p=p_{1}p_{2}\cdots p_{2n} \in \text{ Dyck(n)}$ et $\varphi(p):=r$. On note
-$\text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in $\rm{ Dyck$(n)}$ et $\varphi(p):=r$. On note
+\rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
 % et on en déduit que $\gamma_{i_{j}-1}=r_{j}\leq j-1$.\\ 
 De plus, $| p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}= (j-1)-[(i_{j}-1)-(j-1)]=2(j-1)-i_{j}+1= r_{j}$.\\
-Ainsi, $r_{j+1}=2j - i_{j+1}+1< 2j -i_{j}+1$ ou encore $r_{j+1}\leq 2j-i_{j}=r_{j}+1$.\\ D'où $r\in Sim_{n}$. Ce qui prouve $\varphi$ est bien définie.\vspace{10pt}\\
-D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in Sim_{n}$. On pose $p=p_{1}p_{2}\cdots p_{2n}$ un antécédent de $r$ par $\varphi$ et $E=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des $i$ tels que $p_{i}=m$ et $\gamma_{i_{j}-1}=2j-i_{j}-1=r_{j}$. Soit $j \in [n]$ tel que le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$. \\
+Ainsi, $r_{j+1}=2j - i_{j+1}+1< 2j -i_{j}+1$ ou encore $r_{j+1}\leq 2j-i_{j}=r_{j}+1$.\\ D'où $r\in $\rm{ Sim}$_{n}$. Ce qui prouve $\varphi$ est bien définie.\vspace{10pt}\\
+D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in $Sim$_{n}$. On pose $p=p_{1}p_{2}\cdots p_{2n}$ un antécédent de $r$ par $\varphi$ et $E=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des $i$ tels que $p_{i}=m$ et $\gamma_{i_{j}-1}=2j-i_{j}-1=r_{j}$. Soit $j \in [n]$ tel que le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$. \\
 On en déduit alors $p_{1}=m$ et $\gamma_{0}=0$.\\
-Montrons que $p \in \text{Dyck}(n)$.  Il suffit de montrer que, pour tout $1\leq k\leq 2n$, $| p_{1}\cdots p_{k} |_{m}\geq | p_{1}\cdots p_{k} |_{d}$\\
+Montrons que $p \in $\rm{Dyck}$(n)$.  Il suffit de montrer que, pour tout $1\leq k\leq 2n$, $| p_{1}\cdots p_{k} |_{m}\geq | p_{1}\cdots p_{k} |_{d}$\\
 % Montrons que $|p|_{d} = |p|_{d}$.\\
 % De plus, le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$.\\ 
 Si $k=2n$, on a $|p|_{d}=\underset{j=1}{\overset{n}{\sum}}(r_{j}-r_{j+1}+1)=r_{1}-r_{n+1}+n=n$. Par conséquent, $|p|_{m}=|p|_{d}$.\\
@@ -86,35 +86,35 @@ Supposons que $k\neq 2n$
 	      On a $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{m}=j$ et\\
 	      $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{d}\leq | p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} \cdots p_{i_{j+1}}|_{d}= \underset{p=1}{\overset{j}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j+1}+j=j-r_{j+1}\leq j$
 \end{itemize}
-On en déduit que, pour tout $k \leq 2n$, $| p_{1}p_{2}\cdots p_{k} |_{d} \leq | p_{1}p_{2}\cdots p_{k} |_{m}$.\\ Ainsi, $p\in \text{Dyck}(n)$.
+On en déduit que, pour tout $k \leq 2n$, $| p_{1}p_{2}\cdots p_{k} |_{d} \leq | p_{1}p_{2}\cdots p_{k} |_{m}$.\\ Ainsi, $p\in $\rm{Dyck}$(n)$.
 Ce qui prouve que $\varphi$ est bijective.\vspace{10pt}\\
 Soit $p=p_{1}p_{2}\cdots p_{2n} \in $ Dyck($n$) et $\varphi(p)=r$.
-Soit $k\in [2n-1]$ tel que $\gamma_{k-1}=0$ et $p_{k+1}=d$.\\ Il existe $i_{j}\in \text{Mont p}=\{i_{1}, i_{2}, \cdots, i_{n}\}$ tel que $k=i_{j}$. Donc, $\gamma_{k-1}=\gamma_{i_{j}-1}=0=r_{j}$. De plus $k$ ne peut pas être pair.
+Soit $k\in [2n-1]$ tel que $\gamma_{k-1}=0$ et $p_{k+1}=d$.\\ Il existe $i_{j}\in $\rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ tel que $k=i_{j}$. Donc, $\gamma_{k-1}=\gamma_{i_{j}-1}=0=r_{j}$. De plus $k$ ne peut pas être pair.
 \begin{itemize}
 	\item [-] Si $k=2n-1$, alors on a $k=i_{n}$. Donc $\gamma_{i_{n}-1}=0=r_{n}$ et avec la convention $r_{n+1}=0$
 	\item [-] Si $k\neq 2n-1$, on a $p_{k+2}=m$ avec $\gamma_{(k+2)-1}=0$. Cela implique que $i_{j+1} = k+2$ et on en déduit que $\gamma_{(k+2)-1}=\gamma_{i_{j+1}-1}=0=r_{j+1}$.
 \end{itemize}
-D'où, $|\text{Sim}_{n}(k)| = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$. \hspace{10pt}$\blacksquare$
+D'où, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$. \hspace{10pt}$\blacksquare$
 
 \begin{corollaire}\label{SimNOfK} \text{ }\\
-	On a $\#\text{RS}_{n}(k) = \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
+	On a $\#$\rm{RS}$_{n}(k) = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
 \end{corollaire}
 \textit{Preuve}: En utilisant le \Cref{sr_eq_sim} et la \Cref{phi_tsfm}, on a le résultat.
 
 \begin{corollaire}
-	On a:  $|\text{RS}_{n}|=C_{n}$.
+	On a:  $|$\rm{RS}$_{n}|=C_{n}$.
 \end{corollaire}
-Notons que $\overline{\text{Dyck}}(n) = \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
+Notons que $\overline{\rm{Dyck}}(n) = \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
 
 \begin{corollaire} \label{fnToSRn0}
 	\begin{rm}
-		On a, $F_{n}=|\text{RS}_{n}(0)|$
+		On a, $F_{n}=|$\rm{RS}$_{n}(0)|$
 	\end{rm}
 \end{corollaire}
 \textit{Preuve}: En utilisant la \Cref{bij-DyckBar} et le \Cref{SimNOfK} , on obtient le résultat.
 
 
-\subsection{Relation entre $S_{n}^{k}(321)$ et $\text{RS}_{n}(k)$}
+\subsection{Relation entre $S_{n}^{k}(321)$ et \rm{RS}$_{n}(k)$}
 \begin{definition}
 	\begin{rm}
 		Soit $\pi$ une permutation de $[n]$. On note $D(\pi)$ l'ensemble des $i$ tels que $\pi_{n-i+1}=i$. Pour toute permutation $\sigma=x_{1}x_{2}\cdots x_{n}$, on note $r(\sigma)$ sa permutation miroir: $r(\sigma)=x_{n}\cdots x_{2}x_{1}$.\vspace{10pt}
@@ -163,9 +163,9 @@ Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de
 
 
 \begin{proposition} \label{dyck_to_avoiding_321_tfsm}
-	Soit $\Theta$ la transformation $S_{n}(321)\longrightarrow \text{Dyck}(n)$, $\sigma \longrightarrow p$ définie par:\\
+	Soit $\Theta$ la transformation $S_{n}(321)\longrightarrow $\rm{Dyck}$(n)$, $\sigma \longrightarrow p$ définie par:\\
 	Si $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ est la ssd-décomposition de $\pi=r(\sigma)$, alors $p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$) tel que $|m_{i}| = |w_{i}|+1$ (resp. $|d_{i}| = u_{i}-u_{i+1}$) avec la convention $u_{s+1}=0$. Alors $\Theta$ est une application bijective.\\
-	De plus, $fix(\sigma)= \#\{i \in Mont\text{ p }; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}$
+	De plus, $fix(\sigma)= \#\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}$
 \end{proposition}
 
 \underline{\textit{Démonstration}}:
@@ -199,8 +199,8 @@ Passons ensuite à la preuve de $|p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cd
 	\item [-] Si $p_{k}=d$, alors il existe $l\in[s]$ tel que $p_{k}$ est une lettre de $d_{l}$.\\ On a $|p_{1}p_{2}\cdots p_{k}|_{d}\leq |m_{1}d_{1}\cdots m_{l}d_{l}|_{d}=\underset{i=1}{\overset{l}{\sum}}|d_{i}|= \underset{i=1}{\overset{l}{\sum}}(u_{i}-u_{i+1})=n-u_{l+1}$ et $|p_{1}p_{2}\cdots p_{k}|_{m}=|m_{1}d_{1}\cdots m_{l}d_{l}|_{m}$.\\
 	      On en déduit que $|p_{1}p_{2}\cdots p_{k}|_{d}\leq n-u_{l+1} \leq |m_{1}d_{1}\cdots m_{l}d_{l}|_{m} =|p_{1}p_{2}\cdots p_{k}|_{m}$ \\ou encore $|p_{1}p_{2}\cdots p_{k}|_{d} \leq|p_{1}p_{2}\cdots p_{k}|_{m}$\vspace{7pt}
 \end{itemize}
-Par conséquent, $p\in \text{ Dyck }(n)$. Ce qui prouve que $\Theta$ est bien définie.\vspace{10pt}\\
-Montrons qu'elle est bijective. Soit $p\in \text{Dyck}(n)$. On peut écrire $p$ sous la forme $p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$).\\
+Par conséquent, $p\in $\rm{ Dyck }$(n)$. Ce qui prouve que $\Theta$ est bien définie.\vspace{10pt}\\
+Montrons qu'elle est bijective. Soit $p\in $\rm{Dyck}$(n)$. On peut écrire $p$ sous la forme $p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp. $d_{i}$) est un mot formé par la seule lettre $m$ (resp. $d$).\\
 Posons $u_{i}=\underset{k=i}{\overset{s}{\sum}}|d_{k}|$ et $1\leq i \leq s$ et soit $w_{1}, w_{2}, \cdots, w_{s}$ $s$ mots tels que $|w_{i}| = |m_{i}| - 1$ $(1\leq i \leq s)$ et $w_{1}w_{2}\cdots w_{s}$ le mot décroissant formé par les lettres de $[n]\setminus \{u_1, u_{2}, \cdots, u_{s}\}$ avec $w_i = e$ si $w_i$ est vide.\\
 Il est évident que $u_s < u_{s-1}< \cdots < u_1$.\\
 D'autre part, comme $|w_{1}w_{2}\cdots w_{s}| = n-s$ alors $|w_i w_{i+1} \cdots w_{s} | = n-s - |w_{1}w_{2}\cdots w_{i-1}| = n-s - (\underset{k=1}{\overset{i-1}{\sum}} |m_{k}| - (i-1)) \leq n-s - (\underset{k=1}{\overset{i-1}{\sum}} |d_{k}| - (i-1)) =  \underset{k=i}{\overset{s}{\sum}} |d_{k}| - (s-i +1)= u_{i} - (s-i+1)$.\\
@@ -219,13 +219,13 @@ $\iff \gamma_{2(n-j)}=0$ et $p_{2(n-j+1)}=d$
 
 
 \begin{corollaire} \label{dn321ToFn}
-	On a $s_{n}^{k}(321) =  \# \{p \in \text{Dyck}(n); |\{i \in \text{Mont p}; \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\} $
+	On a $s_{n}^{k}(321) =  \# \{p \in \rm{Dyck}(n); |\{i \in \rm{Mont}(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\} $
 \end{corollaire}
 \textit{Preuve}:
 En utilisant la \Cref{dyck_to_avoiding_321_tfsm}, on a le résultat.
 
 \begin{corollaire} \label{avoiding_321_and_SR_n}
-	$\forall n\geq 0$, $s_{n}^{k}(321)=\#\text{RS}_{n}(k)$
+	$\forall n\geq 0$, $s_{n}^{k}(321)=\#$\rm{RS}$_{n}(k)$
 \end{corollaire}
 \textit{Preuve}:
 En utilisant le \Cref{dn321ToFn} et le \Cref{SimNOfK}, on le résultat.
@@ -269,9 +269,9 @@ Dans un chemin de Dyck, si on remplace chaque montée (resp. chaque descente) pa
 \end{definition}
 \newpage
 \text{}\\
-Dans toute la suite, on note par $\textit{Cat(n)}$ l'ensemble des mots de Catalan  de longueur n.
+Dans toute la suite, on note par \rm{Cat}$(n)$ l'ensemble des mots de Catalan  de longueur n.
 \begin{lemme}
-	La transformation d'un chemin de \text{Dyck} en un mot de \text{Catalan} précédente est un application bijective
+	La transformation d'un chemin de \rm{Dyck} en un mot de \rm{Catalan} précédente est un application bijective
 	% Il existe une bijection $\chi$ de $\textit{Cat(n)}$ sur $\text{Dyck}(n)$.
 \end{lemme}
 
