@@ -44,12 +44,12 @@ $\forall i\leq n, 0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1$ avec la
 \newpage
 
 \begin{proposition} \label{Phi_bijection} \text{ }\\
-	La transformation $\Phi: $RS$_{n} \rightarrow $Sim$_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ où, pour $1\leq i \leq n$ , $r_{i}$ est égal au nombre d'entiers $j$ tels que $j<i$ et $j\mathcal{R}i$, est une application bijective.\\ De plus, le nombre de points isolés de $\mathcal{R}$ est égal au nombre d'entiers $i$ \\tels que $r_{i}=r_{i+1}=0$ % où l'on convient $r_{n+1}=0$.
+	La transformation $\Phi: $\rm{RS}$_{n} \rightarrow $\rm{Sim}$_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ \textit{ où, pour }$1\leq i \leq n$ , $r_{i}$ \textit{est égal au nombre d'entiers} $j$ \textit{tels que} $j<i$ \textit{et} $j\mathcal{R}i$, \textit{est une application bijective.}\\ \textit{De plus, le nombre de points isolés de} $\mathcal{R}$ \textit{est égal au nombre d'entiers} $i$ \\\textit{tels que} $r_{i}=r_{i+1}=0$ % où l'on convient $r_{n+1}=0$.
 \end{proposition}
 \textit{Preuve}:
-Soit $\mathcal{R} \in $RS$_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
+Soit $\mathcal{R} \in $\rm{ RS}$_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
 Si $r_{i+1}>0$, alors $i\mathcal{R}(i+1)$ d'après la définition d'une relation de similarité. De plus, si $k\in E_{i+1}(\mathcal{R})$ et $k<i$, alors $k\mathcal{R}i$, i.e $k\in E_{i}(\mathcal{R})$. Par conséquent, $r_{i+1}-1 \leq r_{i}$. \\Ce qui prouve que $\Phi$ est bien définie.\vspace{5pt}\\
-D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in $Sim$_{n}$ et $p_{k}=k-r_{k}$ pour tout $k$. On a $1\leq p_{k}\leq p_{k+1}$ si $k<n$.
+D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in $\rm{ Sim}$_{n}$ et $p_{k}=k-r_{k}$ pour tout $k$. On a $1\leq p_{k}\leq p_{k+1}$ si $k<n$.
 Soit $\mathcal{R}$ un antécédent de $r$ par $\Phi$. D'après la définition de $\mathcal{R}$, $p_{k}$ est la plus petite lettre $\leq k$ telle que $p_{k}\mathcal{R}k$. Ainsi, pour tout couple $(i, j)$ tel que $i\leq j$, on a l'équivalence $(i\mathcal{R}j \iff i \geq p_{j})$. Ce qui prouve que $\Phi$ est bijective.\vspace{10pt}\\
 Enfin, soit $1\leq i \leq n$. Si $i=n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$.\\
 Si $i<n$, alors $i$ est un point isolé de $\mathcal{R}$ si et seulement si $r_{i}=0$ et $i$ n'est pas en relation avec $i+1$ ou encore $r_{i}=r_{i+1}=0$. $\blacksquare$\\
@@ -60,21 +60,27 @@ Posons Sim$_{n}(k)=\{r \in $ Sim$_{n}; \#\{i; r_{i}=r_{i+1}=0\}=k\}$
 \end{corollaire}
 
 \begin{proposition} \label{phi_tsfm} \text{ }\\
-	Soit la transformation $\varphi$ : $ $\rm{Dyck}$(n) \longrightarrow $\rm{Sim}$_n$, $p=p_{1}p_{2}\cdots p_{2n} \longrightarrow r=r_{1}r_{2}\cdots r_{n}$ définie comme suit:\\
-	Soit \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Alors pour tout $1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ où $\gamma_{i-1}$ est le niveau du $i$-ième pas de p.\\
-	Alors $\varphi$ est une application bijective.\\
-	De plus, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
+	Soit la transformation $\varphi$ : $ $\rm{Dyck}$(n) \longrightarrow $\rm{Sim}$_n$, $p=p_{1}p_{2}\cdots p_{2n} \longrightarrow r=r_{1}r_{2}\cdots r_{n}$ \textit{définie comme suit}:\\
+	\textit{Soit} \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ \textit{l'ensemble des entiers} $i$ tels que $p_{i}=m$. \textit{Alors pour tout }$1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ \textit{où} $\gamma_{i-1}$ \textit{est le niveau du} $i$\textit{-ième pas de p.}
+	\textit{Alors} $\varphi$ \textit{est une application bijective}.\\
+	\textit{De plus}, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
 
 \end{proposition}
-\textit{Preuve}:\\
-Soit $p=p_{1}p_{2}\cdots p_{2n} \in $\rm{ Dyck$(n)}$ et $\varphi(p):=r$. On note
-\rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
+\textit{Preuve}:
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in $\rm{ Dyck$(n)}$ et $\varphi(p):=r$. 
+% On note \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. 
+Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ 
+Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
 % et on en déduit que $\gamma_{i_{j}-1}=r_{j}\leq j-1$.\\ 
-De plus, $| p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}= (j-1)-[(i_{j}-1)-(j-1)]=2(j-1)-i_{j}+1= r_{j}$.\\
+De plus, $| p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}= (j-1)-[(i_{j}-1)-(j-1)]=2(j-1)-i_{j}+1$. 
+Donc $r_{j} = \gamma_{i_{j}-1} = 2(j-1)-i_{j}+1$\\
 Ainsi, $r_{j+1}=2j - i_{j+1}+1< 2j -i_{j}+1$ ou encore $r_{j+1}\leq 2j-i_{j}=r_{j}+1$.\\ D'où $r\in $\rm{ Sim}$_{n}$. Ce qui prouve $\varphi$ est bien définie.\vspace{10pt}\\
-D'autre part, soit $r=r_{1}r_{2}\cdots r_{n}\in $Sim$_{n}$. On pose $p=p_{1}p_{2}\cdots p_{2n}$ un antécédent de $r$ par $\varphi$ et $E=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des $i$ tels que $p_{i}=m$ et $\gamma_{i_{j}-1}=2j-i_{j}-1=r_{j}$. Soit $j \in [n]$ tel que le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$. \\
-On en déduit alors $p_{1}=m$ et $\gamma_{0}=0$.\\
-Montrons que $p \in $\rm{Dyck}$(n)$.  Il suffit de montrer que, pour tout $1\leq k\leq 2n$, $| p_{1}\cdots p_{k} |_{m}\geq | p_{1}\cdots p_{k} |_{d}$\\
+Réciproquement, soit $r=r_{1}r_{2}\cdots r_{n}\in $\rm{ Sim}$_{n}$ et soit $p=p_{1}p_{2}\cdots p_{2n}$ un antécédent de $r$ par $\varphi$ (s'il existe). On note par $E=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des $i$ tels que $p_{i}=m$ avec $i_{j}=2j-1-r_{j}$ et
+$\gamma_{i_{j}-1}=2j-i_{j}-1$. \\
+Par suite, soit $j \in [n]$ tel que le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est $$r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$$\\
+On en déduit alors que $p_{1}=m$ et $\gamma_{0}=0$.\\
+Enfin, montrons que $p \in $\rm{Dyck}$(n)$.\\
+Il suffit de montrer que, pour tout $1\leq k\leq 2n$, $| p_{1}\cdots p_{k} |_{m}\geq | p_{1}\cdots p_{k} |_{d}$\\
 % Montrons que $|p|_{d} = |p|_{d}$.\\
 % De plus, le nombre de descentes entre $p_{i_{j}}$ et $p_{i_{j+1}}$ est de $r_{j}-r_{j+1}+1=i_{j+1}-i_{j}-1$.\\ 
 Si $k=2n$, on a $|p|_{d}=\underset{j=1}{\overset{n}{\sum}}(r_{j}-r_{j+1}+1)=r_{1}-r_{n+1}+n=n$. Par conséquent, $|p|_{m}=|p|_{d}$.\\
@@ -83,8 +89,8 @@ Supposons que $k\neq 2n$
 \begin{itemize}
 	\item [-] Si $p_{k}=m$, alors il existe $i_{j}\in E$ tel que $k=i_{j}$. On a $| p_{1}p_{2}\cdots p_{k} |_{m}=j$ et  \\ $| p_{1}p_{2}\cdots p_{k} |_{d}= \underset{p=1}{\overset{j-1}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j}+ (j-1)=(j-1)-r_{j}<j$.
 	\item [-] Si $p_{k}=d$. Soit $i_{j}$ le plus grand entier élément de $E$ tel que $i_{j}<k$. \\
-	      On a $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{m}=j$ et\\
-	      $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{d}\leq | p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} \cdots p_{i_{j+1}}|_{d}= \underset{p=1}{\overset{j}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j+1}+j=j-r_{j+1}\leq j$
+	      On a $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{m}=j$ et $| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} |_{d}\leq | p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} \cdots p_{i_{j+1}}|_{d}$ avec
+	      $$| p_{1}p_{2}\cdots p_{i_{j}}\cdots p_{k} \cdots p_{i_{j+1}}|_{d}= \underset{p=1}{\overset{j}{\sum}}(r_{p}-r_{p+1}+1)=r_{1}-r_{j+1}+j=j-r_{j+1}\leq j$$
 \end{itemize}
 On en déduit que, pour tout $k \leq 2n$, $| p_{1}p_{2}\cdots p_{k} |_{d} \leq | p_{1}p_{2}\cdots p_{k} |_{m}$.\\ Ainsi, $p\in $\rm{Dyck}$(n)$.
 Ce qui prouve que $\varphi$ est bijective.\vspace{10pt}\\
