@@ -1,10 +1,10 @@
 \chapter{Nombres de Fine, relations de similarité et permutations}
-Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x = x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécessairement un élément de $ S_{m} $.\\ On pose st$(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ la permutation obtenue à partir de $x$ en remplaçant
+Dans toute la suite, on note par $S_{n}$ l'ensemble des permutations de [n]. Soit $m\leq n$ et $x = x_{1}x_{2}\cdots x_{m} $ une permutation qui n'est pas nécéssairement un élément de $ S_{m} $.\\ On pose st$(x) = \sigma_{1}\sigma_{2}\cdots \sigma_{m}$ la permutation obtenue à partir de $x$ en remplaçant
 la plus petite lettre de $x$ par 1, la $2\textsuperscript{e}$ plus petite lettre de $x$ par 2 et ainsi
 de suite. Donc la plus grande lettre de $x$ par $m$. Soit $\pi \in S_{n}$. On dit que $\pi $ contient le
 motif $\alpha \in S_{m}$, s'il existe $i_{1},i_{2}, \cdots, i_{m}$ tel que $i_{1}<i_{2}< \cdots
 	<i_{m}$ et st$(\pi_{i_{1}}\pi_{i_{2}}\cdots \pi_{i_{m}})=\alpha$. Dans le cas contraire, on dit que $\pi$ évite le motif $\alpha$.
-Soit $i\in [n]$. On dit que, $i$ est un point fixe de $\pi$ si $\pi_{i}=i$ et note fix$(\pi)$ le nombre des points fixes de $\pi$.\\ On note par  $S_{n}(\alpha)$ l'ensemble
+Soit $i\in [n]$. On dit que, $i$ est un point fixe de $\pi$ si $\pi_{i}=i$ et on note par Fix$(\pi)$ l'ensemble des points fixes de $\pi$ et fix$(\pi)$ son cardinal.\\ On note par  $S_{n}(\alpha)$ l'ensemble
 de toutes les permutations $\pi \in S_{n}$ qui évitent le motif $\alpha$ et on désigne par $s_{n}(\alpha)$ son cardinal. Par suite, on note par $S_{n}^k(\alpha)$ l'ensemble des permutations $\pi \in S_{n}(\alpha)$ qui ont exactement k points fixes et son cardinal est désigné $s_{n}^{k}(\alpha)$.
 \vspace{5pt}
 
@@ -64,7 +64,6 @@ Posons Sim$_{n}(k)=\{r \in $ Sim$_{n}; \#\{i; r_{i}=r_{i+1}=0\}=k\}$
 	\textit{Soit} \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ \textit{l'ensemble des entiers} $i$ tels que $p_{i}=m$. \textit{Alors pour tout }$1\leq j \leq n$, $r_{j} = \gamma_{i_{j}-1}$ \textit{où} $\gamma_{i-1}$ \textit{est le niveau du} $i$\textit{-ième pas de p.}
 	\textit{Alors} $\varphi$ \textit{est une application bijective}.\\
 	\textit{De plus}, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
-
 \end{proposition}
 \textit{Preuve}:
 Soit $p=p_{1}p_{2}\cdots p_{2n} \in $\rm{ Dyck$(n)}$ et $\varphi(p):=r$. 
@@ -105,12 +104,14 @@ D'où, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p)
 \begin{corollaire}\label{SimNOfK} \text{ }\\
 	On a $\#$\rm{RS}$_{n}(k) = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$.
 \end{corollaire}
-\textit{Preuve}: En utilisant le \Cref{sr_eq_sim} et la \Cref{phi_tsfm}, on a le résultat.
+\textit{Preuve}: On obtient le résultat  en utilisant le \Cref{sr_eq_sim} et la \Cref{phi_tsfm} $\blacksquare$.
 
 \begin{corollaire}
 	On a:  $|$\rm{RS}$_{n}|=C_{n}$.
 \end{corollaire}
-Notons que $\overline{\rm{Dyck}}(n) = \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
+Preuve: On obtient le résultat en utilisant la \Cref{Phi_bijection} et la \Cref{phi_tsfm} $\blacksquare$\\
+D'après la définition de  $\overline{\rm{Dyck}}(n)$ dans le chapitre 1,  on peut aussi écrire \\
+$\overline{\rm{Dyck}}(n) = \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=0\}$
 
 \begin{corollaire} \label{fnToSRn0}
 	\begin{rm}
@@ -123,20 +124,21 @@ Notons que $\overline{\rm{Dyck}}(n) = \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont
 \subsection{Relation entre $S_{n}^{k}(321)$ et \rm{RS}$_{n}(k)$}
 \begin{definition}
 	\begin{rm}
-		Soit $\pi$ une permutation de $[n]$. On note $D(\pi)$ l'ensemble des $i$ tels que $\pi_{n-i+1}=i$. Pour toute permutation $\sigma=x_{1}x_{2}\cdots x_{n}$, on note $r(\sigma)$ sa permutation miroir: $r(\sigma)=x_{n}\cdots x_{2}x_{1}$.\vspace{10pt}
+		Soit $\pi$ une permutation de $[n]$. On note $D(\pi)$ l'ensemble des $i$ tels que $\pi_{n-i+1}=i$. Pour toute permutation $\sigma=\sigma_{1}\sigma_{2}\cdots \sigma_{n}$, on note $r(\sigma)$ sa permutation miroir $$r(\sigma)=\sigma_{n}\cdots \sigma_{2}\sigma_{1}$$
 	\end{rm}
 \end{definition}
 
 \begin{proposition} \label{SKNBij}
 	Soit $\Sigma$ la transformation $S_{n}(321)\longrightarrow S_{n}(123)$, $\sigma \longrightarrow \pi$ définie par  $\Sigma(\sigma):= r(\sigma)$. Alors $\varphi$ est une application bijective.\\
-	De plus, $fix(\sigma)=|D(r(\sigma))|$
+	De plus, \rm{fix}$(\sigma)=|D(r(\sigma))|$
 \end{proposition}
 
 \underline{\textit{Preuve}}:
-Soit $\sigma \in S_{n}(321)$ et $\Sigma(\sigma):=\pi$. Supposons qu'il existe $i<j<k$ tels que $st(\pi_{i}\pi_{j}\pi_{k})=123$. Alors $st(\sigma_{n-k+1}\sigma_{n-j+1}\sigma_{n-i+1})=321$, qui est en contradiction avec $\sigma \in S_{n}(321)$. \\Ce qui prouve que $\Sigma$ est bien définie.\\
-Soit $\pi \in S_{n}(123)$. On pose $\sigma$ l'antécédent de $\pi$ par $\Sigma$ tel que $\sigma=r(\pi)\in S_{n}(321)$. \\
-Ainsi $\Sigma$ est bijective.\\
-De plus, soit $i\in Fix(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi $fix(\sigma)=|D(r(\sigma))|$. $\blacksquare$
+Soit $\sigma \in S_{n}(321)$ et $\Sigma(\sigma):=\pi$. On a $\pi \in S_{n}(123)$, car sinon on aura $r(\pi)=\sigma \notin S_{n}(321)$.
+% Supposons qu'il existe $i<j<k$ tels que $st(\pi_{i}\pi_{j}\pi_{k})=123$. Alors $st(\sigma_{n-k+1}\sigma_{n-j+1}\sigma_{n-i+1})=321$, qui est en contradiction avec $\sigma \in S_{n}(321)$. \\
+Ce qui prouve que $\Sigma$ est bien définie.\\
+Réciproquement, soit $\pi \in S_{n}(123)$ et $\sigma$ l'antécédent de $\pi$ par $\Sigma$ (s'il existe) tel que $\sigma=r(\pi)$. Comme $\pi \in S_{n}(123)$, alors $r(\pi) \in S_{n}(321)$. Par conséquent, $\Sigma$ est bijective.\\
+De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma)=|D(r(\sigma))|$. $\blacksquare$
 
 \begin{definition}
 	\begin{rm}
@@ -149,7 +151,7 @@ De plus, soit $i\in Fix(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi $fix(\sigma)=|D(r(
 
 \begin{definition}
 	\begin{rm}
-		Soit $\pi$ une permutation de $[n]$. On appelle ssd-décomposition de $\pi$ l'expréssion $\pi = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ où les $u_{i}$ sont les ssd de $\pi$ et les $w_{i}$ sont des sous-mots(éventuellement vide)  de $\pi$.
+		Soit $\pi$ une permutation de $[n]$. On appelle ssd-décomposition de $\pi$ l'expression $\pi = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ où les $u_{i}$ sont les ssd de $\pi$ et les $w_{i}$ sont des sous-mots(éventuellement vide)  de $\pi$.
 	\end{rm}
 \end{definition}
 \begin{lemme}
@@ -372,8 +374,8 @@ Trouvons ensuite l'expression de $A_{n}^{(2)}(x)$.\\
 On a $A_{n}^{(2)}(x) = \sum\limits_{\underset{c_{2}=2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S} + \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$.\\
 On pose $a_{n}(x)=\sum\limits_{\underset{c_{2}=2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$ et $b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{\underset{1\notin S}{S\subset D(c)}}(x-1)^{\#S}$.\\
 Donc $A_{n}^{(2)}(x)=a_{n}(x)+b_{n}(x)$.\\
-Premièrement, trouvons l'expréssion de $a_{n}(x)$. Soit $c \in E$ et $c^{(1)} = \eta(c)$. Soit $S\subset D(c)$ tel que $1\notin S$. Posons $S'$ l'ensemble obtenu à partir de $S$ en diminuant de $1$ ses éléments. Il est clair que $S'\subset D(c^{(1)})$ et pour tout $i\in S$, on a $i-1\in S'$. D'où $\#S' = \#S$ et par conséquent $$a_{n}(x) = \sum\limits_{c^{(1)}\in Cat(n-1)} \sum\limits_{S'\subset D(c^{(1)})}(x-1)^{\#S'}=A_{n-1}(x)$$
-Deuxièmement, on va trouver l'expréssion de $b_{n}(x)$. Soit $c\in Cat(n)$ tel que $c_{2}\neq 2$. Cela implique que $1\notin D(c)$ ou encore pour tout $S\subset D(c)$, on a $1\notin S$. Alors on a $$b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$\\
+Premièrement, trouvons l'expression de $a_{n}(x)$. Soit $c \in E$ et $c^{(1)} = \eta(c)$. Soit $S\subset D(c)$ tel que $1\notin S$. Posons $S'$ l'ensemble obtenu à partir de $S$ en diminuant de $1$ ses éléments. Il est clair que $S'\subset D(c^{(1)})$ et pour tout $i\in S$, on a $i-1\in S'$. D'où $\#S' = \#S$ et par conséquent $$a_{n}(x) = \sum\limits_{c^{(1)}\in Cat(n-1)} \sum\limits_{S'\subset D(c^{(1)})}(x-1)^{\#S'}=A_{n-1}(x)$$
+Deuxièmement, on va trouver l'expression de $b_{n}(x)$. Soit $c\in Cat(n)$ tel que $c_{2}\neq 2$. Cela implique que $1\notin D(c)$ ou encore pour tout $S\subset D(c)$, on a $1\notin S$. Alors on a $$b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in Cat(n)}} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$\\
 Posons $\overline{E}:=\{c\in Cat(n); c_{2}\neq 2\}$ et soit $i>1$. On note par $Cat_{i}(n)$ l'ensemble des $c\in \overline{E}$ tel que $i$ est le plus petit entier
 qui vérifie $c_{i}=i$.\\
 Il est clair que $Cat_{2}(n)=\emptyset$ et pour tout $i \neq j$, on a $Cat_{i}(n)\bigcap Cat_{j}(n)=\emptyset$\\
@@ -478,7 +480,7 @@ On pose $\sigma^{0} = \star $.
 Supposons que les lettres $k_{1},\cdots, k_{l-1} $ sont toutes placées. On va trouver la place de $k_{l}$.
 Si $c_{k_{l}} = m$, alors on place $k_{l}\star$ après le $(p_{k_{l}}+1)$-ième $\star$. Et si $c_{k_{l}}=d$, alors on
 remplace par $k_{l}$ le $(p_{k_{l}}+2)$-ième $\star$.\\
-On obtient ainsi l'expréssion $\sigma^{2p} = \star M_{1}\cdots M_{p} $ car $|Q| = |P|$. La présence d'une seule $\star$
+On obtient ainsi l'expression $\sigma^{2p} = \star M_{1}\cdots M_{p} $ car $|Q| = |P|$. La présence d'une seule $\star$
 est dû au fait que $\sigma^0 = \star$ et $|Q| = |P|$. Supposons que les éléments de P et Q sont tous placés.\\ Soit i
 tel que $c_{i}=r \text{ ou } c_{i}=b$. Si $c_{i}=r$, alors on place i dans $M_{j}$ où $M_{j}$ est le $(p_{i}+1)$-ième
 mot qui vérifie $P(M_{j}) < i < D(M_{j})$.
