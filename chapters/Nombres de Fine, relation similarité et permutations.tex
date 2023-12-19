@@ -143,25 +143,30 @@ De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma
 \begin{definition}
 	\begin{rm}
 		Soit $\sigma\in S_{n}$ et  $i\in [n]$.\\
-		On dit que $\sigma_{i}$ est un saillant supérieur gauche $(ssg)$ (resp saillant
-		supérieur droite (ssd) )  de $\sigma$ si $\forall j<i\text{, }\sigma_{j}<\sigma_{i}$
+		On dit que $\sigma_{i}$ est un saillant supérieur gauche ou un $ssg$ (resp saillant
+		supérieur droite ou un ssd)  de $\sigma$ si $\forall j<i\text{, }\sigma_{j}<\sigma_{i}$
 		(resp $\forall j>i$, $\sigma_{j}<\sigma_{i}$)
 	\end{rm}
 \end{definition}
 
 \begin{definition}
 	\begin{rm}
-		Soit $\pi$ une permutation de $[n]$. On appelle ssd-décomposition de $\pi$ l'expression $\pi = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ où les $u_{i}$ sont les ssd de $\pi$ et les $w_{i}$ sont des sous-mots(éventuellement vide)  de $\pi$.
+		Soit $\pi$ une permutation de $[n]$. On appelle ssd-décomposition de $\pi$ l'expression $\pi = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ où les $u_{i}$ sont les ssd de $\pi$ et les $w_{i}$ sont des sous-mots (éventuellement vides)  de $\pi$.
 	\end{rm}
 \end{definition}
 \begin{lemme}
-	Soit $\sigma \in S_{n}$ et $\sigma = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ sa ssd-décomposition. Alors $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant.
+	Soit $\sigma \in S_{n}$ et $\sigma = w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ sa $\rm{ssd}$-décomposition. \\
+	Alors $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant.
 \end{lemme}
-\textit{Preuve}:\\
-On a $w_{1}w_{2}\cdots w_{s}$  n'est pas décroissant\\
-ssi il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1}$ n'est pas décroissant\\
-ssi il existe $k \in [s - 1]$ tel que $w_{k} u_{k} w_{k+1} u_{k+1}$ contient le motif 123\\
-ssi $\sigma$ contient le motif 123.
+\textit{Preuve}:
+Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $|w_{k}|$ est une lettre en un mot décroissant. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
+De plus, on a
+$w_{1}w_{2}\cdots w_{s}$  n'est pas décroissant\\
+$\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1}$ n'est pas décroissant\\
+$\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1} u_{k+1}$ contient le motif 123\\
+$\iff$ $\sigma$ contient le motif 123.\\
+Par conséquent, $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant. $\blacksquare$
+
 \begin{lemme} \label{jPtFix}
 	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si et seulement si, dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$.
 \end{lemme}
