@@ -160,20 +160,31 @@ De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma
 \end{lemme}
 \textit{Preuve}:
 Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $|w_{k}|$ est une lettre en un mot décroissant. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
-De plus, on a
-$w_{1}w_{2}\cdots w_{s}$  n'est pas décroissant\\
-$\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1}$ n'est pas décroissant\\
-$\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1} u_{k+1}$ contient le motif 123\\
-$\iff$ $\sigma$ contient le motif 123.\\
+De plus, on a l'équivalence suivant:
+\[
+	\begin{array} {l l l}
+		w_{1}w_{2}\cdots w_{s} \text{ n'est pas décroissant } & \iff & \exists k \in [s - 1], w_{k} w_{k+1} 
+		\text{ n'est pas décroissant }\\
+		& \iff & \exists k \in [s - 1], w_{k} w_{k+1} u_{k+1} \text{ contient le motif } 123\\
+		& \iff & \sigma \text{ contient le motif } 123\\
+	\end{array}
+\]
+% $w_{1}w_{2}\cdots w_{s}$  n'est pas décroissant\\
+% $\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1}$ n'est pas décroissant\\
+% $\iff$ il existe $k \in [s - 1]$ tel que $w_{k} w_{k+1} u_{k+1}$ contient le motif 123\\
+% $\iff$ $\sigma$ contient le motif 123.\\
 Par conséquent, $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant. $\blacksquare$
 
 \begin{lemme} \label{jPtFix}
-	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si et seulement si, dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$.
+	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$. La réciproque n'est pas vraie.
 \end{lemme}
 \textit{Preuve}:
 Soit $\sigma = \sigma(1)\sigma(2)\cdots \sigma(n) \in S_{n}(321)$ et $1\leq j \leq n$ tel que $\sigma(j)=j$.\\
-Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de $[j-1]$, alors il existe $i<j$ et $k>j$ tel que $\sigma(i)\sigma(j)\sigma(k)$ est un motif $321$.
-
+Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de $[j-1]$, alors il existe $i<j$ et $k>j$ tel que $\sigma(i)\sigma(j)\sigma(k)$ est un motif $321$.\vspace{5pt}\\
+% Réciproquement, supposons qu'il existe une lettre $j\in [n]$ de $\sigma$, tel que toute lettre à gauche de $j$ est plus petite que $j$
+% et toute lettre à droite est plus grande que $j$. De ce fait, il existe $k\in [n]$, tel que $\sigma(k)=j$. Montrons que $k = j$\\
+% Si $k < j$, alors il n'y a pas assez de place à gauche de $j$ pour placer les lettres $1, 2, \cdots j-1$ i.e il y aura au moins une lettre plus petite que $j$ qui se trouve  à sa droite.\\
+% Si $k > j$, alors on aura au moins une lettre plus grande que $j$ qui se trouve à sa gauche.\\
 
 \begin{proposition} \label{dyck_to_avoiding_321_tfsm}
 	Soit $\Theta$ la transformation $S_{n}(321)\longrightarrow $\rm{Dyck}$(n)$, $\sigma \longrightarrow p$ définie par:\\
