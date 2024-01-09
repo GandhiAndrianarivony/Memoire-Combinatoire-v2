@@ -1,4 +1,4 @@
-\chapter{Définitions et préliminaires}
+\chapter{Préliminaires}
 % Dans ce chapitre, nous allons trouver des relations entre $C_{n}$ et $F_{n}$ en utilisant le
 % concept des fractions continues.
 \section{Chemins de Motzkin}
@@ -28,7 +28,7 @@ Dans la suite, on notera par $\Gamma_{n,1}^{i}$ l'ensemble des chemins de $A_{0}
 \end{definition}
 Tout chemin $c \in \Gamma_{n,1}^{i}$ est entièrement détérminé par $b_{0}, b_{1}, \cdots, b_{n}$.
 En conséquence, nous adoptons la notation suivante pour un chemin donné:
-$c = c_{1}c_{2}\cdots c_{n}$, où $c_{k} \in \{p, m, d\}$ représente la $k$-ième pas de $c$ de niveau $b_{k-1}$. La longueur du chemin, notée $|c|$, correspond au nombre total de pas. On désigne par $|x|_{u}$ le nombre de lettre dans le mot $x$ égal à $u$. Nous notons également l'ensemble $\{1, 2, \ldots, n\}$ par $[n]$ tout au long du document.
+$c = c_{1}c_{2}\cdots c_{n}$ où \\$c_{k} \in \{p, m, d\}$ représente la $k$-ième pas de $c$ de niveau $b_{k-1}$. La longueur du chemin, notée $|c|$, correspond au nombre total de pas. On désigne par $|x|_{u}$ le nombre de lettre dans le mot $x$ égal à $u$. Nous notons également l'ensemble $\{1, 2, \ldots, n\}$ par $[n]$ tout au long du document.
 
 \begin{definition}
 	\begin{rm}
@@ -80,27 +80,27 @@ Dans la suite, l'ensemble des 2-chemin de Motzkin en $n$ pas sera noté par $\Ga
 	\end{rm}
 \end{definition}
 
-On note $C(x)=\underset{n\geq 0}{\sum}C_{n}x^{n}$ la fonction génératrice ordinaire des nombres de Catalan
+On note $C(z)=\underset{n\geq 0}{\sum}C_{n}z^{n}$ la fonction génératrice ordinaire des nombres de Catalan
 \begin{proposition}
 	\begin{rm}
-		On a \[C(x)=\cfrac{1-
-				\sqrt{1-4x}}{2x}\]\\
+		On a \[C(z)=\cfrac{1-
+				\sqrt{1-4z}}{2z}\]\\
 	\end{rm}
 \end{proposition}
 Preuve: On a\\\[
 	\begin{array}{r r l}
-		C(x) & =       & 1+\underset{n\geq1}{\sum}C_{n}x^n = 1+ \underset{n\geq1}{\sum}x^{n}\underset{i=0}{\overset{n-1}{\sum}}C_{i}C_{n-i-1} = 1+
-		\underset{n\geq1}{\sum}x^n\underset{\underset{j+i=n-1}{0\leq i, j \leq n-1}}{\sum}C_{i}C_{j}                                               \\
+		C(z) & =       & 1+\underset{n\geq1}{\sum}C_{n}z^n = 1+ \underset{n\geq1}{\sum}z^{n}\underset{i=0}{\overset{n-1}{\sum}}C_{i}C_{n-i-1} = 1+
+		\underset{n\geq1}{\sum}z^n\underset{\underset{j+i=n-1}{0\leq i, j \leq n-1}}{\sum}C_{i}C_{j}                                               \\
 		     & \text{} &                                                                                                                           \\
-		     & =       & 1+x\underset{n\geq0}{\sum}\text{ }\underset{\underset{j+i=n}{0\leq i, j \leq n}}{\sum}(C_{i}x^i)(C_{j}x^j)
-		= 1 +x\left[\left(\sum_{i\geq0}C_{i}x^i\right)\left(\sum_{j\geq0}C_{j}x^j\right)\right]                                                    \\
+		     & =       & 1+z\underset{n\geq0}{\sum}\text{ }\underset{\underset{j+i=n}{0\leq i, j \leq n}}{\sum}(C_{i}z^i)(C_{j}z^j)
+		= 1 +z\left[\left(\sum_{i\geq0}C_{i}z^i\right)\left(\sum_{j\geq0}C_{j}z^j\right)\right]                                                    \\
 		     & \text{} &                                                                                                                           \\
-		     & =       & 1+x(C(x))^2
+		     & =       & 1+z(C(z))^2
 	\end{array}
 \]\\
-Cela implique que $C(x)$ est solution de l'équation $xt^2-t+1 = 0$. On a $C(x)=\cfrac{1-\sqrt{1-4x}}{2x}$\\ ou $C(x)=\cfrac{1+\sqrt{1-4x}}{2x}$.\\
-La limite quand $x$ tends vers $0$ de $\cfrac{1+\sqrt{1-4x}}{2x}$ (resp. $\cfrac{1-\sqrt{1-4x}}{2x}$) est infini (resp. 1) \\
-En conséquent, $C(x)=\cfrac{1-\sqrt{1-4x}}{2x}$ \hspace{5pt}$\blacksquare$
+Cela implique que $C(z)$ est solution de l'équation $zt^2-t+1 = 0$. On a $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$\\ ou $C(z)=\cfrac{1+\sqrt{1-4z}}{2z}$.\\
+La limite quand $z$ tends vers $0$ de $\cfrac{1+\sqrt{1-4z}}{2z}$ (resp. $\cfrac{1-\sqrt{1-4z}}{2z}$) est infini (resp. 1) \\
+En conséquent, $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$ \hspace{5pt}$\blacksquare$
 
 \section{Fractions continues de Stieltjes}
 \begin{definition}
@@ -168,7 +168,7 @@ où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$ et  $r_{\gam
 % $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
 Dans toute la suite, on pose $H_{i,n} = \underset{c\in \Gamma_{n,2}^{i}}{\sum}w(c)$ où $w(c) = \underset{c_{j}=m}{\prod}
 	m_{\gamma_{j-1}}\text{ } \underset{c_{j}=d}{\prod}d_{\gamma_{j-1}}\text{ }\underset{c_{j}=b}{\prod}
-	b_{\gamma_{j-1}}\text{ }\underset{c_{j}=r}{\prod}r_{\gamma_{j-1}}$.\\
+	b_{\gamma_{j-1}}\text{ }\underset{c_{j}=r}{\prod}r_{\gamma_{j-1}}$\\
 \begin{proposition} \label{weight-tab}
 	On a:
 	\[
@@ -183,7 +183,7 @@ Dans toute la suite, on pose $H_{i,n} = \underset{c\in \Gamma_{n,2}^{i}}{\sum}w(
 \end{proposition}
 
 Preuve:
-Soit $c \in \Gamma_{n,2}^{i}$. Il est clair que si $i\geq 1$ et $n=0$ alors $w(c)=0$ ou encore $H_{i, 0}=0$. \\
+Soit $c \in \Gamma_{n,2}^{i}$. Il est clair que si $i\geq 1$ et $n=0$ alors $w(c)=0$ \\ ou encore $H_{i, 0}=0$.\\
 % Pour tout $i \geq 1$, l'ensemble $\Gamma_{0,2}^{i}=\emptyset$. On en déduit que $w(c)=0$. D'où $H_{i, 0} = 0$.
 De plus, comme $\Gamma_{n, 2}^{0}=\Gamma_{n}$ alors, on a $c_{n}\neq r$ et $c_{n}\neq m$.\vspace{5pt}\\
 Et
@@ -467,7 +467,7 @@ Fixons $j\in [n]$ et montrons que $| c_{1}\cdots c_{j} |_{m}\geq | c_{1}\cdots c
 % Soit $j \in [n]$ tel que $|p_{1}\cdots p_{2j-1}p_{2j}|_{m} \geq p_{1}\cdots p_{2j-1}p_{2j}|_{d}$. \\
 % On en déduit  $\#\{i; i\leq j \text{ tel que  } p_{2i-1}p_{2i}=mm\} \geq \#\{i; i \leq j \text{ tel que } p_{2i-1}p_{2i}=dd\}$ ou encore $|c_{1}\cdots c_{j}|_{m} \geq |c_{1}\cdots c_{j}|_{d} $
 Enfin montrons que $c$ ne contient pas ni palier bleu ni palier rouge de niveau zéro. \\
-Soit $i\in [n]$. Si $c_{i}=b$ (resp $c_{i}=r$) alors on a $\gamma_{i-1}\neq 0$ parce que $p_{2i-1}p_{2i}=md$ (resp. $p_{2i-1}p_{2i}=dm$) avec le niveau du pas $p_{2i}$ différent de $1$ (resp. différent de 0).\\
+Soit $i\in [n]$. Si $c_{i}=b$ (resp $c_{i}=r$) alors on a $\gamma_{i-1}\neq 0$ car $p_{2i-1}p_{2i}=md$ \\ (resp. $p_{2i-1}p_{2i}=dm$) avec le niveau du pas $p_{2i}$ différent de $1$ (resp. différent de 0).\\
 Ainsi, $c\in \mathcal{F}_{n}$. Enfin l'application $\theta$ est bijective\hspace{10pt}$\blacksquare$
 \begin{proposition}
 	On a: $ F_{n} = \underset{i=2}{\overset{n}{\sum}}C_{i-1}F_{n-i} $
