@@ -39,12 +39,12 @@ de toutes les permutations $\pi \in S_{n}$ qui évitent le motif $\alpha$ et on 
 \end{definition}
 % Dans toute la suite, on note par $ \text{RS}_{n} $ l'ensemble des relations de similarité sur $ [n] $ et 
 On note par RS$_{n}(k)$ l'ensemble des éléments de RS$_{n}$ ayant exactement $k$ points isolés.
-On note par Sim$_{n}$ l'ensemble des mots $r=r_{1} r_{2}\cdots r_{n}$, avec les $r_{i}\in\mathbb{N}$, tel que \\
+On note par Sim$_{n}$ l'ensemble des mots $r=r_{1} r_{2}\cdots r_{n}$, avec les $r_{i}\in\mathbb{N}$, tels que \\
 $\forall i\leq n, 0\leq r_{i} \leq i-1 \text{ et }  r_{i+1}\leq r_{i}+1$ avec la convention $r_{n+1}=0$
 \newpage
 
 \begin{proposition} \label{Phi_bijection} \text{ }\\
-	La transformation $\Phi: $\rm{RS}$_{n} \rightarrow $\rm{Sim}$_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ \textit{ où, pour }$1\leq i \leq n$ , $r_{i}$ \textit{est égal au nombre d'entiers} $j$ \textit{tels que} $j<i$ \textit{et} $j\mathcal{R}i$, \textit{est une application bijective.}\\ \textit{De plus, le nombre de points isolés de} $\mathcal{R}$ \textit{est égal au nombre d'entiers} $i$ \\\textit{tels que} $r_{i}=r_{i+1}=0$ % où l'on convient $r_{n+1}=0$.
+	La transformation $\Phi: $\rm{RS}$_{n} \rightarrow $\rm{Sim}$_{n}$, $\mathcal{R} \rightarrow r = r_{1}r_{2}\cdots r_{n}$ \textit{ où, pour }$1\leq i \leq n$ , $r_{i}$ \textit{est égale au nombre d'entiers} $j$ \textit{tels que} $j<i$ \textit{et} $j\mathcal{R}i$, \textit{est une application bijective.}\\ \textit{De plus, le nombre de points isolés de} $\mathcal{R}$ \textit{est égal au nombre d'entiers} $i$ \\\textit{tels que} $r_{i}=r_{i+1}=0$ % où l'on convient $r_{n+1}=0$.
 \end{proposition}
 Preuve:
 Soit $\mathcal{R} \in $\rm{ RS}$_{n}$ et $\Phi(\mathcal{R}):= r = r_{1}r_{2}\cdots r_{n}$ . Pour tout $1\leq j \leq n$, notons $E_{j}(\mathcal{R})=\{k<j; k \mathcal{R} j \}$. On a $\# E_{j}(\mathcal{R})=r_{j}$ et $r_{j}\leq j-1$ pour tout j.\\ Soit $1\leq i < n$. Si $r_{i+1}=0$ on a toujours $r_{i+1}\leq r_{i}+1$.\\
@@ -143,7 +143,7 @@ De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma
 \begin{definition}
 	\begin{rm}
 		Soit $\sigma\in S_{n}$ et  $i\in [n]$.\\
-		On dit que $\sigma_{i}$ est un saillant supérieur gauche ou un $ssg$ (resp saillant
+		On dit que $\sigma_{i}$ est un saillant supérieur gauche ou un ssg (resp saillant
 		supérieur droite ou un ssd)  de $\sigma$ si $\forall j<i\text{, }\sigma_{j}<\sigma_{i}$
 		(resp $\forall j>i$, $\sigma_{j}<\sigma_{i}$)
 	\end{rm}
@@ -159,7 +159,7 @@ De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma
 	Alors $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant.
 \end{lemme}
 Preuve:
-Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $|w_{k}|$ est une lettre en un mot décroissant. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
+Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $w_{k}$ est une lettre en mots décroissants. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
 De plus, on a l'équivalence suivante:
 \[
 	\begin{array} {l l l}
@@ -176,7 +176,8 @@ De plus, on a l'équivalence suivante:
 Par conséquent, $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant. $\blacksquare$
 
 \begin{lemme} \label{jPtFix}
-	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$. La réciproque n'est pas vraie.
+	Soit $\sigma \in S_{n}(321)$ et $1\leq j \leq n$.\\ $j$ est un point fixe de $\sigma$ si dans la décomposition linéaire de $\sigma$, toute lettre à gauche de $j$ est plus petite que $j$ et toute lettre à droite de $j$ est plus grande que $j$. 
+	% La réciproque n'est pas vraie.
 \end{lemme}
 Preuve:
 Soit $\sigma = \sigma(1)\sigma(2)\cdots \sigma(n) \in S_{n}(321)$ et $1\leq j \leq n$ tel que $\sigma(j)=j$.\\
@@ -193,7 +194,7 @@ Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de
 % \end{proposition}
 
 \begin{proposition}  \label{dyck_to_avoiding_321_tfsm}
-	Soit $\Theta$ la transformation $S_{n}(123) \longrightarrow$ \rm{Dyck}$(n)$, $\pi \longrightarrow p$ \textit{défini par}:\\
+	Soit $\Theta$ la transformation $S_{n}(123) \longrightarrow$ \rm{Dyck}$(n)$, $\pi \longrightarrow p$ \textit{définie par}:\\
 	\textit{soit} $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ \textit{la ssd-décomposition de $\pi$ et on définit $\Theta(\pi):=p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$, resp $d_{i}$, est un mot formé par la seule lettre $m$, resp $d$, tel que $|m_{i}| = |w_{i}|+1$ et $|d_{i}| = u_{i}-u_{i+1}$ avec la convention $u_{s+1}=0$.}\\
 	\textit{Alors $\Theta$ est bijective.}\\
 	\textit{De plus, $D(\pi) = \#\{i\in$ \rm{Mont}$(p)$$;\gamma_{i-1}=0, p_{i+1}=d\}$}
@@ -245,7 +246,7 @@ D'autre part, comme $|w_{1}w_{2}\cdots w_{s}| = n-s$ alors
 \]
 avec $n-s - (\underset{k=1}{\overset{i-1}{\sum}} |d_{k}| - (i-1))=\underset{k=i}{\overset{s}{\sum}} |d_{k}| - (s-i +1)= u_{i} - (s-i+1)$.\\
 Par conséquent, $| w_{i}w_{i+1}u_{i+1}\cdots w_{s}u_{s} |\leq u_{i}-1< u_i$, et toutes les lettres du mot \\$w_{i} w_{i+1} u_{i+1} \cdots w_s u_s$ sont plus petites que $u_i$. Il s'ensuit que l'antécédent de $p$ est $\pi$ dont la ssd-décomposition est $w_1 u_1 w_2 u_2 \cdots w_s u_s$.\vspace{10pt}\\
-Enfin, soit $\pi \in S_{n}(123)$ et soit $j \in D(\pi)$. On en déduit de \Cref{SKNBij} et le \Cref{jPtFix} que toute lettre à droite de $j$ et plus petite que $j$ et toute lettre à gauche de $j$ et plus grande que $j$. Cela implique que $j$ est un ssd de $\pi$\\ ou encore 
+Enfin, soit $\pi \in S_{n}(123)$ et soit $j \in D(\pi)$. On en déduit de la \Cref{SKNBij} et \\ du \Cref{jPtFix} que toute lettre à droite de $j$ et plus petite que $j$ et toute lettre à gauche de $j$ et plus grande que $j$. Cela implique que $j$ est un ssd de $\pi$\\ ou encore 
 % Enfin, soit $1 \leq j \leq n$. D'après le \Cref{jPtFix} et par passage au miroir,\\
 % $\sigma(j) = j$,\\
 $ \exists i, u_i = j, |w_i | = 0, |w_1 u_1 w_2 u_2 \cdots w_{i-1} u_{i-1} | = n - j, |w_{i+1} u_{i+1} \cdots w_s u_s | = j - 1$\\
@@ -386,7 +387,7 @@ Considérons maintenant la fonction génératrice $A_{n}(x)= \underset{\pi \in S
 	On a $A_{n}(x)=\sum\limits_{c\in \begin{rm}Cat\end{rm}(n)}x^{\#D(c)}$ où $D(c) = \{i; c_{i}=i \text{ et } c_{i+1}=i+1\}$.\vspace{5pt}\\
 	De plus, $x^{\# D(c)} = \sum\limits_{S\subset D(c)}(x-1)^{\#S}$
 \end{proposition}
-Preuve: Soit $c\in \begin{rm}Cat\end{rm}(n)$ et $\alpha(c):=\pi \in S_{n}(321)$ où $\alpha$ est la bijection définit dans la \Cref{bijCatN}. On a fix$(\pi) = \# \{i; c_{i}=i \text{ et } c_{i+1}=i+1\}=\#D(c)$. D'où le résultat.\vspace{5pt}\\
+Preuve: Soit $c\in \begin{rm}Cat\end{rm}(n)$ et $\alpha(c):=\pi \in S_{n}(321)$ où $\alpha$ est la bijection définie dans la \Cref{bijCatN}. On a fix$(\pi) = \# \{i; c_{i}=i \text{ et } c_{i+1}=i+1\}=\#D(c)$. D'où le résultat.\vspace{5pt}\\
 D'autre part, 
 \[
 	\begin{array}{l l l}
@@ -415,7 +416,7 @@ On pose $A_{n}^{(1)}(x)=\sum\limits_{c\in \begin{rm}Cat\end{rm}(n)}\sum\limits_{
 Donc $A_{n}(x) = A_{n}^{(1)}(x) + A_{n}^{(2)}(x)$.\vspace{15pt}\\
 Trouvons d'abord l'expression $A_{n}^{(1)}(x)$.\\
 On a $A_{n}^{(1)}(x) = \sum\limits_{c \in E}\sum\limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{{\#S}}$ car si $c_{2}\neq 2$, alors il n'existe aucun $S\subset D(c)$ tel que $1\in S$. \\
-Soit $c\in E$ et $c^{(1)}=\eta(c)$. Soit $S\subset D(c)$ tel que $1\in S$ et on note $S'$ l'ensemble obtenu à partir de $S$ en supprimant l'élément $1$ et on diminuant de $1$ les éléments restants \\(s'il y en a). Cela implique que $S'\subset D(c^{(1)})$.
+Soit $c\in E$ et $c^{(1)}=\eta(c)$. Soit $S\subset D(c)$ tel que $1\in S$ et on note $S'$ l'ensemble obtenu à partir de $S$ en supprimant l'élément $1$ et en diminuant de $1$ les éléments restants \\(s'il y en a). Cela implique que $S'\subset D(c^{(1)})$.
 Il est clair que pour tout $i \in S$, $i \neq 1$, on a $i-1 \in  D(c^{(1)})$ et $\#S = \#S' + 1$.\\
 De plus, $$\sum \limits_{\underset{1\in S}{S\subset D(c)}}(x-1)^{\#S} = \sum \limits_{S'\subset D(c^{(1)})}(x-1)^{\#S' + 1}$$\\
 Par conséquent, $$A_{n}^{(1)}(x)=\sum\limits_{c^{(1)}\in \begin{rm}Cat\end{rm}(n-1)}\sum \limits_{S'\subset D(c^{(1)})}(x-1)^{\#S' + 1}=(x-1)A_{n-1}(x)$$\vspace{15pt}\\
@@ -478,9 +479,9 @@ de cette proposition nous sera utile dans toute la suite.
 \end{proposition}
 Preuve:
 Soit $\sigma \in S_{n}$ et $ M_{1} \cdots M_{u} $ sa décomposition en mots
-croissants maximaux, i.e pour tout $ j<u$, la dernière lettre de $M_{j}$ est supérieur à la première lettre
-de $M_{j+1}$. Dans toute la suite, on note par $D(M_{k})$, resp $P(M_{k})$, la dernière lettre, resp la première
-lettre, du mot $M_{k}$. Soit $j \leq u$ et i une lettre de $M_{j}$. On a:\\
+croissants maximaux, i.e pour tout $ j<u$, la dernière lettre de $M_{j}$ est supérieure à la première lettre
+de $M_{j+1}$. Dans toute la suite, on note par $D(M_{k})$ (resp $P(M_{k})$) la dernière lettre (resp la première
+lettre) du mot $M_{k}$. Soit $j \leq u$ et i une lettre de $M_{j}$. On a:\\
 $$
 	\begin{cases}
 		\text{ i est un creux de }\sigma            & ssi \text{ }|M_{j}| > 1 \text{ et } i = P(M_{j})        \\
@@ -554,9 +555,9 @@ On a:
 \begin{itemize}
 	\item [(i)] Si $i$ est un ceux de $\sigma$, alors pour tout $r<j$, $i=P(M_{j})<P(M_{r})$. Cela implique que $p_{i}=0$.\\
 	      D'où, $m_{q}=1$ pour tout $q\geq 0$.
-	\item [(ii)] Si $i$ est un pic de $\sigma$ i.e $i=D(M_{j})$, alors toutes lettres à droite de $i$ sont inférieurs à $i$. \\
+	\item [(ii)] Si $i$ est un pic de $\sigma$ i.e $i=D(M_{j})$, alors toute lettre à droite de $i$ est inférieure à $i$. \\
 	      Cela implique que $$p_{i} = | \{M_{r}; r \neq j \text{ et } P(M_{r})<i<D(M_{r})\} | = | \{M_{r}; |M_{r}|=2 \text{ et } P(M_{r})<i \leq D(M_{r})\} |-1$$ car $P(M_{j})< i=D(M_{j})$. Ou encore $p_{i}=\gamma_{i-1}-1$. D'où $d_{q+1}=1$ pour tout $q\geq 0$
-	\item [(iii)] Si $i$ est une double descente de $\sigma$ et s'il existe $M_{u}$, $u<j$, tel que $P(M_{u})<i$, alors toutes lettres à droite de $i$ sont inférieur à $i$. Cela implique que $p_{i}=\gamma_{i-1}$. Il est évident que $p_{i}=0$ si $P(M_{u})>i$, pour tout $u<j$. D'où  $b_{0}=1$ et $b_{q}=2$ pour tout $q\geq 1$.
+	\item [(iii)] Si $i$ est une double descente de $\sigma$ et s'il existe $M_{u}$, $u<j$, tel que $P(M_{u})<i$, alors toute lettre à droite de $i$ est inférieure à $i$. Cela implique que $p_{i}=\gamma_{i-1}$. Il est évident que $p_{i}=0$ si $P(M_{u})>i$, pour tout $u<j$. D'où  $b_{0}=1$ et $b_{q}=2$ pour tout $q\geq 1$.
 	\item[(iv)] On déduit de l'équivalence précédente que $r_{j+1}=0$ pour tout $j \geq 0$
 \end{itemize}
 \begin{proposition}
@@ -771,8 +772,8 @@ Ainsi, on en déduit que:
 $\blacksquare$ \newpage
 % ==================================================================================================================================================================
 % ==================================================================================================================================================================
-% D'après \cite{Desantis}, les indices $n$ et $k$ de $c_{n, k}$ commencent chacun par $1$. Mais nous allons les redéfinir dans ce memoire.\\
-Dans ce memoire, nous allons redéfinir ce qui est ennoncé dans \cite{Desantis}
+% D'après \cite{Desantis}, les indices $n$ et $k$ de $c_{n, k}$ commencent chacun par $1$. Mais nous allons les redéfinir dans ce mémoire.\\
+Dans ce mémoire, nous allons redéfinir ce qui est ennoncé dans \cite{Desantis}
 \begin{rm}
 	\begin{definition}\label{firstDefLab}
 		Le triangle de Catalan est défini comme suit:
@@ -788,7 +789,7 @@ Dans ce memoire, nous allons redéfinir ce qui est ennoncé dans \cite{Desantis}
 \text{}\vspace{10pt}\\
 En utilisant la \Cref{firstDefLab} et d'après le Théorème 2.2 de \cite{Desantis}, on a le lemme suivant.
 \begin{lemme}
-	Soit $s_{n, k} (p)$ le nombre de permutation $\sigma$ dans $S_{n}(p)$ vérifiant $\sigma(1)=k$.\\ On a pour tout $n, k \geq 1$, $s_{n,k}(123) = s_{n,k}(132) = s_{n, n-k+1}(321) = c_{n-1, k-1}$
+	Soit $s_{n, k} (p)$ le nombre de permutations $\sigma$ dans $S_{n}(p)$ vérifiant $\sigma(1)=k$.\\ On a pour tout $n, k \geq 1$, $s_{n,k}(123) = s_{n,k}(132) = s_{n, n-k+1}(321) = c_{n-1, k-1}$
 \end{lemme}
 \text{ }\\
 A partir des deux tableaux suivants, on déduit la proposition ci-dessous.\vspace{5pt}\\
@@ -815,14 +816,14 @@ $$
 \begin{proposition}\label{p5}
 	Pour tout $n\geq k$, on a $c_{n, k} = b(n, n-k)$
 \end{proposition}
-Preuve: Nous allons montre par récurrence sur $n$ et $k$.
+Preuve: Nous allons montrer par récurrence sur $n$ et $k$.
 D'abord, fixons $n$.\\
 Si $k=0$, on a $c_{n, 0}=1=b(n,n)$.\\
 Si $k=1$ on a $c_{n,1}=c_{n-1, 1} + c_{n,0}=c_{n-1,1}+1 = \cdots = c_{1,1}+n-1=n$\\
 et $b(n, n-1)=b(n,n)+ b(n-1,n-2)=1+b(n-1,n-2)=\cdots=n-1 + b(1,0)=n$. \vspace{5pt}\\
 D'où $c_{n,1}=b(n, n-1)$.\vspace{10pt}\\
 Supposons que $c_{n, k-1} = b(n, n-k+1)$\\
-Ensuite, fixons $k$ et faire varié $n$.\\
+Ensuite, fixons $k$ et faisons varier $n$.\\
 On a $c_{0,k} = \begin{cases}
 		1 & \text{ si } k=0 \\
 		0 & \text{ sinon }
