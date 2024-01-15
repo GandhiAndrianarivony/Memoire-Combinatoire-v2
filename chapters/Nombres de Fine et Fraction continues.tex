@@ -1,4 +1,4 @@
-\chapter{Définitions et préliminaires}
+\chapter{Préliminaires}
 % Dans ce chapitre, nous allons trouver des relations entre $C_{n}$ et $F_{n}$ en utilisant le
 % concept des fractions continues.
 \section{Chemins de Motzkin}
@@ -27,8 +27,8 @@ Dans la suite, on notera par $\Gamma_{n,1}^{i}$ l'ensemble des chemins de $A_{0}
 	\end{rm}
 \end{definition}
 Tout chemin $c \in \Gamma_{n,1}^{i}$ est entièrement détérminé par $b_{0}, b_{1}, \cdots, b_{n}$.
-En conséquence, nous adoptons la notation suivante pour un chemin donné:
-$c = c_{1}c_{2}\cdots c_{n}$, où $c_{k} \in \{p, m, d\}$ représente la $k$-ième pas de $c$ de niveau $b_{k-1}$. La longueur du chemin, notée $|c|$, correspond au nombre total de pas. On désigne par $|x|_{u}$ le nombre de lettre dans le mot $x$ égal à $u$. Nous notons également l'ensemble $\{1, 2, \ldots, n\}$ par $[n]$ tout au long du document.
+En conséquence, nous adoptons la notation suivante pour un chemin donné
+$c = c_{1}c_{2}\cdots c_{n}$ où \\$c_{k} \in \{p, m, d\}$ représente le $k$-ième pas de $c$ de niveau $b_{k-1}$. La longueur du chemin, notée $|c|$, correspond au nombre total de pas. On désigne par $|x|_{u}$ le nombre de lettres dans le mot $x$ égale à $u$. Nous notons également l'ensemble $\{1, 2, \ldots, n\}$ par $[n]$ tout au long du document.
 
 \begin{definition}
 	\begin{rm}
@@ -61,11 +61,11 @@ $$
 	\end{rm}
 \end{definition}
 
-Dans la suite, l'ensemble des 2-chemin de Motzkin en $n$ pas sera noté par $\Gamma_{n}$.
+Dans la suite, l'ensemble des 2-chemins de Motzkin en $n$ pas sera noté par $\Gamma_{n}$.
 \vspace{5pt}
 \begin{definition}
 	\begin{rm}
-		Un chemin de Fine est un 2-chemin de Motzkin sans palier bleu de niveau zéro. On note par $\mathcal{F}_{n}$ l'ensemble des chemin de Fine en $n$ pas.
+		Un chemin de Fine est un 2-chemin de Motzkin sans palier bleu de niveau zéro. On note par $\mathcal{F}_{n}$ l'ensemble des chemins de Fine en $n$ pas.
 	\end{rm}
 \end{definition}
 
@@ -80,27 +80,27 @@ Dans la suite, l'ensemble des 2-chemin de Motzkin en $n$ pas sera noté par $\Ga
 	\end{rm}
 \end{definition}
 
-On note $C(x)=\underset{n\geq 0}{\sum}C_{n}x^{n}$ la fonction génératrice ordinaire des nombres de Catalan
+On note $C(z)=\underset{n\geq 0}{\sum}C_{n}z^{n}$ la fonction génératrice ordinaire des nombres de Catalan
 \begin{proposition}
 	\begin{rm}
-		On a \[C(x)=\cfrac{1-
-				\sqrt{1-4x}}{2x}\]\\
+		On a \[C(z)=\cfrac{1-
+				\sqrt{1-4z}}{2z}\]\\
 	\end{rm}
 \end{proposition}
 Preuve: On a\\\[
 	\begin{array}{r r l}
-		C(x) & =       & 1+\underset{n\geq1}{\sum}C_{n}x^n = 1+ \underset{n\geq1}{\sum}x^{n}\underset{i=0}{\overset{n-1}{\sum}}C_{i}C_{n-i-1} = 1+
-		\underset{n\geq1}{\sum}x^n\underset{\underset{j+i=n-1}{0\leq i, j \leq n-1}}{\sum}C_{i}C_{j}                                               \\
+		C(z) & =       & 1+\underset{n\geq1}{\sum}C_{n}z^n = 1+ \underset{n\geq1}{\sum}z^{n}\underset{i=0}{\overset{n-1}{\sum}}C_{i}C_{n-i-1} = 1+
+		\underset{n\geq1}{\sum}z^n\underset{\underset{j+i=n-1}{0\leq i, j \leq n-1}}{\sum}C_{i}C_{j}                                               \\
 		     & \text{} &                                                                                                                           \\
-		     & =       & 1+x\underset{n\geq0}{\sum}\text{ }\underset{\underset{j+i=n}{0\leq i, j \leq n}}{\sum}(C_{i}x^i)(C_{j}x^j)
-		= 1 +x\left[\left(\sum_{i\geq0}C_{i}x^i\right)\left(\sum_{j\geq0}C_{j}x^j\right)\right]                                                    \\
+		     & =       & 1+z\underset{n\geq0}{\sum}\text{ }\underset{\underset{j+i=n}{0\leq i, j \leq n}}{\sum}(C_{i}z^i)(C_{j}z^j)
+		= 1 +z\left[\left(\sum_{i\geq0}C_{i}z^i\right)\left(\sum_{j\geq0}C_{j}z^j\right)\right]                                                    \\
 		     & \text{} &                                                                                                                           \\
-		     & =       & 1+x(C(x))^2
+		     & =       & 1+z(C(z))^2
 	\end{array}
 \]\\
-Cela implique que $C(x)$ est solution de l'équation $xt^2-t+1 = 0$. On a $C(x)=\cfrac{1-\sqrt{1-4x}}{2x}$\\ ou $C(x)=\cfrac{1+\sqrt{1-4x}}{2x}$.\\
-La limite quand $x$ tends vers $0$ de $\cfrac{1+\sqrt{1-4x}}{2x}$ (resp. $\cfrac{1-\sqrt{1-4x}}{2x}$) est infini (resp. 1) \\
-En conséquent, $C(x)=\cfrac{1-\sqrt{1-4x}}{2x}$ \hspace{5pt}$\blacksquare$
+Cela implique que $C(z)$ est solution de l'équation $zt^2-t+1 = 0$. On a $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$\\ ou $C(z)=\cfrac{1+\sqrt{1-4z}}{2z}$.\\
+La limite quand $z$ tends vers $0$ de $\cfrac{1+\sqrt{1-4z}}{2z}$ (resp. $\cfrac{1-\sqrt{1-4z}}{2z}$) est infini (resp. 1) \\
+Par conséquent, $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$ \hspace{5pt}$\blacksquare$
 
 \section{Fractions continues de Stieltjes}
 \begin{definition}
@@ -141,34 +141,34 @@ On voit que $C(z)$ est une $S$-fraction avec $c_{i}=1$ ($\forall i \geq 1$).
 D'où le résultat est obtenu en utilisant la \Cref{j-frac}. \hspace{10pt} $\blacksquare$
 
 % \section{Développement en fraction continue de $\Gamma_{n}$}
-\section{Chemins de Motzkin valué}
+\section{Chemins de Motzkin valués}
 \begin{definition}
 	\begin{rm}
 		Un 2-chemin de Motzkin valué est un couple (c,p) où $c = c_{1}c_{2}\cdots c_{n}$\\ et $p = p_{1}p_{2}\cdots p_{n}$
 		vérifient les conditions suivantes:
 		\begin{itemize}
 			\item[$(i)$] $c \in \Gamma_{n}$
-			\item[$(ii)$.] p est le poids associé à c
-			\item[$(iii)$.] $0\leq p_{i}\leq \gamma_{i-1}$, si $c_{i}=m\text{ ou }c_{i}=b$
-			\item[$(iv)$.]  $0\leq p_{i}\leq \gamma_{i-1} - 1$, si  $c_{i}=d\text{ ou }c_{i}=r$
+			% \item[$(ii)$.] p est le poids associé à c
+			\item[$(ii)$.] $0\leq p_{i}\leq \gamma_{i-1}$, si $c_{i}=m\text{ ou }c_{i}=b$
+			\item[$(iii)$.]  $0\leq p_{i}\leq \gamma_{i-1} - 1$, si  $c_{i}=d\text{ ou }c_{i}=r$
 		\end{itemize}
 	\end{rm}
 \end{definition}
-Dans la suite, nous adopterons la notation du cours de combinatoire en S10 pour désigner l'ensemble des 2-chemins de Motzkin valués ayant $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement. Les chemins, allant de $A_{0}=(0, 0)$ vers $A_{n}=(n, i)$, qui ont deux types de palier (à savoir rouge et bleu) est noté par $\Gamma_{n, 2}^{i}$. \\
-Soit $c \in \Gamma_{n, 2}^{i}$. Nous attribuons à chaque pas de $c$ un poids selon les conditions suivante:
+Dans la suite, nous adopterons la notation du cours de combinatoire en semestre $10$ pour désigner l'ensemble des 2-chemins de Motzkin valués ayant $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement. Les chemins, allant de $A_{0}=(0, 0)$ vers $A_{n}=(n, i)$, qui ont deux types de palier (à savoir rouge et bleu) est noté par $\Gamma_{n, 2}^{i}$. \\
+Soit $c \in \Gamma_{n, 2}^{i}$. Nous attribuons à chaque pas de $c$ un poids selon les conditions suivantes:
 \begin{itemize}
 	\item [$(i)$] si le $j$-ième pas est une montée (i.e $c_{j}=m$), alors on affecte le poids $m_{\gamma_{j-1}}$
 	\item [($ii$)] si le $j$-ième pas est une descente (i.e $c_{j}=d$), alors on affecte le poids $d_{\gamma_{j-1}}$
 	\item [($iii$)]  si le $j$-ième pas est un palier bleu (i.e $c_{j}=b$), alors on affecte le poids $b_{\gamma_{j-1}}$
 	\item [($iv$)]  si le $j$-ième pas est un palier rouge (i.e $c_{j}=r$), alors on affecte le poids $r_{\gamma_{j-1}}$
 \end{itemize}
-où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
+où les  $m_{\gamma_{k}}$, $d_{\gamma_{k}}$, $b_{\gamma_{k}}$ et  $r_{\gamma_{k}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
 % Si $c_{j} = m$ (resp d, b, r), alors on affecte le poids $m_{\gamma_{j-1}}$ (resp
 % $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$, $r_{\gamma_{j-1}}$) au $j^e$-pas où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$,
 % $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
 Dans toute la suite, on pose $H_{i,n} = \underset{c\in \Gamma_{n,2}^{i}}{\sum}w(c)$ où $w(c) = \underset{c_{j}=m}{\prod}
 	m_{\gamma_{j-1}}\text{ } \underset{c_{j}=d}{\prod}d_{\gamma_{j-1}}\text{ }\underset{c_{j}=b}{\prod}
-	b_{\gamma_{j-1}}\text{ }\underset{c_{j}=r}{\prod}r_{\gamma_{j-1}}$.\\
+	b_{\gamma_{j-1}}\text{ }\underset{c_{j}=r}{\prod}r_{\gamma_{j-1}}$\\
 \begin{proposition} \label{weight-tab}
 	On a:
 	\[
@@ -183,7 +183,7 @@ Dans toute la suite, on pose $H_{i,n} = \underset{c\in \Gamma_{n,2}^{i}}{\sum}w(
 \end{proposition}
 
 Preuve:
-Soit $c \in \Gamma_{n,2}^{i}$. Il est clair que si $i\geq 1$ et $n=0$ alors $w(c)=0$ ou encore $H_{i, 0}=0$. \\
+Soit $c \in \Gamma_{n,2}^{i}$. Il est clair que si $i\geq 1$ et $n=0$ alors $w(c)=0$ \\ ou encore $H_{i, 0}=0$.\\
 % Pour tout $i \geq 1$, l'ensemble $\Gamma_{0,2}^{i}=\emptyset$. On en déduit que $w(c)=0$. D'où $H_{i, 0} = 0$.
 De plus, comme $\Gamma_{n, 2}^{0}=\Gamma_{n}$ alors, on a $c_{n}\neq r$ et $c_{n}\neq m$.\vspace{5pt}\\
 Et
@@ -201,7 +201,7 @@ Et
 		         & \text{} &                                                                        \\
 		         & =       & b_{0}H_{0,n-1}+d_{1}H_{1,n-1}
 	\end{array}
-\]\\D'autre part, si $i>n$, alors $\Gamma_{n,2}^{i}$ est vide car on n'atteint jamais le niveau $i$ en $n$ pas pour tout les chemins de $\Gamma_{n,2}^{i}$. Cela implique que $\forall c \in \Gamma_{n,2}^{i}$, $H_{i,n}=0$ si $i>n$.\vspace{10pt}\\ Enfin, soit $i \in [n]$ et $c \in \Gamma_{n,2}^{i}$, \\
+\]\\D'autre part, si $i>n$, alors $\Gamma_{n,2}^{i}$ est vide car on n'atteint jamais le niveau $i$ en $n$ pas pour tous les chemins de $\Gamma_{n,2}^{i}$. Cela implique que $\forall c \in \Gamma_{n,2}^{i}$, $H_{i,n}=0$ si $i>n$.\vspace{10pt}\\ Enfin, soit $i \in [n]$ et $c \in \Gamma_{n,2}^{i}$, \\
 On a:
 $$
 	\gamma_{n-1} = \begin{cases}
@@ -314,7 +314,7 @@ D'où le résultat. \hspace{5pt}$\blacksquare$
 \end{corollaire}
 Preuve: De ce qu'on voit dans la \Cref{cat-frac} et dans la \Cref{gamma-frac}, $C(z)$ et $\Gamma(z)$ ont le même développement en fraction continue.\\
 
-\section{Développement en fraction continue de $F(t)$}
+\section{Développement en fraction continue de $F(z)$}
 % La fonction génératrice ordinaire des nombres de Fine est $F(t) = \underset{n \geq 0}{\sum}F_{n}t^{n}$ avec la convention $F_{0}=1$. Le développement en fraction continue de $F(t)$ nous permet de trouver quelques résultats sur les relations entre les nombres de Catalan $C_{n}$ et les nombres de Fine $F_{n}$ dont lesquels nous allons faire dans cette section.\vspace{10pt}
 \begin{proposition} \label{Fn-frac} Posons $F(z) = \underset{n \geq 0}{\sum}F_{n}z^{n}$ avec la convention $F_{0}=1$ où $F_{n} = |\mathcal{F}_{n}|$.
 	On a $$F(z) = \cfrac{1}{1 - \cfrac{z^2}{1 - 2z - \cfrac{z^2}{\ddots}}}$$\vspace{5pt}
@@ -416,9 +416,9 @@ vérifient la condition si $p_{i}=m \text{ et } \gamma_{i-1}=0$, alors  $p_{i+1}
 \end{proposition}
 Preuve: Soit $c\in \mathcal{F}_{n}$ et $\theta(c):=p$.
 Nous allons voir que $p\in \overline{\text{Dyck}}(n) $.\\
-Par définition de $\mathcal{F}_{n}$, on a $|c|_{d}=|c|_{m}$ ou encore \\$\#\{i; p_{2i-1}p_{2i}=mm\}=\#\{i; p_{2i-1}p_{2i}=dd\}$. Par construction, à chaque palier
+Par définition de $\mathcal{F}_{n}$, on a $|c|_{d}=|c|_{m}$ ou encore \\$\#\{i; p_{2i-1}p_{2i}=mm\}=\#\{i; p_{2i-1}p_{2i}=dd\}$. Par construction, chaque palier
 bleu (resp. palier rouge) de $c$ est transformé en $md$ (resp. en $dm$); ce qui implique que $|p|_{m}=|p|_{d}$.\\
-Vérifions ensuite la relation $|p_{1} \cdots p_{j}|_{m}\geq |p_{1} \cdots p_{j}|_{d}$, ($\forall j\leq 2n$).\\
+Vérifions ensuite la relation $|p_{1} \cdots p_{j}|_{m}\geq |p_{1} \cdots p_{j}|_{d}$, $\forall j\leq 2n$.\\
 Fixons $j$ et étudions le cas où $j$ impair et $j$ pair. \\
 Supposons que $j$ est pair. Il existe $i\in [n]$ tel que $j=2i$. On a \vspace{5pt}\\
 \[
@@ -466,8 +466,8 @@ Fixons $j\in [n]$ et montrons que $| c_{1}\cdots c_{j} |_{m}\geq | c_{1}\cdots c
 \text{}\vspace{5pt}
 % Soit $j \in [n]$ tel que $|p_{1}\cdots p_{2j-1}p_{2j}|_{m} \geq p_{1}\cdots p_{2j-1}p_{2j}|_{d}$. \\
 % On en déduit  $\#\{i; i\leq j \text{ tel que  } p_{2i-1}p_{2i}=mm\} \geq \#\{i; i \leq j \text{ tel que } p_{2i-1}p_{2i}=dd\}$ ou encore $|c_{1}\cdots c_{j}|_{m} \geq |c_{1}\cdots c_{j}|_{d} $
-Enfin montrons que $c$ ne contient pas ni palier bleu ni palier rouge de niveau zéro. \\
-Soit $i\in [n]$. Si $c_{i}=b$ (resp $c_{i}=r$) alors on a $\gamma_{i-1}\neq 0$ parce que $p_{2i-1}p_{2i}=md$ (resp. $p_{2i-1}p_{2i}=dm$) avec le niveau du pas $p_{2i}$ différent de $1$ (resp. différent de 0).\\
+Enfin montrons que $c$ ne contient ni palier bleu ni palier rouge de niveau zéro. \\
+Soit $i\in [n]$. Si $c_{i}=b$ (resp $c_{i}=r$) alors on a $\gamma_{i-1}\neq 0$ car $p_{2i-1}p_{2i}=md$ \\ (resp. $p_{2i-1}p_{2i}=dm$) avec le niveau du pas $p_{2i}$ différent de $1$ (resp. différent de 0).\\
 Ainsi, $c\in \mathcal{F}_{n}$. Enfin l'application $\theta$ est bijective\hspace{10pt}$\blacksquare$
 \begin{proposition}
 	On a: $ F_{n} = \underset{i=2}{\overset{n}{\sum}}C_{i-1}F_{n-i} $
@@ -477,13 +477,13 @@ $\underline{\textit{Preuve}}$:\\
 Soit $p \in  \overline{\text{Dyck}}(n)$ et $i \leq 2n$ le plus petit entier qui vérifie:
 $$|p_{1}p_{2}\cdots p_{2i}|_{m} = |p_{1}p_{2}\cdots p_{2i}|_{d} \text{ et } \forall j<2i, |p_{1}p_{2}\cdots p_{j}|_{m}>|p_{1}p_{2}\cdots p_{j}|_{d}$$
 Nécéssairement, $i > 1$. On note par $\overline{\text{Dyck}}_{i}(n)$ l'ensemble des éléments $\overline{\text{Dyck}}(n)$ qui vérifient les conditions précédentes. \\
-Soit $p=p_{1}p_{2}\cdots p_{2n} \in \overline{\text{Dyck}}_{i}(n)$. On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$. Soit $p'=p'_{1}\cdots p'_{2(i-1)}$ et $p''=p''_{1} \cdots p''_{2(n-i)}$ obtenu à partir de $p$ tel que
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in \overline{\text{Dyck}}_{i}(n)$. On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$. Soit $p'=p'_{1}\cdots p'_{2(i-1)}$ et $p''=p''_{1} \cdots p''_{2(n-i)}$ deux chemins obtenu à partir de $p$ tel que
 \begin{itemize}
 	\item $p'_{k}=p_{k+1}, (k\leq 2(i-1))$
 	\item $p''_{k}=p_{2i+k}, (k\leq 2(n-i))$
 \end{itemize}
 On a $p'\in \text{Dyck}(i-1) $ et  $p'' \in \overline{\text{Dyck}}(n-i)$. \\
-Considérons l'application $\alpha: \overline{\text{Dyck}}_{i}(n) \longrightarrow \text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i), p \mapsto (p', p'')$, défini par la transformation ci-dessus. On voit que $\alpha$ est une application bijective.\newpage
+Considérons l'application $\alpha: \overline{\text{Dyck}}_{i}(n) \longrightarrow \text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i), p \mapsto (p', p'')$, définie par la transformation ci-dessus. On voit que $\alpha$ est une application bijective.\newpage
 Par conséquent,
 $$\#\underset{i=2}{\overset{n}{\bigcup}}\text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i)= \# \underset{i=2}{\overset{n}{\bigcup}}\overline{\text{Dyck}}_{i}(n) = \# \overline{\text{Dyck}}(n)$$
 D'après la \Cref{bij-DyckBar}, on a $F_{n} = \#\overline{\text{Dyck}}(n)$ et le fait que $C_{n}=\#\text{Dyck}(n)$, on obtient le résultat.
