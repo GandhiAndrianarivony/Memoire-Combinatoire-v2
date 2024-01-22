@@ -99,7 +99,7 @@ Preuve: On a\\\[
 	\end{array}
 \]\\
 Cela implique que $C(z)$ est solution de l'équation $zt^2-t+1 = 0$. On a $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$\\ ou $C(z)=\cfrac{1+\sqrt{1-4z}}{2z}$.\\
-La limite quand $z$ tends vers $0$ de $\cfrac{1+\sqrt{1-4z}}{2z}$ (resp. $\cfrac{1-\sqrt{1-4z}}{2z}$) est infini (resp. 1) \\
+La limite quand $z$ tend vers $0$ de $\cfrac{1+\sqrt{1-4z}}{2z}$ (resp. $\cfrac{1-\sqrt{1-4z}}{2z}$) est infinie (resp. 1) \\
 Par conséquent, $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$ \hspace{5pt}$\blacksquare$
 
 \section{Fractions continues de Stieltjes}
@@ -112,7 +112,7 @@ Par conséquent, $C(z)=\cfrac{1-\sqrt{1-4z}}{2z}$ \hspace{5pt}$\blacksquare$
 		où $z$ est une variable formelle et $c_{i}$ sont des éléments d'un anneau commutatif.
 	\end{rm}
 \end{definition}
-La proposition suivante est analogue au Lemme 2.11 dans \cite{ref30}.
+La proposition suivante est similaire au Lemme 2.11 dans \cite{ref30}.
 \begin{proposition}\label{j-frac}
 	\begin{rm}
 		\[
@@ -121,7 +121,7 @@ La proposition suivante est analogue au Lemme 2.11 dans \cite{ref30}.
 				S(z) & =       & \cfrac{1}{1-c_{1}z-\cfrac{c_{1}c_{2}z^2}{1-(c_{2}+c_{3})z-\cfrac{c_{3}c_{4}z^2}{1-(c_{4}+c_{5})z-\cfrac{c_{5}c_{6}z^2}{\ddots}}}}                \\
 				     & \text{} &                                                                                                                                                  \\
 
-				     & =       & 1+\cfrac{c_{1}z}{1-(c_{1}+c_{2})z-\cfrac{c_{2}c_{3}z^2}{1-(c_{3}+c_{4})z-\cfrac{c_{4}c_{5}z^2}{1-(c_{5}+c_{6})z-\cfrac{c_{6}c_{7}z^2}{\ddots}}}} \\
+				    %  & =       & 1+\cfrac{c_{1}z}{1-(c_{1}+c_{2})z-\cfrac{c_{2}c_{3}z^2}{1-(c_{3}+c_{4})z-\cfrac{c_{4}c_{5}z^2}{1-(c_{5}+c_{6})z-\cfrac{c_{6}c_{7}z^2}{\ddots}}}} \\
 				     & \text{} &
 			\end{array}
 		\]
@@ -154,7 +154,7 @@ D'où le résultat est obtenu en utilisant la \Cref{j-frac}. \hspace{10pt} $\bla
 		\end{itemize}
 	\end{rm}
 \end{definition}
-Dans la suite, nous adopterons la notation du cours de combinatoire en semestre $10$ pour désigner l'ensemble des 2-chemins de Motzkin valués ayant $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement. Les chemins, allant de $A_{0}=(0, 0)$ vers $A_{n}=(n, i)$, qui ont deux types de palier (à savoir rouge et bleu) est noté par $\Gamma_{n, 2}^{i}$. \\
+Dans la suite, nous adopterons la notation du cours de combinatoire en semestre $S9$ pour désigner l'ensemble des 2-chemins de Motzkin valués ayant $n$ pas, noté $HL(n)$. Cette notation sera employée ultérieurement. Les chemins, allant de $A_{0}=(0, 0)$ vers $A_{n}=(n, i)$, qui ont deux types de paliers (à savoir rouge et bleu) est noté par $\Gamma_{n, 2}^{i}$. \\
 Soit $c \in \Gamma_{n, 2}^{i}$. Nous attribuons à chaque pas de $c$ un poids selon les conditions suivantes:
 \begin{itemize}
 	\item [$(i)$] si le $j$-ième pas est une montée (i.e $c_{j}=m$), alors on affecte le poids $m_{\gamma_{j-1}}$
@@ -162,7 +162,8 @@ Soit $c \in \Gamma_{n, 2}^{i}$. Nous attribuons à chaque pas de $c$ un poids se
 	\item [($iii$)]  si le $j$-ième pas est un palier bleu (i.e $c_{j}=b$), alors on affecte le poids $b_{\gamma_{j-1}}$
 	\item [($iv$)]  si le $j$-ième pas est un palier rouge (i.e $c_{j}=r$), alors on affecte le poids $r_{\gamma_{j-1}}$
 \end{itemize}
-où les  $m_{\gamma_{k}}$, $d_{\gamma_{k}}$, $b_{\gamma_{k}}$ et  $r_{\gamma_{k}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
+% où les  $m_{\gamma_{k}}$, $d_{\gamma_{k}}$, $b_{\gamma_{k}}$ et  $r_{\gamma_{k}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
+où ces poids sont des éléments d'un anneau commutatif.\vspace{10pt}\\
 % Si $c_{j} = m$ (resp d, b, r), alors on affecte le poids $m_{\gamma_{j-1}}$ (resp
 % $d_{\gamma_{j-1}}$, $b_{\gamma_{j-1}}$, $r_{\gamma_{j-1}}$) au $j^e$-pas où les  $m_{\gamma_{j-1}}$, $d_{\gamma_{j-1}}$,
 % $b_{\gamma_{j-1}}$ et  $r_{\gamma_{j-1}}$ sont des éléments d'un anneau commutatif.\vspace{10pt}\\
@@ -312,7 +313,7 @@ D'où le résultat. \hspace{5pt}$\blacksquare$
 \begin{corollaire}
 	On a $|\Gamma_{n}|=C_{n}$.
 \end{corollaire}
-Preuve: De ce qu'on voit dans la \Cref{cat-frac} et dans la \Cref{gamma-frac}, $C(z)$ et $\Gamma(z)$ ont le même développement en fraction continue.\\
+Preuve: D'après la \Cref{cat-frac} et la \Cref{gamma-frac}, $C(z)$ et $\Gamma(z)$ ont le même développement en fraction continue.\\
 
 \section{Développement en fraction continue de $F(z)$}
 % La fonction génératrice ordinaire des nombres de Fine est $F(t) = \underset{n \geq 0}{\sum}F_{n}t^{n}$ avec la convention $F_{0}=1$. Le développement en fraction continue de $F(t)$ nous permet de trouver quelques résultats sur les relations entre les nombres de Catalan $C_{n}$ et les nombres de Fine $F_{n}$ dont lesquels nous allons faire dans cette section.\vspace{10pt}
@@ -403,7 +404,7 @@ de longueur $2n$. Dans toute la suite, on pose $\overline{\text{Dyck}}(n)$ l'ens
 vérifient la condition si $p_{i}=m \text{ et } \gamma_{i-1}=0$, alors  $p_{i+1}=m$.
 
 \begin{proposition} \label{bij-DyckBar}
-	La transformation $\theta: \mathcal{F}_{n} \longrightarrow  \overline{\rm{Dyck}}(n)$; $c \longrightarrow p=p_{1}\cdots p_{2n}$ défini comme suit, pour tout $i \in [n]$,
+	La transformation $\theta: \mathcal{F}_{n} \longrightarrow  \overline{\rm{Dyck}}(n)$; $c \longrightarrow p=p_{1}\cdots p_{2n}$ définie comme suit, pour tout $i \in [n]$,
 	$$
 		p_{2i-1}p_{2i}=\begin{cases}
 			mm & \text{ si } c_{i}=m \\
@@ -477,7 +478,7 @@ $\underline{\textit{Preuve}}$:\\
 Soit $p \in  \overline{\text{Dyck}}(n)$ et $i \leq 2n$ le plus petit entier qui vérifie:
 $$|p_{1}p_{2}\cdots p_{2i}|_{m} = |p_{1}p_{2}\cdots p_{2i}|_{d} \text{ et } \forall j<2i, |p_{1}p_{2}\cdots p_{j}|_{m}>|p_{1}p_{2}\cdots p_{j}|_{d}$$
 Nécéssairement, $i > 1$. On note par $\overline{\text{Dyck}}_{i}(n)$ l'ensemble des éléments $\overline{\text{Dyck}}(n)$ qui vérifient les conditions précédentes. \\
-Soit $p=p_{1}p_{2}\cdots p_{2n} \in \overline{\text{Dyck}}_{i}(n)$. On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$. Soit $p'=p'_{1}\cdots p'_{2(i-1)}$ et $p''=p''_{1} \cdots p''_{2(n-i)}$ deux chemins obtenu à partir de $p$ tel que
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in \overline{\text{Dyck}}_{i}(n)$. On a $p_{1} = p_{2} = m$,  $p_{2i-1} = p_{2i} = d$. Soit $p'=p'_{1}\cdots p'_{2(i-1)}$ et $p''=p''_{1} \cdots p''_{2(n-i)}$ deux chemins obtenus à partir de $p$ tel que
 \begin{itemize}
 	\item $p'_{k}=p_{k+1}, (k\leq 2(i-1))$
 	\item $p''_{k}=p_{2i+k}, (k\leq 2(n-i))$
