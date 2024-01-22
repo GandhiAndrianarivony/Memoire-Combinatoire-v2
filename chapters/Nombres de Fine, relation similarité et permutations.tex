@@ -159,7 +159,7 @@ De plus, soit $i\in \text{Fix}(\sigma)$. On a $\pi_{n-i+1}=i$. Ainsi fix$(\sigma
 	Alors $\sigma \in S_{n}(123)$ si et seulement si, $w_{1}w_{2}\cdots w_{s}$ est un mot décroissant.
 \end{lemme}
 Preuve:
-Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $w_{k}$ est une lettre en mots décroissants. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
+Montrons tout d'abord que, s'il existe $k\in [s]$ tel que $|w_{k}|>1$, alors $w_{k}$ est un mot constitué des lettres disposées dans un ordre décroissant. Il est évident que c'est le cas car sinon on aura $w_{k}u_{k}$ contient le motif $123$.\\
 De plus, on a l'équivalence suivante:
 \[
 	\begin{array} {l l l}
@@ -195,7 +195,7 @@ Si $\sigma(1)\sigma(2)\cdots \sigma(j-1)$ n'est pas formé par les éléments de
 
 \begin{proposition}  \label{dyck_to_avoiding_321_tfsm}
 	Soit $\Theta$ la transformation $S_{n}(123) \longrightarrow$ \rm{Dyck}$(n)$, $\pi \longrightarrow p$ \textit{définie par}:\\
-	\textit{soit} $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ \textit{la ssd-décomposition de $\pi$ et on définit $\Theta(\pi):=p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$, resp $d_{i}$, est un mot formé par la seule lettre $m$, resp $d$, tel que $|m_{i}| = |w_{i}|+1$ et $|d_{i}| = u_{i}-u_{i+1}$ avec la convention $u_{s+1}=0$.}\\
+	\textit{soit} $w_{1}u_{1}w_{2}u_2 \cdots w_{s}u_{s}$ \textit{la ssd-décomposition de $\pi$ et on définit $\Theta(\pi):=p=m_{1}d_{1}m_{2}d_{2}\cdots m_{s}d_{s}$ où $m_{i}$ (resp $d_{i}$) est un mot formé par la seule lettre $m$ (resp $d$) tel que $|m_{i}| = |w_{i}|+1$ et $|d_{i}| = u_{i}-u_{i+1}$ avec la convention $u_{s+1}=0$.}\\
 	\textit{Alors $\Theta$ est bijective.}\\
 	\textit{De plus, $D(\pi) = \#\{i\in$ \rm{Mont}$(p)$$;\gamma_{i-1}=0, p_{i+1}=d\}$}
 \end{proposition}
@@ -451,7 +451,7 @@ Il s'ensuit que $A_{n}^{(2)}=a_{n}(x)+b_{n}(x)= A_{n-1}(x) + C_{n-1} + \sum\limi
 Par conséquent, $A_{n}(x)= A_{n}^{(1)} + A_{n}^{(2)} = (x-1)A_{n-1}(x) + \sum\limits_{i=1}^{n}C_{i-1}A_{n-i}(x)$ \hspace{5pt}$\blacksquare$
 % ==================================================================================================================================================================
 
-\subsection{Expression explicite des coefficients $A_{n}(x)$}
+\subsection{Expression explicite des coefficients} % $A_{n}(x)$}
 Soit $\sigma \in S_{n}$ et $1 \leq i \leq n$\\
 \begin{definition}
 	\begin{rm}
@@ -532,7 +532,7 @@ Supposons que les lettres $k_{1},\cdots, k_{l-1} $ sont toutes placées. On va t
 Si $c_{k_{l}} = m$, alors on place $k_{l}\star$ après le $(p_{k_{l}}+1)$-ième $\star$. Et si $c_{k_{l}}=d$, alors on
 remplace par $k_{l}$ le $(p_{k_{l}}+2)$-ième $\star$.\\
 On obtient ainsi l'expression $\sigma^{2p} = \star M_{1}\cdots M_{p} $ car $|Q| = |P|$. La présence d'une seule $\star$
-est dû au fait que $\sigma^0 = \star$ et $|Q| = |P|$. Supposons que les éléments de P et Q sont tous placés.\\ Soit i
+vient du fait que $\sigma^0 = \star$ et $|Q| = |P|$. Supposons que les éléments de P et Q sont tous placés.\\ Soit i
 tel que $c_{i}=r \text{ ou } c_{i}=b$. Si $c_{i}=r$, alors on place i dans $M_{j}$ où $M_{j}$ est le $(p_{i}+1)$-ième
 mot qui vérifie $P(M_{j}) < i < D(M_{j})$.
 Si $c_{i}=b$, alors on place i entre $M_{q}$ et $M_{q+1}$ tel que $D(M_{q})>i>P(M_{q+1}) $ et $|\{j\leq q;
