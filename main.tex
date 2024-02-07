@@ -18,7 +18,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tabularx}
-
+\usepackage{pdfpages}
 
 % Show Prop, Lemma and other label near them
 % \usepackage{showkeys}
@@ -34,7 +34,8 @@
 \newtheorem{property}[proposition]{Propriété}
 
 \begin{document}
-\input{./chapters/page_garde.tex}
+% \input{./chapters/page_garde.tex}
+\includepdf[pages=-]{page-garde.pdf}
 \input{./chapters/remerciements.tex}
 \tableofcontents
 \pagenumbering{arabic}

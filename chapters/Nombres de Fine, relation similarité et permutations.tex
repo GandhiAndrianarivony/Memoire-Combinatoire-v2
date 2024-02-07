@@ -210,7 +210,7 @@ et
 $$
 	|p|_{d} = \underset{k=1}{\overset{s}{\sum}}|d_{k}| = \underset{k=1}{\overset{s}{\sum}}(u_{k}-u_{k+1}) = u_{1} - u_{s+1}=u_{1}=n
 $$
-Ensuite, on note $p=p_{1}p_{2}\cdots p_{2n}$ avec $p_{1}=m$ et  $\gamma_{0}=0$, et montrons que $$k\leq 2n, |p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cdots p_{k}|_{d}$$
+Ensuite, on note $p=p_{1}p_{2}\cdots p_{2n}$ avec $p_{1}=m$ et  $\gamma_{0}=0$, et montrons que $$\forall k\leq 2n, |p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cdots p_{k}|_{d}$$
 % On peut alors écrire $p$ sous la forme $p=p_{1}p_{2}\cdots p_{2n}$ avec $p_{1}=m$ et  $\gamma_{0}=0$.\vspace{10pt}\\
 % Deuxièment, nous allons voir que pour tout $k\leq 2n$, $|p_{1}p_{2}\cdots p_{k}|_{m}\geq |p_{1}p_{2}\cdots p_{k}|_{d}$.\\
 On commence par prouver que, $\forall h\leq s$, $n-u_{h}\leq |m_{1}d_{1}\cdots m_{h-1}d_{h-1} |_{m}$.\\
@@ -246,7 +246,7 @@ D'autre part, comme $|w_{1}w_{2}\cdots w_{s}| = n-s$ alors
 \]
 avec $n-s - (\underset{k=1}{\overset{i-1}{\sum}} |d_{k}| - (i-1))=\underset{k=i}{\overset{s}{\sum}} |d_{k}| - (s-i +1)= u_{i} - (s-i+1)$.\\
 Par conséquent, $| w_{i}w_{i+1}u_{i+1}\cdots w_{s}u_{s} |\leq u_{i}-1< u_i$, et toutes les lettres du mot \\$w_{i} w_{i+1} u_{i+1} \cdots w_s u_s$ sont plus petites que $u_i$. Il s'ensuit que l'antécédent de $p$ est $\pi$ dont la ssd-décomposition est $w_1 u_1 w_2 u_2 \cdots w_s u_s$.\vspace{10pt}\\
-Enfin, soit $\pi \in S_{n}(123)$ et soit $j \in D(\pi)$. On en déduit de la \Cref{SKNBij} et \\ du \Cref{jPtFix} que toute lettre à droite de $j$ et plus petite que $j$ et toute lettre à gauche de $j$ et plus grande que $j$. Cela implique que $j$ est un ssd de $\pi$\\ ou encore 
+Enfin, soit $\pi \in S_{n}(123)$ et soit $j \in D(\pi)$. On en déduit de la \Cref{SKNBij} et \\ du \Cref{jPtFix} que toute lettre à droite de $j$ est plus petite que $j$ et toute lettre à gauche de $j$ est plus grande que $j$. Cela implique que $j$ est un ssd de $\pi$\\ ou encore 
 % Enfin, soit $1 \leq j \leq n$. D'après le \Cref{jPtFix} et par passage au miroir,\\
 % $\sigma(j) = j$,\\
 $ \exists i, u_i = j, |w_i | = 0, |w_1 u_1 w_2 u_2 \cdots w_{i-1} u_{i-1} | = n - j, |w_{i+1} u_{i+1} \cdots w_s u_s | = j - 1$\\
@@ -331,7 +331,7 @@ Dans toute la suite, on note par Cat$(n)$ l'ensemble des mots de Catalan  de lon
 	\begin{rm}
 		Soit $\psi: S_{m}(321)\longrightarrow S_{m-1}(321), \pi \longrightarrow \psi(\pi)$ définie par:
 		\begin{itemize}
-			\item [-] Si $\pi(m)=m-1$, alors $\psi(\pi)=st(\pi(1)\pi(2)\cdots \pi(m-1))$
+			\item [-] Si $\pi(m)=m-1$, alors $\psi(\pi)=\text{st}(\pi(1)\pi(2)\cdots \pi(m-1))$
 			\item [-] Si $\pi(m)\neq m-1$, alors $\psi(\pi)$ se déduit de $\pi$ en supprimant $m$
 		\end{itemize}
 		On note ps$(\pi)$ la position de $m$, i.e, ps$(\pi)=\pi^{-1}(m)$.
@@ -367,7 +367,7 @@ On a $\begin{rm}ps\end{rm}(\pi^{(n-(k+1))}) = \begin{rm}ps\end{rm}(\pi^{(n-(k+2)
 On en déduit que $c_{j} = \begin{rm}ps\end{rm}(\pi^{(n-j)})$\vspace{7pt}\\
 Il nous reste à montrer que pour tout $1 \leq j \leq n$,  $\pi^{(n-j)}\in S_{j}(321)$\\
 Supposons qu'il existe $j\leq n$ tel que $\pi^{(n-j)} \notin S_{j}(321)$ et pour tout $p<j$, $\pi^{(n-p)}\in S_{p}(321)$.\\
-Soit alors $i<k<l$ tel que $st(\pi^{(n-j)}(i)\pi^{(n-j)}(k)\pi^{(n-j)}(l))=321$.
+Soit alors $i<k<l$ tel que st$(\pi^{(n-j)}(i)\pi^{(n-j)}(k)\pi^{(n-j)}(l))=321$.
 On en déduit que $\pi^{(n-j)}(i)=j$.\\
 On a $\pi^{(n-j)}(j)\neq j-1$ et  $j-1$ se trouve à droite de $j$  dans la décomposition linéaire de $\pi^{(n-j)}$ car sinon on aura $\pi^{(n-j+1)}\notin S_{j-1}(321)$.\\
 Cela implique que $\begin{rm}ps\end{rm}(\pi^{(n-j)})< \begin{rm}ps\end{rm}(\pi^{(n-j+1)})$ ou encore $c_{j}<c_{j-1}$ qui est en contradiction avec $c\in \begin{rm}Cat\end{rm}(n)$.\\
@@ -465,7 +465,7 @@ Soit $\sigma \in S_{n}$ et $1 \leq i \leq n$\\
 	\end{rm}
 \end{definition}
 On convient que $\sigma (0) = n+1$ et $\sigma (n+1) = 0 $.
-D'après \cite{FranconViennot}, on a la bijection de\\ J. Françon et G. Viennot ci-dessous.. La démonstration
+D'après \cite{FranconViennot}, on a la bijection de\\ J. Françon et G. Viennot ci-dessous. La démonstration
 de cette proposition nous sera utile dans toute la suite.
 
 \begin{proposition} \label{khiFV}
