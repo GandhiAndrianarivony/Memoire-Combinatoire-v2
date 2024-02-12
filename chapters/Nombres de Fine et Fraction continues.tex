@@ -395,6 +395,14 @@ On en déduit de la \Cref{CatFinGenRelation} que $C(z)=(2+z)F(z)-1$. Par conséq
 \[C(z)= (2+z)\underset{n\geq0}{\sum}F_{n}z^n -1=\sum_{n\geq 0}2F_{n}z^n+\sum_{n\geq 0} F_{n}
 	z^{n+1}-1=\sum_{n\geq 1}2F_{n}z^n+\sum_{n\geq 1} F_{n-1}z^{n}+1\]
 D'où le résultat \hspace{5pt}$\blacksquare$ \vspace{5pt}\\
+On a le tableau des $F_{n}$ et $C_{n}$ suivant:
+$$
+	\begin{matrix}
+		n  & 0 & 1 & 2 & 3 & 4 & 5                 \\
+		C_{n}  & . & 1 & 2 & 5 & 14 & 42             \\
+		F_{n}  & 1 & 0 & 1 & 2 & 6 & 18         \\
+	\end{matrix}
+$$
 \begin{definition}
 	\begin{rm}
 		Un chemin de Dyck de longueur $2n$ est un chemin dans $\mathbb{N}\times \mathbb{N}$ de $(0, 0)$ vers $(2n, 0)$ formé par les pas montées $(1,1)$
