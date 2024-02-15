@@ -1,9 +1,12 @@
-\section*{Introduction}
-\vspace*{20pt}
-La première fois où les nombres de Fine ont été vue était dans la recherche de la prédiction ou de l'extrapolation non statistique d'une fonction faite par Terrence Fine \cite{TFine}. Avec la puissance des ordinateurs d'aujourd'hui, sa recherche montre beaucoup d'intérêts sur l'apprentissage automatique comme les modèles génératifs. Dans son article, il a introduit le concept des relations de similarité, qui est à la base des nombres de Fine.
-Ces nombres sont étroitement liés aux nombres de Catalan qui font l'objet d'étude de plusieurs objets combinatoires tels que les chemins, les permutations et les graphes. Dans le présent mémoire, qui est inspiré de \cite{RRP}, le nombre de Fine d'ordre $n$ est désigné par $F_{n}$. Dans la suite, on notera par $C_{n}$ le nombre de Catalan d'order $n$ et on notera par $\text{RS}_{n}$, respectivement $S_{n}$, l'ensemble des relations de similarité, respectivement des permutations, sur l'ensemble $\{1, 2, \cdots, n\}$.\vspace{5pt}\\
+\begingroup
+\renewcommand{\thechapter}{}
+\chapter{Introduction}
+\endgroup
 
-Étant donné que les permutations et les relations de similarité jouent un rôle crucial dans l'interprétation des nombres de Fine, il est donc primordial d'approfondir la recherche sur leurs implications. C'est précisément l'objectif de ce mémoire, qui marque cependant le commencement d'une exploration approfondie plutôt qu'une présentation exhaustive de ces nombres. \vspace{5pt}\\
+La première fois où les nombres de Fine ont été vue était dans la recherche de la prédiction ou de l'extrapolation non statistique d'une fonction faite par Terrence Fine \cite{TFine}. Avec la puissance des ordinateurs d'aujourd'hui, sa recherche montre beaucoup d'intérêts sur l'apprentissage automatique comme les modèles génératifs. Dans son article, il a introduit le concept des relations de similarité, qui est à la base des nombres de Fine.
+Ces nombres sont étroitement liés aux nombres de Catalan qui font l'objet d'étude de plusieurs objets combinatoires tels que les chemins, les permutations et les graphes. Dans le présent mémoire, qui est inspiré de \cite{RRP}, le nombre de Fine d'ordre $n$ est désigné par $F_{n}$. Dans la suite, on notera par $C_{n}$ le nombre de Catalan d'order $n$ et on notera par $\text{RS}_{n}$, respectivement $S_{n}$, l'ensemble des relations de similarité, respectivement des permutations, sur l'ensemble $\{1, 2, \cdots, n\}$.\\
+
+Étant donné que les permutations et les relations de similarité jouent un rôle crucial dans l'interprétation des nombres de Fine, il est donc primordial d'approfondir la recherche sur leurs implications. C'est précisément l'objectif de ce mémoire, qui marque cependant le commencement d'une exploration approfondie plutôt qu'une présentation exhaustive de ces nombres. \\
 
 De ce fait, ce mémoire est organisé en deux chapitres fondamentaux. Le premier chapitre a pour objectif de fournir les connaissances et outils nécessaires à la compréhension de la suite du document. Il présente les définitions, théorèmes et propriétés essentiels abordés dans le semestre $S9$ du combinatoire et qui seront utilisées ultérieurement. Ensuite, nous détaillons la définition des chemins de Fine et ses propriétés fondamentales, à savoir les fractions continues et la fonction génératrice des nombres de Fine. \vspace*{5pt}\\
 
@@ -36,7 +39,7 @@ Finalement, le second chapitre se concentre sur les interprétations combinatoir
 % 	Pour tout $\forall i \geq 3, |c_{1} \cdots c_{i-1}|_{m} - |c_{1} \cdots c_{i-1}|_{d} = \gamma_{i-1}$
 % \end{proposition}
 % \underline{\textit{Démonstration}}: On a \\
-% \vspace{5pt}
+% 
 % $
 % 	\begin{array}{c c l}
 % 		\gamma_{i-1} & = & (\gamma_{i-1}-\gamma_{i-2})+(\gamma_{i-2}-\gamma_{i-3})+\cdots+(\gamma_{1}-\gamma_{0})                           \\

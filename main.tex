@@ -19,7 +19,7 @@
 \usepackage{subcaption}
 \usepackage{tabularx}
 \usepackage{pdfpages}
-
+\usepackage{titlesec}
 % Show Prop, Lemma and other label near them
 % \usepackage{showkeys}
 
@@ -33,17 +33,44 @@
 \newtheorem{corollaire}[proposition]{Corollaire}
 \newtheorem{property}[proposition]{Propriété}
 
+% =================================================================
+% For displaying or removing title numbering
+\titleformat{name=\chapter}[display]
+{\normalfont\large\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Large}
+
+% =================================================================
+
+
 \begin{document}
 % \input{./chapters/page_garde.tex}
 \includepdf[pages=-]{page-garde.pdf}
+
+% Start New page
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\titleformat{name=\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\Huge}
 \input{./chapters/remerciements.tex}
 \tableofcontents
-\pagenumbering{arabic}
 
 \newpage
+
+% Start new page
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
 \input{./chapters/introduction.tex}
+
+\setcounter{chapter}{0}
+\titleformat{name=\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \input{./chapters/Nombres de Fine et Fraction continues.tex}
 \input{./chapters/Nombres de Fine, relation similarité et permutations.tex}
+
+\titleformat{name=\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\input{./chapters/conclusion.tex}
 
 \bibliographystyle{unsrt}
 \begin{thebibliography}{100} % 100 is a random guess of the total number of
