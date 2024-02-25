@@ -66,7 +66,8 @@ Posons Sim$_{n}(k)=\{r \in $ Sim$_{n}; \#\{i; r_{i}=r_{i+1}=0\}=k\}$
 	\textit{De plus}, $|$\rm{Sim}$_{n}(k)| = \# \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gamma_{i-1}=0 \text{ et } p_{i+1}=d\}|=k\}$
 \end{proposition}
 Preuve:
-Soit $p=p_{1}p_{2}\cdots p_{2n} \in $\rm{ Dyck$(n)}$ et $\varphi(p):=r$. 
+Soit $p=p_{1}p_{2}\cdots p_{2n} \in $ \rm{Dyck}($n$) et $\varphi(p):=r$. 
+% Soit $p=p_{1}p_{2}\cdots p_{2n} \in $ \rm{ Dyck$(n)}$ et $\varphi(p):=r$. 
 % On note \rm{Mont}$(p)=\{i_{1}, i_{2}, \cdots, i_{n}\}$ l'ensemble des entiers $i$ tels que $p_{i}=m$. 
 Notons que $$\gamma_{i_{j}-1}= | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m} - | p_{1}p_{2}\cdots p_{i_{j}-1} |_{d}$$ 
 Cela implique que $\gamma_{i_{j}-1} = r_{j} \leq | p_{1}p_{2}\cdots p_{i_{j}-1} |_{m}=j-1$.\\
@@ -428,17 +429,17 @@ Premièrement, trouvons l'expression de $a_{n}(x)$. Soit $c \in E$ et $c^{(1)} =
 Deuxièmement, on va trouver l'expression de $b_{n}(x)$. Soit $c\in \begin{rm}Cat\end{rm}(n)$ tel que $c_{2}\neq 2$. Cela implique que $1\notin D(c)$ ou encore pour tout $S\subset D(c)$, on a $1\notin S$. Alors on a $$b_{n}(x) = \sum\limits_{\underset{c_{2}\neq 2}{c\in \begin{rm}Cat\end{rm}(n)}} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$\\
 Posons $\overline{E}:=\{c\in \begin{rm}Cat\end{rm}(n); c_{2}\neq 2\}$ et soit $i>1$. On note par $Cat_{i}(n)$ l'ensemble des $c\in \overline{E}$ tel que $i$ est le plus petit entier
 qui vérifie $c_{i}=i$.\\
-Il est clair que $\begin{rm}Cat\end{rm}_{2}(n)=\emptyset$ et pour tout $i \neq j$, on a $\begin{rm}Cat\end{rm}_{i}(n)\bigcap \begin{rm}Cat\end{rm}_{j}(n)=\emptyset$\\
+Il est clair que $\begin{rm}Cat\end{rm}_{2}(n)=\varnothing$ et pour tout $i \neq j$, on a $\begin{rm}Cat\end{rm}_{i}(n)\bigcap \begin{rm}Cat\end{rm}_{j}(n)=\varnothing$\\
 Ensuite, on note par $F$ l'ensemble des $c\in \overline{E}$ tels que pour tout $k>1$,
 $c_{k}<k$.\\
 On a \[
-	\left(\bigcup\limits_{i=3}^{n}\begin{rm}Cat\end{rm}_{i}(n)\right)\bigcap F=\emptyset \text{ et } \overline{E}=\left(\bigcup\limits_{i=3}^{n}\begin{rm}Cat\end{rm}_{i}(n)\right)\bigcup F
+	\left(\bigcup\limits_{i=3}^{n}\begin{rm}Cat\end{rm}_{i}(n)\right)\bigcap F=\varnothing \text{ et } \overline{E}=\left(\bigcup\limits_{i=3}^{n}\begin{rm}Cat\end{rm}_{i}(n)\right)\bigcup F
 \]
-% On note que si $i=1 \text{ ou } i=2$ alors $\begin{rm}Cat\end{rm}_{i}(n)=\emptyset$. \vspace{5pt}\\
+% On note que si $i=1 \text{ ou } i=2$ alors $\begin{rm}Cat\end{rm}_{i}(n)=\varnothing$. \vspace{5pt}\\
 Par conséquent $$b_{n}(x)=  \sum\limits_{c\in \left(\bigcup\limits_{i=3}^{n}\begin{rm}Cat\end{rm}_{i}(n)\right)\bigcup F} \sum\limits_{S\subset D(c)}(x-1)^{\#S}=\sum\limits_{i=3}^{n}\sum\limits_{c\in \begin{rm}\begin{rm}Cat\end{rm}\end{rm}_{i}(n)} \sum\limits_{S\subset D(c)}(x-1)^{\#S} + \sum\limits_{c\in F} \sum\limits_{S\subset D(c)}(x-1)^{\#S}$$. \\
 La transformation $\beta: \begin{rm}Cat\end{rm}_{i}(n) \longrightarrow \begin{rm}Cat\end{rm}(i-2)\times \begin{rm}Cat\end{rm}(n-i+1)$; $c \longmapsto (c', c'')$ définie comme suit $c'_{j}=c_{j+1}$ et $c''_{j}=c_{i+j-1}-(i-1)$, est bijective.\\
 De plus, $\#D(c) = \#D(c'')$. \vspace{5pt}\\
-La transformation $\mu: F \longrightarrow \begin{rm}Cat\end{rm}(n-1)$; $c=c_{1}\cdots c_{n} \longmapsto c^{(1)}=c_{2}\cdots c_{n}$ est bijective. De plus, pour tout $c \in F$, on a $D(c)=\emptyset$. D'où $\sum\limits_{S\subset D(c)}(x-1)^{\#S}=1$.\vspace{10pt}\\
+La transformation $\mu: F \longrightarrow \begin{rm}Cat\end{rm}(n-1)$; $c=c_{1}\cdots c_{n} \longmapsto c^{(1)}=c_{2}\cdots c_{n}$ est bijective. De plus, pour tout $c \in F$, on a $D(c)=\varnothing$. D'où $\sum\limits_{S\subset D(c)}(x-1)^{\#S}=1$.\vspace{10pt}\\
 Ainsi,
 $$
 	\begin{array}{l l l}
@@ -974,8 +975,8 @@ En utilisant la \Cref{p7}, on a $$\begin{array}{l l l}
 \begin{proposition}
 	On a $\forall r\geq n\text{, }E_{n,r}(x) = C_{n}$
 \end{proposition}
-$\underline{\textit{Démontration}}:$\\
-D'abord, pour tout $ \pi \in \mathcal{E}_{n, r}, \text{fix}(\pi)=0$. Alors, on a
+Preuve:
+On a, $ \forall \pi \in \mathcal{E}_{n, r}, \text{fix}(\pi)=0$. Alors, on a
 $E_{n,r}(x)= \sum_{i=1}^{n}| \mathcal{E}_{i-1, n-i+r}||\mathcal{E}_{n-i, r-i}|$\\
 Le nombre $|\mathcal{E}_{n, r}|$ dépend seulement de n. On convient que $|\mathcal{E}_{0, r}|=1=C_{0}$. \\On a  $|\mathcal{E}_{1, r}|=1=C_{1}$ et  $|\mathcal{E}_{2, r}|=2=C_{2}$. Comme $E_{n,r}(x)$ et $C_{n}$ ont même relation de récurrence, alors $E_{n,r}(x) = C_{n}\text{, }\forall r\geq n \hspace{10pt}\blacksquare$ \vspace{15pt}
 
@@ -992,7 +993,7 @@ ou encore $i\leq \lfloor \frac{n+r+1}{2}\rfloor$ (avec $\lfloor x \rfloor$ est l
 		           & \text{} & +(x-1)E_{n-1,0}(x)\mathbbm{1}_{\{r=0\}}
 	\end{array}
 \end{equation}
-On pose $F_{n, r}(x)=A_{n}(x) + (1-x)\sum\limits_{i=1}^{r}C_{i-1}A_{n-i}$. \\Alors on peut écrire $F_{n, r}(x)=\sum\limits_{k=0}^{n}f(n, k)(x-1)^{k}$\\
+On pose $F_{n, r}(x)=A_{n}(x) + (1-x)\sum\limits_{i=1}^{r}C_{i-1}A_{n-i}(x)$. \\Alors on peut écrire $F_{n, r}(x)=\sum\limits_{k=0}^{n}f(n, k)(x-1)^{k}$\\
 \begin{lemme}\label{l101}
 	$[(x-1)^{k}]F_{n, r}(x)=f(n, k) = b(n, k) - \sum\limits_{i=1}^{r}C_{i-1}b(n-i, k-1)$
 \end{lemme}
@@ -1315,7 +1316,7 @@ D'où, \[s_{n}^{k}(\alpha)=\underset{j=0}{\overset{n-k}{\sum}}\begin{pmatrix} j+
 Preuve:
 Comme $S_{n}(\alpha)=\underset{k=0}{\overset{n}{\bigcup}}S_{n}^{k}(\alpha)$ avec $|S_{n}(\alpha)|=C_{n}$ alors, on a $C_{n}=\underset{k=0}{\overset{n}{\sum}}s_{n}^{k}(\alpha)$ $\blacksquare$
 
-\begin{proposition}
+\begin{proposition} \label{fnbnk}
 	Pour tout $ n\geq 1$, $F_{n}=\underset{j=0}{\overset{n}{\sum}}(-1)^{j}b(n,j)$
 \end{proposition}
 Preuve: On a
@@ -1327,7 +1328,7 @@ Preuve: On a
 \begin{proposition}\label{p12}
 	On a $F_{n} = \sum\limits_{k=0}^{\lfloor \frac{n}{2} \rfloor}c_{n-1, n-2k}$
 \end{proposition}
-Preuve: Dans la Proposition 2.2.31, on a $F_{n} = \sum\limits_{j=0}^{n}(-1)^{j}b(n, j)$. Rappelons que, pour tout $n\geq k$,\\$c_{n, k} = b(n, k)$. Cela implique que $F_{n}=\sum\limits_{j=0}^{n}(-1)^{j}c_{n, n-j}$. Nous allons distinguer le cas où $n$ est pair et $n$ impair.\vspace{5pt}\\
+Preuve: Dans la \Cref{fnbnk}, on a $F_{n} = \sum\limits_{j=0}^{n}(-1)^{j}b(n, j)$. Rappelons que, pour tout $n\geq k$, $c_{n, k} = b(n, k)$. Cela implique que $F_{n}=\sum\limits_{j=0}^{n}(-1)^{j}c_{n, n-j}$. Nous allons distinguer le cas où $n$ est pair et $n$ impair.\vspace{5pt}\\
 	Si $n$ est pair, alors il existe $n \in \mathbb{N}$, tel que $n=2p$. \\
 	On a
 	\[
@@ -1387,7 +1388,7 @@ Preuve: Dans la Proposition 2.2.31, on a $F_{n} = \sum\limits_{j=0}^{n}(-1)^{j}b
 		\end{array}
 	\]
 $\blacksquare$\vspace{10pt}\\
-	Soit $\mu \in \{132, 321\}$. On pose $T_{n}(\mu)= \{\pi \in S_{n}(\mu); \text{Fix}(\pi)\bigcap [n-1]\neq \emptyset\}$
+	Soit $\mu \in \{132, 321\}$. On pose $T_{n}(\mu)= \{\pi \in S_{n}(\mu); \text{Fix}(\pi)\bigcap [n-1]\neq \varnothing\}$
 	\begin{proposition}
 		Pour tout $n\geq 1$, on a $ F_{n}=|T_{n}(\mu)|$.
 	\end{proposition}
