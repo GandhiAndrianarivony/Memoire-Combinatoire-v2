@@ -2,3 +2,14 @@
 \renewcommand{\thechapter}{}
 \chapter{Conclusion}
 \endgroup
+Dans ce mémoire, nous avons exploré plusieurs aspects des nombres de Fine, en mettant particulièrement l'accent sur les chemins et les permutations évitant un motif. Nos résultats ont démontré que le nombre de Fine d'ordre $n$ correspond au  nombre de 2-chemins de Motzkin sans palier bleu ni rouge de niveau zéro en $n$ pas.\\
+
+Le développement en fraction continue des $(F_{n})$ nous a permis de dériver la relation $F(z) = \cfrac{1}{2+z}(1+C(z))$ que nous avons utilisé pour établir que $C_{n} = 2F_{n} + F_{n-1}$ $(n\geq 1)$ où $C_{n}$ est le nombre de Catalan d'ordre $n$.  Nos résultats ont également confirmé que $F_{n}$ équivaut à la cardinalité de l'ensemble des relations de similarités non-singulières sur $[n]$, mentionnées par Terrence Fine dans \cite{TFine}, ce qui nous a permis de proposer plusieurs interprétations des nombres de Fine.\\
+
+Nous avons également établi une relation entre $F_{n}$ et $S_{n}(\mu)$ $(\mu \in \{132, 321\})$ est représentée par:
+\begin{itemize}
+    \item[-] $F_{2n}=$ cardinalité de l'ensemble des permutations $\sigma \in S_{2n}(\mu)$ \\telles que $\sigma(1)$ est impair 
+    \item[-] $F_{2n+1}=$ cardinalité de l'ensemble des permutations $\sigma \in S_{2n+1}(\mu)$ \\telles que $\sigma(1)$ est pair
+    \item[-] $F_{n}$ = cardinalité de l'ensemble des permutations $\sigma \in S_{n}(\mu)$ \\telles que Fix($\sigma$) $\cap [n-1]\neq \varnothing$
+\end{itemize}
+Ces conclusions correspondent à l'objectif abordé dans la section 2.2 du chapitre 2 de ce mémoire, où nous avons discuté en détail des interprétations des résultats obtenus.

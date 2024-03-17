@@ -272,9 +272,9 @@ D'autre part, pour tout $i\geq1$,
 		         & =       & \underset{n\geq1}{\sum}H_{i,n}z^n                                                                     \\
 		         & \text{} &                                                                                                       \\
 		         & =       & \underset{n\geq1}{\sum}m_{i-1}H_{i-1,n-1}z^n+(b_{i}+r_{i})\underset{n\geq1}{\sum}H_{i,n-1}z^n+d_{i+1}
-		\underset{n\geq}{\sum}H_{i+1,n-1}z^n                                                                                       \\
+		\underset{n\geq 1}{\sum}H_{i+1,n-1}z^n                                                                                       \\
 		         & \text{} &                                                                                                       \\
-		         & =       & m_{i-1}zH_{i-1}(z)+(b_{i}+r_{i})zH_{i}(z)+d_{i+1}H_{i+1}(z)
+		         & =       & m_{i-1}zH_{i-1}(z)+(b_{i}+r_{i})zH_{i}(z)+d_{i+1}zH_{i+1}(z)
 	\end{array}
 \]
 Cela implique que :\\
@@ -497,8 +497,10 @@ On a $p'\in \text{Dyck}(i-1) $ et  $p'' \in \overline{\text{Dyck}}(n-i)$. \\
 Considérons l'application $\alpha: \overline{\text{Dyck}}_{i}(n) \longrightarrow \text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i), p \mapsto (p', p'')$, définie par la transformation ci-dessus. On voit que $\alpha$ est une application bijective.\newpage
 Par conséquent,
 $$\#\underset{i=2}{\overset{n}{\bigcup}}\text{Dyck}(i-1) \times \overline{\text{Dyck}}(n-i)= \# \underset{i=2}{\overset{n}{\bigcup}}\overline{\text{Dyck}}_{i}(n) = \# \overline{\text{Dyck}}(n)$$
-D'après la \Cref{bij-DyckBar}, on a $F_{n} = \#\overline{\text{Dyck}}(n)$ et le fait que $C_{n}=\#\text{Dyck}(n)$, on obtient le résultat.
-Ci-dessous une illustration.
+D'après la \Cref{bij-DyckBar}, on a $F_{n} = \#\overline{\text{Dyck}}(n)$ et le fait que $C_{n}=\#\text{Dyck}(n)$, on obtient le résultat.\\
+% Ci-dessous une illustration.
+Dans la figure d'illustration ci-dessous, nous avons $n=10$, $p=p_{1}p_{2}\cdots p_{20}$ et $i=6$.\\ 
+On a $p'=p_{2}p_{3}\cdots p_{11}\in \text{Dyck}(5)$ et $p''=p_{13}p_{14}\cdots p_{20}\in \overline{\text{Dyck}}(4)$
 \begin{figure}[h!]
 	% \centering
 	% \begin{subfigure}[b]{0.38\textwidth}
@@ -509,12 +511,12 @@ Ci-dessous une illustration.
 	% \hspace{2cm}
 	\begin{subfigure}[b]{0.38\textwidth}
 		\centering
-		\includegraphics[width=2.4\textwidth]{./Images/fine-catalan.png}
+		\includegraphics[width=3.0\textwidth]{./Images/fine-catalan.png}
 		% \caption{}
 	\end{subfigure}
 	%\caption{Nouveau chemin de Dyck}
 	% \label{fig:DyckPath}
-\end{figure}
+\end{figure}\\
 % =================================================================================================
 %\section{Chemins de Dyck}
 
