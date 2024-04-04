@@ -34,12 +34,12 @@ On note par RS$_{n}$ l'ensemble des relations de similarité sur $[n]$.
 \begin{definition}
 	\begin{rm}
 		Une relation de similarité $\mathcal{R}$ est non-singulière si elle n'a aucun point
-		isolé.
+		isolé. Le nombre de relations de similarité non-singulières sur $[n]$ est appelé nombre de Fine d'ordre $n$.
 	\end{rm}
 \end{definition}
 % \begin{definition}
 % 	\begin{rm}
-		Dans \cite{TFine}, le nombre de Fine correspond au nombre des relations de similarité non-singulière.
+% 		Le nombre de Fine d'ordre $n$ est égal au nombre des relations de similarité non-singulières sur  $[n]$.
 % 	\end{rm}
 % \end{definition}
 % Dans toute la suite, on note par $ \text{RS}_{n} $ l'ensemble des relations de similarité sur $ [n] $ et 
@@ -121,12 +121,13 @@ $\overline{\rm{Dyck}}(n) = \{p \in $\rm{Dyck}$(n); |\{i \in $\rm{Mont}$(p); \gam
 
 \begin{corollaire} \label{fnToSRn0}
 	\begin{rm}
-		On a, $F_{n}=|$\rm{RS}$_{n}(0)|$
+		% On a, $F_{n}=|$\rm{RS}$_{n}(0)|$
+		Le nombre de Fine d'ordre $n$ est  égal au nombre $F_{n}$ des chemins de Fine de longueur $n$
 	\end{rm}
 \end{corollaire}
-Preuve: En utilisant la \Cref{bij-DyckBar} et le \Cref{SimNOfK} , on obtient le résultat.
-
-
+Preuve: En utilisant la \Cref{bij-DyckBar} et le \Cref{SimNOfK} , on obtient le résultat. $\blacksquare$\vspace{5pt}\\
+% Remarque: D'après le \Cref{fnToSRn0}, le nombre de Fine d'ordre $n$ n'est autre que le nombre $F_{n}$.
+Grâce à ce corollaire, nous gardons la notation $F_{n}$ pour désigner le nombre de Fine sur $n$.
 \subsection{Relation entre $S_{n}^{k}(321)$ et \rm{RS}$_{n}(k)$}
 \begin{definition}
 	\begin{rm}
